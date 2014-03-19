@@ -389,7 +389,7 @@ void QssEditor::slotExportQss()
 
     if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
     {
-        showError(tr("Cannot open file: ") + ' ' + file.errorString());
+        showError(tr("Cannot open file:") + ' ' + file.errorString());
         return;
     }
 
@@ -397,7 +397,7 @@ void QssEditor::slotExportQss()
 
     if(file.write(qss, qss.length()) != qss.length())
     {
-        showError(tr("Cannot export QSS: ") + ' ' + file.errorString());
+        showError(tr("Cannot export QSS:") + ' ' + file.errorString());
         return;
     }
 }
