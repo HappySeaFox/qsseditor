@@ -93,11 +93,8 @@ QssEditor::QssEditor(QWidget *parent) :
     ui->splitter->setSizes(list);
 
     // some MDI windows
-    QMdiSubWindow *mdi1 = ui->mdiArea->addSubWindow(new QLabel("MDI", ui->mdiArea));
-    QMdiSubWindow *mdi2 = ui->mdiArea->addSubWindow(new QLineEdit("MDI", ui->mdiArea));
-
-    mdi1->move(0, 0);
-    mdi2->move(0, 60);
+    QMdiSubWindow *mdi = ui->mdiArea->addSubWindow(new QLabel("MDI", ui->mdiArea));
+    mdi->resize(160, 80);
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
     ui->tree->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
