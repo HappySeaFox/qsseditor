@@ -261,7 +261,7 @@ void QssEditor::updateProjectPath(const QString &newPath)
 
     m_lastFileName = fi.absoluteFilePath();
 
-    setWindowTitle(m_lastFileName);
+    setWindowTitle(QDir::toNativeSeparators(m_lastFileName));
 
     if(!QDir::setCurrent(fi.absolutePath()))
     {
@@ -283,6 +283,9 @@ void QssEditor::restoreLastFiles()
 
     foreach(QString file, files)
     {
+        if(!QFile::exists(file))
+            continue;
+
         ui->toolOpen->menu()->addAction(file, this, SLOT(slotOpenFromHistoryMenu()));
     }
 }
