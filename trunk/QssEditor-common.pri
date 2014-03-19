@@ -99,7 +99,17 @@ for(ts, TRANSLATIONS) {
     QMAKE_POST_LINK += $$mle(lrelease \"$$ts\" -qm \"$$QM\")
 }
 
-QMAKE_POST_LINK += $$mle(if not exist \"$${OUT_PWD}/$(DESTDIR_TARGET)/../translations\" mkdir \"$${OUT_PWD}/$(DESTDIR_TARGET)/../translations\")
+win32 {
+    TRANSLATIONS_DIR="$${OUT_PWD}/$(DESTDIR_TARGET)/../translations"
+} unix {
+    TRANSLATIONS_DIR="$${OUT_PWD}/translations"
+}
+
+win32 {
+    QMAKE_POST_LINK += $$mle(if not exist \"$$TRANSLATIONS_DIR\" mkdir \"$$TRANSLATIONS_DIR\")
+} unix {
+    QMAKE_POST_LINK += $$mle(test -d \"$$TRANSLATIONS_DIR\" || mkdir -p \"$$TRANSLATIONS_DIR\")
+}
 
 QMFILES=
 
@@ -108,7 +118,7 @@ for(ts, TRANSLATIONS) {
     ts=$$replace(ts, \\.ts$, .qm)
     ts=$$replace(ts, /, \\)
     QMFILES += $$ts
-    QMAKE_POST_LINK += $$mle(copy /y \"$$ts\" \"$${OUT_PWD}/$(DESTDIR_TARGET)/../translations\")
+    QMAKE_POST_LINK += $$mle($(COPY) \"$$ts\" \"$$TRANSLATIONS_DIR\")
 }
 
 # check for upx
