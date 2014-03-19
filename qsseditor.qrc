@@ -7,5 +7,7 @@
         <file>images/options.png</file>
         <file>images/save.png</file>
         <file>images/saveas.png</file>
+        <file>images/qsseditor.ico</file>
+        <file>images/export.png</file>
     </qresource>
 </RCC>

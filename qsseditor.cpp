@@ -15,6 +15,7 @@
  * along with QssEditor. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <QMdiSubWindow>
 #include <QApplication>
 #include <QKeySequence>
 #include <QMessageBox>
@@ -25,6 +26,7 @@
 #include <QSettings>
 #include <QKeyEvent>
 #include <QTimer>
+#include <QMenu>
 #include <QDir>
 
 #include "qscilexerqss.h"
@@ -38,6 +40,15 @@ QssEditor::QssEditor(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // application shortcuts
+    new QShortcut(QKeySequence::Quit, this, SLOT(slotQuit()));
+
+    // shortcuts
+    ui->toolOpen->setShortcut(QKeySequence::Open);
+    ui->toolSave->setShortcut(QKeySequence::Save);
+    ui->toolSaveAs->setShortcut(QKeySequence::SaveAs);
+
+    // set some sizes
     const int buttonSize = 22;
 
     QWidgetList buttons = QWidgetList()
@@ -51,13 +62,12 @@ QssEditor::QssEditor(QWidget *parent) :
         w->setFixedSize(buttonSize, buttonSize);
     }
 
-    // application shortcuts
-    new QShortcut(QKeySequence::Quit, this, SLOT(slotQuit()));
-
-    // shortcuts
-    ui->toolOpen->setShortcut(QKeySequence::Open);
-    ui->toolSave->setShortcut(QKeySequence::Save);
-    ui->toolSaveAs->setShortcut(QKeySequence::SaveAs);
+    // menu fot toolbutton
+    QMenu *toolButtonMenu = new QMenu(this);
+    toolButtonMenu->addAction("Item1");
+    toolButtonMenu->addSeparator();
+    toolButtonMenu->addAction("Item2");
+    ui->toolButton->setMenu(toolButtonMenu);
 
     m_timerDelayedApply = new QTimer(this);
     m_timerDelayedApply->setInterval(750);
@@ -70,13 +80,18 @@ QssEditor::QssEditor(QWidget *parent) :
     timerProgress->start();
 
     ui->splitter->setCollapsible(0, false);
+    ui->splitter->setStretchFactor(0, 1);
 
+    // splitter size
     QList<int> list = QList<int>() << width()/2 << width()/2;
     ui->splitter->setSizes(list);
 
-    ui->mdiArea->addSubWindow(new QLabel("MDI", ui->mdiArea));
-    ui->mdiArea->addSubWindow(new QLineEdit(ui->mdiArea));
-    ui->mdiArea->cascadeSubWindows();
+    // some MDI windows
+    QMdiSubWindow *mdi1 = ui->mdiArea->addSubWindow(new QLabel("MDI", ui->mdiArea));
+    QMdiSubWindow *mdi2 = ui->mdiArea->addSubWindow(new QLineEdit("MDI", ui->mdiArea));
+
+    mdi1->move(0, 0);
+    mdi2->move(0, 60);
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
     ui->tree->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
@@ -159,13 +174,16 @@ void QssEditor::open(const QString &fileName)
 
     if(settings.status() != QSettings::NoError)
     {
-        QMessageBox::critical(this, tr("Error"), tr("Cannot open file:") + ' ' + settingsErrorToString(settings.status()));
+        showError(tr("Cannot open file:") + ' ' + settingsErrorToString(settings.status()));
         return;
     }
 
-    m_lastFileName = fileName;
+    updateProjectPath(fileName);
 
     ui->text->setText(settings.value("css").toString());
+
+    m_changed = false;
+    ui->toolSave->setEnabled(false);
 }
 
 bool QssEditor::save()
@@ -183,11 +201,13 @@ bool QssEditor::save()
 
     if(settings.status() != QSettings::NoError)
     {
-        QMessageBox::critical(this, tr("Error"), tr("Cannot save file:") + ' ' + settingsErrorToString(settings.status()));
+        showError(tr("Cannot save file:") + ' ' + settingsErrorToString(settings.status()));
         return false;
     }
 
     m_changed = false;
+
+    ui->toolSave->setEnabled(false);
 
     return false;
 }
@@ -212,12 +232,36 @@ QString QssEditor::settingsErrorToString(int status)
 
 bool QssEditor::continueWhenUnsaved()
 {
-    return (!m_changed || QMessageBox::question(this, tr("Warning"), tr("All unsaved changes will be lost. Continue?")) == QMessageBox::Yes);
+    return (!m_changed || QMessageBox::question(this,
+                                                tr("Warning"),
+                                                tr("All unsaved changes will be lost. Continue?"),
+                                                QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes);
+}
+
+void QssEditor::updateProjectPath(const QString &newPath)
+{
+    QFileInfo fi(newPath);
+
+    m_lastFileName = fi.absoluteFilePath();
+
+    setWindowTitle(m_lastFileName);
+
+    if(!QDir::setCurrent(fi.absolutePath()))
+    {
+        qWarning("Cannot change directory");
+        QMessageBox::warning(this, tr("Warning"), tr("Cannot change directory"));
+    }
+}
+
+void QssEditor::showError(const QString &err)
+{
+    QMessageBox::critical(this, tr("Error"), err);
 }
 
 void QssEditor::slotCssChanged()
 {
     m_changed = true;
+    ui->toolSave->setEnabled(true);
     m_timerDelayedApply->start();
 }
 
@@ -260,9 +304,34 @@ void QssEditor::slotSaveAs()
     if(fileName.isEmpty())
         return;
 
-    m_lastFileName = fileName;
-
+    updateProjectPath(fileName);
     save();
+}
+
+void QssEditor::slotExportQss()
+{
+    qDebug("Export QSS");
+
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Export QSS"), QString(), tr("QSS files (*.qss)"));
+
+    if(fileName.isEmpty())
+        return;
+
+    QFile file(fileName);
+
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
+    {
+        showError(tr("Cannot open file: ") + ' ' + file.errorString());
+        return;
+    }
+
+    QByteArray qss = ui->text->text().toAscii();
+
+    if(file.write(qss, qss.length()) != qss.length())
+    {
+        showError(tr("Cannot export QSS: ") + ' ' + file.errorString());
+        return;
+    }
 }
 
 void QssEditor::slotOptions()

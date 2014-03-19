@@ -44,6 +44,8 @@ private:
     bool save();
     QString settingsErrorToString(int);
     bool continueWhenUnsaved();
+    void updateProjectPath(const QString &newPath);
+    void showError(const QString &err);
 
 private slots:
     void slotCssChanged();
@@ -51,6 +53,7 @@ private slots:
     void slotOpen();
     void slotSave();
     void slotSaveAs();
+    void slotExportQss();
     void slotOptions();
     void slotProgress();
     void slotQuit();
