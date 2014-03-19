@@ -25,12 +25,14 @@
 #include <QShortcut>
 #include <QSettings>
 #include <QKeyEvent>
+#include <QDebug>
 #include <QTimer>
 #include <QMenu>
 #include <QDir>
 
 #include "qscilexerqss.h"
 #include "qsseditor.h"
+#include "settings.h"
 #include "ui_qsseditor.h"
 
 QssEditor::QssEditor(QWidget *parent) :
@@ -55,6 +57,7 @@ QssEditor::QssEditor(QWidget *parent) :
                              << ui->toolOpen
                              << ui->toolSave
                              << ui->toolSaveAs
+                             << ui->toolExportQss
                              << ui->toolOptions;
 
     foreach(QWidget *w, buttons)
@@ -68,6 +71,9 @@ QssEditor::QssEditor(QWidget *parent) :
     toolButtonMenu->addSeparator();
     toolButtonMenu->addAction("Item2");
     ui->toolButton->setMenu(toolButtonMenu);
+
+    toolButtonMenu = new QMenu(this);
+    ui->toolOpen->setMenu(toolButtonMenu);
 
     m_timerDelayedApply = new QTimer(this);
     m_timerDelayedApply->setInterval(750);
@@ -132,6 +138,8 @@ QssEditor::QssEditor(QWidget *parent) :
     ui->text->setFocus();
     ui->text->installEventFilter(this);
 
+    restoreLastFiles();
+
     if(QCoreApplication::arguments().size() > 1)
         QTimer::singleShot(0, this, SLOT(slotDelayedOpen()));
 }
@@ -163,7 +171,10 @@ bool QssEditor::eventFilter(QObject *obj, QEvent *event)
 void QssEditor::closeEvent(QCloseEvent *e)
 {
     if(continueWhenUnsaved())
+    {
+        saveLastFiles();
         e->accept();
+    }
     else
         e->ignore();
 }
@@ -184,6 +195,8 @@ void QssEditor::open(const QString &fileName)
 
     m_changed = false;
     ui->toolSave->setEnabled(false);
+
+    appendToHistoryCurrentProject();
 }
 
 bool QssEditor::save()
@@ -208,6 +221,8 @@ bool QssEditor::save()
     m_changed = false;
 
     ui->toolSave->setEnabled(false);
+
+    appendToHistoryCurrentProject();
 
     return false;
 }
@@ -256,6 +271,53 @@ void QssEditor::updateProjectPath(const QString &newPath)
 void QssEditor::showError(const QString &err)
 {
     QMessageBox::critical(this, tr("Error"), err);
+}
+
+void QssEditor::restoreLastFiles()
+{
+    QStringList files = SETTINGS_GET_STRING_LIST(SETTING_LAST_FILES);
+
+    files.removeDuplicates();
+
+    foreach(QString file, files)
+    {
+        ui->toolOpen->menu()->addAction(file, this, SLOT(slotOpenFromHistoryMenu()));
+    }
+}
+
+void QssEditor::saveLastFiles()
+{
+    const QList<QAction *> actions = ui->toolOpen->menu()->actions();
+    QStringList files;
+
+    foreach(QAction *a, actions)
+    {
+        files.append(a->text());
+    }
+
+    files.removeDuplicates();
+
+    SETTINGS_SET_STRING_LIST(SETTING_LAST_FILES, files);
+}
+
+void QssEditor::appendToHistoryCurrentProject()
+{
+    QList<QAction *> actions = ui->toolOpen->menu()->actions();
+    QAction *movedAction = 0;
+
+    foreach(QAction *a, actions)
+    {
+        qDebug() << a->text() << m_lastFileName;
+        if(a->text() == m_lastFileName)
+        {
+            ui->toolOpen->menu()->removeAction(a);
+            movedAction = a;
+            break;
+        }
+    }
+
+    ui->toolOpen->menu()->insertAction(actions.size() ? actions.first() : 0,
+                                       movedAction ? movedAction : new QAction(m_lastFileName, ui->toolOpen->menu()));
 }
 
 void QssEditor::slotCssChanged()
@@ -359,4 +421,17 @@ void QssEditor::slotQuit()
 void QssEditor::slotDelayedOpen()
 {
     open(QCoreApplication::arguments().at(1));
+}
+
+void QssEditor::slotOpenFromHistoryMenu()
+{
+    QAction *a = qobject_cast<QAction *>(sender());
+
+    if(!a)
+    {
+        qWarning("Cannot cast to QAction");
+        return;
+    }
+
+    open(a->text());
 }
