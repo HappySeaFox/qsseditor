@@ -48,7 +48,7 @@ private:
     void showError(const QString &err);
     void restoreLastFiles();
     void saveLastFiles();
-    void appendToHistoryCurrentProject();
+    void appendCurrentProjectToHistory();
 
 private slots:
     void slotCssChanged();

@@ -198,7 +198,7 @@ void QssEditor::open(const QString &fileName)
     m_changed = false;
     ui->toolSave->setEnabled(false);
 
-    appendToHistoryCurrentProject();
+    appendCurrentProjectToHistory();
 }
 
 bool QssEditor::save()
@@ -224,7 +224,7 @@ bool QssEditor::save()
 
     ui->toolSave->setEnabled(false);
 
-    appendToHistoryCurrentProject();
+    appendCurrentProjectToHistory();
 
     return false;
 }
@@ -251,8 +251,8 @@ bool QssEditor::continueWhenUnsaved()
 {
     return (!m_changed || QMessageBox::question(this,
                                                 tr("Warning"),
-                                                tr("All unsaved changes will be lost. Continue?"),
-                                                QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes);
+                                                tr("This will discard all the unsaved changes"),
+                                                QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
 }
 
 void QssEditor::updateProjectPath(const QString &newPath)
@@ -302,7 +302,7 @@ void QssEditor::saveLastFiles()
     SETTINGS_SET_STRING_LIST(SETTING_LAST_FILES, files);
 }
 
-void QssEditor::appendToHistoryCurrentProject()
+void QssEditor::appendCurrentProjectToHistory()
 {
     if(m_lastFileName.isEmpty())
         return;
