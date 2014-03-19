@@ -13,11 +13,13 @@ include(QssEditor-common.pri)
 SOURCES += main.cpp \
         qsseditor.cpp \
     qscilexerqss.cpp \
-    project.cpp
+    project.cpp \
+    settings.cpp
 
 HEADERS += qsseditor.h \
     qscilexerqss.h \
-    project.h
+    project.h \
+    settings.h
 
 FORMS += qsseditor.ui
 

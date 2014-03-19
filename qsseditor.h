@@ -46,6 +46,9 @@ private:
     bool continueWhenUnsaved();
     void updateProjectPath(const QString &newPath);
     void showError(const QString &err);
+    void restoreLastFiles();
+    void saveLastFiles();
+    void appendToHistoryCurrentProject();
 
 private slots:
     void slotCssChanged();
@@ -58,6 +61,7 @@ private slots:
     void slotProgress();
     void slotQuit();
     void slotDelayedOpen();
+    void slotOpenFromHistoryMenu();
 
 private:
     Ui::QssEditor *ui;
