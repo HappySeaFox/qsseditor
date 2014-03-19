@@ -27,6 +27,10 @@ RESOURCES += qsseditor.qrc
 
 RC_FILE = qsseditor.rc
 
+unix {
+    LIBS += -lqscintilla2
+}
+
 # QScintilla files
 DEFINES += SCINTILLA_QT SCI_LEXER
 
