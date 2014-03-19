@@ -181,6 +181,8 @@ void QssEditor::closeEvent(QCloseEvent *e)
 
 void QssEditor::open(const QString &fileName)
 {
+    qDebug("Opening project");
+
     QSettings settings(fileName, QSettings::IniFormat);
 
     if(settings.status() != QSettings::NoError)
@@ -308,6 +310,10 @@ void QssEditor::appendToHistoryCurrentProject()
     QList<QAction *> actions = ui->toolOpen->menu()->actions();
     QAction *movedAction = 0;
 
+    // already first element
+    if(!actions.isEmpty() && actions.first()->text() == m_lastFileName)
+        return;
+
     foreach(QAction *a, actions)
     {
         if(a->text() == m_lastFileName)
@@ -318,7 +324,7 @@ void QssEditor::appendToHistoryCurrentProject()
         }
     }
 
-    ui->toolOpen->menu()->insertAction(actions.size() ? actions.first() : 0,
+    ui->toolOpen->menu()->insertAction(!actions.isEmpty() ? actions.first() : 0,
                                        movedAction ? movedAction : new QAction(m_lastFileName, ui->toolOpen->menu()));
 }
 
@@ -336,8 +342,6 @@ void QssEditor::slotApplyCss()
 
 void QssEditor::slotOpen()
 {
-    qDebug("Opening project");
-
     if(!continueWhenUnsaved())
         return;
 
