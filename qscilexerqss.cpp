@@ -76,7 +76,79 @@ QsciLexerQSS::QsciLexerQSS(QObject *parent)
                 << "QTreeView"
                 << "QTreeWidget"
                 << "QWidget"
-                ;
+
+                // alignment
+                << "top"
+                << "bottom"
+                << "left"
+                << "right"
+                << "center"
+
+                // attachment
+                << "scroll"
+                << "fixed"
+
+                // border image
+                << "none"
+                << "stretch"
+                << "repeat"
+
+                // border style
+                << "dashed"
+                << "dot-dash"
+                << "dot-dot-dash"
+                << "dotted"
+                << "double"
+                << "inset"
+                << "outset"
+                << "ridge"
+                << "solid"
+                << "none"
+
+                // font
+                << "normal"
+                << "italic"
+                << "oblique"
+                << "bold"
+
+                // gradients
+                << "qlineargradient"
+                << "qradialgradient"
+                << "qconicalgradient"
+
+                // origin
+                << "margin"
+                << "border"
+                << "padding"
+                << "content"
+
+                // palette role
+                << "alternate-base"
+                << "base"
+                << "bright-text"
+                << "button"
+                << "button-text"
+                << "dark"
+                << "highlight"
+                << "highlighted-text"
+                << "light"
+                << "link"
+                << "link-visited"
+                << "mid"
+                << "midlight"
+                << "shadow"
+                << "text"
+                << "window"
+                << "window-text"
+
+                // repeat
+                << "repeat"
+                << "repeat-x"
+                << "repeat-y"
+                << "no-repeat"
+                    ;
+
+    listKeywords.removeDuplicates();
 
     foreach(const QString &word, listKeywords)
     {
@@ -135,7 +207,8 @@ const char *QsciLexerQSS::keywords(int set) const
                     " border-right-width"
                     " border-bottom-width"
                     " border-left-width"
-                    " bottom button-layout"
+                    " bottom"
+                    " button-layout"
                     " color"
                     " dialogbuttonbox-buttons-have-icons"
                     " font"
@@ -161,6 +234,7 @@ const char *QsciLexerQSS::keywords(int set) const
                     " min-height"
                     " min-width"
                     " opacity"
+                    " outline" // not documented
                     " padding"
                     " padding-top"
                     " padding-right"
