@@ -302,12 +302,14 @@ void QssEditor::saveLastFiles()
 
 void QssEditor::appendToHistoryCurrentProject()
 {
+    if(m_lastFileName.isEmpty())
+        return;
+
     QList<QAction *> actions = ui->toolOpen->menu()->actions();
     QAction *movedAction = 0;
 
     foreach(QAction *a, actions)
     {
-        qDebug() << a->text() << m_lastFileName;
         if(a->text() == m_lastFileName)
         {
             ui->toolOpen->menu()->removeAction(a);
