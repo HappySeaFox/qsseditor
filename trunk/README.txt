@@ -9,6 +9,13 @@ License: GNU GPLv3+ (see LICENSE.txt),
 Other
 -----
 
+* "Palette" icons is taken from
+
+http://www.iconarchive.com/show/perfect-design-icons-by-aha-soft/palette-icon.html
+
+Author: Aha-Soft
+License: Free for non-commercial use
+
 * Other icons are taken from Fugue Icons theme
 
 http://p.yusukekamiyamane.com/

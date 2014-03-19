@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Qss Editor</string>
+   <string>QSS Editor</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -28,6 +28,9 @@
          </property>
          <item>
           <widget class="QToolButton" name="toolOpen">
+           <property name="toolTip">
+            <string>Open project</string>
+           </property>
            <property name="icon">
             <iconset resource="qsseditor.qrc">
              <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
@@ -36,6 +39,12 @@
          </item>
          <item>
           <widget class="QToolButton" name="toolSave">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>Save project</string>
+           </property>
            <property name="icon">
             <iconset resource="qsseditor.qrc">
              <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
@@ -44,9 +53,23 @@
          </item>
          <item>
           <widget class="QToolButton" name="toolSaveAs">
+           <property name="toolTip">
+            <string>Save project as</string>
+           </property>
            <property name="icon">
             <iconset resource="qsseditor.qrc">
              <normaloff>:/images/saveas.png</normaloff>:/images/saveas.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolExportQss">
+           <property name="toolTip">
+            <string>Export QSS</string>
+           </property>
+           <property name="icon">
+            <iconset resource="qsseditor.qrc">
+             <normaloff>:/images/export.png</normaloff>:/images/export.png</iconset>
            </property>
           </widget>
          </item>
@@ -65,6 +88,9 @@
          </item>
          <item>
           <widget class="QToolButton" name="toolOptions">
+           <property name="toolTip">
+            <string>Options</string>
+           </property>
            <property name="icon">
             <iconset resource="qsseditor.qrc">
              <normaloff>:/images/options.png</normaloff>:/images/options.png</iconset>
@@ -454,8 +480,8 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>693</width>
-                   <height>241</height>
+                   <width>253</width>
+                   <height>141</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -469,8 +495,8 @@ p, li { white-space: pre-wrap; }
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>69</width>
-                       <height>169</height>
+                       <width>98</width>
+                       <height>28</height>
                       </rect>
                      </property>
                      <attribute name="label">
@@ -482,8 +508,8 @@ p, li { white-space: pre-wrap; }
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>100</width>
-                       <height>30</height>
+                       <width>98</width>
+                       <height>28</height>
                       </rect>
                      </property>
                      <attribute name="label">
@@ -544,6 +570,33 @@ p, li { white-space: pre-wrap; }
            <item row="0" column="0" colspan="2">
             <layout class="QGridLayout" name="gridLayout_6">
              <item row="0" column="0">
+              <widget class="QRadioButton" name="radioButton">
+               <property name="text">
+                <string>RadioButton</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="checkBox">
+               <property name="text">
+                <string>CheckBox</string>
+               </property>
+               <property name="tristate">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QProgressBar" name="progressBar">
+               <property name="maximum">
+                <number>20</number>
+               </property>
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
               <widget class="QPushButton" name="pushButton">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -556,7 +609,7 @@ p, li { white-space: pre-wrap; }
                </property>
               </widget>
              </item>
-             <item row="0" column="1">
+             <item row="1" column="1">
               <widget class="QToolButton" name="toolButton">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -567,50 +620,67 @@ p, li { white-space: pre-wrap; }
                <property name="text">
                 <string>ToolButton</string>
                </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QComboBox" name="comboBox">
-               <item>
-                <property name="text">
-                 <string>1</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>2</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>3</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QRadioButton" name="radioButton">
-               <property name="text">
-                <string>RadioButton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
-              <widget class="QCheckBox" name="checkBox">
-               <property name="text">
-                <string>CheckBox</string>
+               <property name="popupMode">
+                <enum>QToolButton::InstantPopup</enum>
                </property>
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QProgressBar" name="progressBar">
-               <property name="maximum">
-                <number>20</number>
-               </property>
-               <property name="value">
-                <number>0</number>
-               </property>
-              </widget>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QComboBox" name="comboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>1</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>3</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="comboBox_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="editable">
+                  <bool>true</bool>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>1</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>3</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
              </item>
              <item row="2" column="0">
               <widget class="QSpinBox" name="spinBox"/>
@@ -619,11 +689,25 @@ p, li { white-space: pre-wrap; }
               <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
              </item>
              <item row="2" column="2">
-              <widget class="QLineEdit" name="lineEdit">
-               <property name="text">
-                <string>Line edit</string>
-               </property>
-              </widget>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLineEdit" name="lineEdit">
+                 <property name="text">
+                  <string>Line edit</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_2">
+                 <property name="text">
+                  <string>Password</string>
+                 </property>
+                 <property name="echoMode">
+                  <enum>QLineEdit::Password</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
              <item row="3" column="0">
               <widget class="QTimeEdit" name="timeEdit"/>
@@ -651,10 +735,14 @@ p, li { white-space: pre-wrap; }
                </property>
               </widget>
              </item>
-             <item row="4" column="2">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit"/>
-             </item>
             </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCommandLinkButton" name="commandLinkButton">
+             <property name="text">
+              <string>CommandLinkButton</string>
+             </property>
+            </widget>
            </item>
            <item row="2" column="0">
             <layout class="QGridLayout" name="gridLayout_5">
@@ -733,13 +821,6 @@ p, li { white-space: pre-wrap; }
              </property>
             </spacer>
            </item>
-           <item row="1" column="0">
-            <widget class="QCommandLinkButton" name="commandLinkButton">
-             <property name="text">
-              <string>CommandLinkButton</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </widget>
         </widget>
@@ -766,6 +847,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>toolOpen</tabstop>
   <tabstop>toolSave</tabstop>
   <tabstop>toolSaveAs</tabstop>
+  <tabstop>toolExportQss</tabstop>
   <tabstop>toolOptions</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>listWidget</tabstop>
@@ -776,18 +858,19 @@ p, li { white-space: pre-wrap; }
   <tabstop>textEdit</tabstop>
   <tabstop>calendarWidget</tabstop>
   <tabstop>scrollArea</tabstop>
+  <tabstop>radioButton</tabstop>
+  <tabstop>checkBox</tabstop>
   <tabstop>pushButton</tabstop>
   <tabstop>toolButton</tabstop>
   <tabstop>comboBox</tabstop>
-  <tabstop>radioButton</tabstop>
-  <tabstop>checkBox</tabstop>
+  <tabstop>comboBox_2</tabstop>
   <tabstop>spinBox</tabstop>
   <tabstop>doubleSpinBox</tabstop>
   <tabstop>lineEdit</tabstop>
+  <tabstop>lineEdit_2</tabstop>
   <tabstop>timeEdit</tabstop>
   <tabstop>dateEdit</tabstop>
   <tabstop>dateTimeEdit</tabstop>
-  <tabstop>keySequenceEdit</tabstop>
   <tabstop>commandLinkButton</tabstop>
   <tabstop>verticalSlider</tabstop>
   <tabstop>horizontalSlider</tabstop>
@@ -820,8 +903,8 @@ p, li { white-space: pre-wrap; }
    <slot>slotOpen()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>20</x>
-     <y>129</y>
+     <x>31</x>
+     <y>32</y>
     </hint>
     <hint type="destinationlabel">
      <x>243</x>
@@ -836,8 +919,8 @@ p, li { white-space: pre-wrap; }
    <slot>slotSave()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>43</x>
-     <y>127</y>
+     <x>58</x>
+     <y>32</y>
     </hint>
     <hint type="destinationlabel">
      <x>242</x>
@@ -852,8 +935,8 @@ p, li { white-space: pre-wrap; }
    <slot>slotSaveAs()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>73</x>
-     <y>128</y>
+     <x>83</x>
+     <y>32</y>
     </hint>
     <hint type="destinationlabel">
      <x>243</x>
@@ -868,12 +951,28 @@ p, li { white-space: pre-wrap; }
    <slot>slotOptions()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>159</x>
-     <y>132</y>
+     <x>160</x>
+     <y>32</y>
     </hint>
     <hint type="destinationlabel">
      <x>238</x>
      <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolExportQss</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotExportQss()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>26</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>173</x>
+     <y>559</y>
     </hint>
    </hints>
   </connection>
@@ -884,5 +983,6 @@ p, li { white-space: pre-wrap; }
   <slot>slotSave()</slot>
   <slot>slotSaveAs()</slot>
   <slot>slotOptions()</slot>
+  <slot>slotExportQss()</slot>
  </slots>
 </ui>
