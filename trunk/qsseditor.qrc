@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/battery.png</file>
+        <file>images/image-sunset.png</file>
+        <file>images/user.png</file>
+        <file>images/open.png</file>
+        <file>images/options.png</file>
+        <file>images/save.png</file>
+        <file>images/saveas.png</file>
+    </qresource>
+</RCC>
