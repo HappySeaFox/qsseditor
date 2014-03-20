@@ -16,19 +16,41 @@
  */
 
 #include <QApplication>
+#include <QTranslator>
+#include <QLocale>
+#include <QDir>
 
 #include "qsseditor.h"
+#include "settings.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
 
     QCoreApplication::setApplicationName("QssEditor");
     QCoreApplication::setOrganizationName("QssEditor");
     QCoreApplication::setApplicationVersion(NVER_STRING);
 
+    // load translations
+    QString locale = QLocale::system().name();
+    QString ts = SETTINGS_GET_STRING(SETTING_TRANSLATION);
+    QString translationsDir = QCoreApplication::applicationDirPath() + QDir::separator() + "translations";
+
+    qDebug("Locale \"%s\", translation \"%s\"", qPrintable(locale), qPrintable(ts));
+
+    ts = ts.isEmpty() ? locale : (ts + ".qm");
+
+    QTranslator translator_qsseditor;
+    qDebug("Loading QSS Editor translation: %s", translator_qsseditor.load("qsseditor_" + ts, translationsDir) ? "ok" : "failed");
+
+    QTranslator translator_qt;
+    qDebug("Loading Qt translation: %s", translator_qt.load("qt_" + ts, translationsDir) ? "ok" : "failed");
+
+    app.installTranslator(&translator_qt);
+    app.installTranslator(&translator_qsseditor);
+
     QssEditor w;
     w.show();
 
-    return a.exec();
+    return app.exec();
 }

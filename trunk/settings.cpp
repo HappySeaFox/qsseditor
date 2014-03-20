@@ -82,6 +82,9 @@ Settings* Settings::instance()
 void Settings::fillTranslations()
 {
     d->translations.insert("en", "English");
+
+    // http://www.loc.gov/standards/iso639-2/php/code_list.php
+    d->translations.insert("ru", QString::fromUtf8("Русский"));
 }
 
 QHash<QString, QVariant>& Settings::defaultValues()
