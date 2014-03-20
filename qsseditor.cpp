@@ -22,7 +22,6 @@
 #include <QFileDialog>
 #include <QHeaderView>
 #include <QCloseEvent>
-#include <QDockWidget>
 #include <QShortcut>
 #include <QSettings>
 #include <QKeyEvent>
