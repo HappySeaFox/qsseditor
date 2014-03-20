@@ -20,6 +20,8 @@
 
 #include <QWidget>
 
+#include "project.h"
+
 class QTimer;
 
 namespace Ui
@@ -44,7 +46,7 @@ private:
     bool save();
     QString settingsErrorToString(int);
     bool continueWhenUnsaved();
-    void updateProjectPath(const QString &newPath);
+    bool updateProjectPath(const QString &newPath);
     void showError(const QString &err);
     void restoreLastFiles();
     void saveLastFiles();
@@ -68,6 +70,7 @@ private:
     QTimer *m_timerDelayedApply;
     bool m_changed;
     QString m_lastFileName;
+    Project m_project;
 };
 
 #endif // QSSEDITOR_H
