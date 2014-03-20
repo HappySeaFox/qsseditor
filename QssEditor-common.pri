@@ -38,10 +38,16 @@ contains(QMAKE_HOST.arch, x86_64) {
     HOST64="-x86_64"
 }
 
+win32 {
+    SEP="\\"
+} unix {
+    SEP="/"
+}
+
 # generate TRANSLATIONS
 defineReplace(gentranslations) {
     for(ts, LANGUAGES) {
-        TRANSLATIONS += $${_PRO_FILE_PWD_}\\ts\\$${1}_$${ts}.ts
+        TRANSLATIONS += $${_PRO_FILE_PWD_}$${SEP}ts$${SEP}$${1}_$${ts}.ts
     }
     return ( $$TRANSLATIONS )
 }
@@ -95,7 +101,7 @@ message(Translations for $${TS_PREFIX}: $$TRANSLATIONS)
 # lrelease for each ts
 for(ts, TRANSLATIONS) {
     QM=$$replace(ts, \\.ts$, .qm)
-    QM=$$replace(QM, /, \\)
+    QM=$$replace(QM, /, $${SEP})
     QMAKE_POST_LINK += $$mle(lrelease \"$$ts\" -qm \"$$QM\")
 }
 
@@ -116,7 +122,7 @@ QMFILES=
 # copy .qm files
 for(ts, TRANSLATIONS) {
     ts=$$replace(ts, \\.ts$, .qm)
-    ts=$$replace(ts, /, \\)
+    ts=$$replace(ts, /, $${SEP})
     QMFILES += $$ts
     QMAKE_POST_LINK += $$mle($(COPY) \"$$ts\" \"$$TRANSLATIONS_DIR\")
 }
