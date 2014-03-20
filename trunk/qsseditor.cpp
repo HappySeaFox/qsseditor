@@ -64,6 +64,8 @@ QssEditor::QssEditor(QWidget *parent) :
                              << ui->toolOpen
                              << ui->toolSave
                              << ui->toolSaveAs
+                             << ui->toolUndo
+                             << ui->toolRedo
                              << ui->toolOptions;
 
     foreach(QWidget *w, buttons)

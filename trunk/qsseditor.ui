@@ -66,8 +66,43 @@
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>43</width>
+             <width>0</width>
              <height>17</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolUndo">
+           <property name="toolTip">
+            <string>Undo</string>
+           </property>
+           <property name="icon">
+            <iconset resource="qsseditor.qrc">
+             <normaloff>:/images/undo.png</normaloff>:/images/undo.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolRedo">
+           <property name="toolTip">
+            <string>Redo</string>
+           </property>
+           <property name="icon">
+            <iconset resource="qsseditor.qrc">
+             <normaloff>:/images/redo.png</normaloff>:/images/redo.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>0</width>
+             <height>20</height>
             </size>
            </property>
           </spacer>
@@ -748,8 +783,8 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>702</width>
-                   <height>259</height>
+                   <width>253</width>
+                   <height>141</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -802,7 +837,7 @@ p, li { white-space: pre-wrap; }
                        <x>0</x>
                        <y>0</y>
                        <width>69</width>
-                       <height>187</height>
+                       <height>69</height>
                       </rect>
                      </property>
                      <attribute name="label">
@@ -874,6 +909,8 @@ p, li { white-space: pre-wrap; }
    <container>1</container>
    <slots>
     <signal>textChanged()</signal>
+    <slot>undo()</slot>
+    <slot>redo()</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -990,6 +1027,38 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>238</x>
      <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolUndo</sender>
+   <signal>clicked()</signal>
+   <receiver>text</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>54</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolRedo</sender>
+   <signal>clicked()</signal>
+   <receiver>text</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>96</x>
+     <y>339</y>
     </hint>
    </hints>
   </connection>
