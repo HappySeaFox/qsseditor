@@ -23,7 +23,6 @@
 #include <QHeaderView>
 #include <QCloseEvent>
 #include <QDockWidget>
-#include <QMetaObject>
 #include <QShortcut>
 #include <QSettings>
 #include <QKeyEvent>
@@ -204,8 +203,7 @@ void QssEditor::open(const QString &fileName)
     appendCurrentProjectToHistory();
 
     // apply QSS right now
-    m_timerDelayedApply->stop();
-    QMetaObject::invokeMethod(m_timerDelayedApply, "timeout");
+    m_timerDelayedApply->start(0);
 }
 
 bool QssEditor::save()
