@@ -34,6 +34,7 @@
 #include "qscilexerqss.h"
 #include "qsseditor.h"
 #include "settings.h"
+#include "options.h"
 #include "project.h"
 #include "ui_qsseditor.h"
 
@@ -44,7 +45,7 @@ QssEditor::QssEditor(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    setWindowTitle(tr("QSS Editor") + ' ' + NVER_STRING);
+    setWindowTitle(tr("QSS Editor") + " v" + NVER_STRING);
 
     // application shortcuts
     new QShortcut(QKeySequence::Quit, this, SLOT(slotQuit()));
@@ -355,7 +356,7 @@ void QssEditor::slotOpen()
     if(!continueWhenUnsaved())
         return;
 
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open project"), QString(), tr("Qt Style Sheets (*.qss)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open style"), QString(), tr("Qt Style Sheets (*.qss)"));
 
     if(fileName.isEmpty())
         return;
@@ -365,7 +366,7 @@ void QssEditor::slotOpen()
 
 void QssEditor::slotSave()
 {
-    qDebug("Saving project");
+    qDebug("Saving style");
 
     if(m_lastFileName.isEmpty())
         slotSaveAs();
@@ -375,9 +376,9 @@ void QssEditor::slotSave()
 
 void QssEditor::slotSaveAs()
 {
-    qDebug("Saving project as");
+    qDebug("Saving style as");
 
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save project as"), QString(), tr("Qt Style Sheets (*.qss)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save style as"), QString(), tr("Qt Style Sheets (*.qss)"));
 
     if(fileName.isEmpty())
         return;
@@ -391,6 +392,11 @@ void QssEditor::slotSaveAs()
 void QssEditor::slotOptions()
 {
     qDebug("Options");
+
+    Options opt(this);
+
+    if(opt.exec() == QDialog::Accepted)
+        opt.saveSettings();
 }
 
 void QssEditor::slotProgress()

@@ -113,6 +113,7 @@
 
 #define SETTINGS_REMOVE Settings::instance()->remove
 
+#define SETTING_TRANSLATION                  "translation"
 #define SETTING_LAST_FILES                   "last-files"
 #define SETTING_FIND_REPLACE_FIND_TEXT       "fr-find-text"
 #define SETTING_FIND_REPLACE_REPLACE         "fr-replace"

@@ -26,7 +26,7 @@
          <item>
           <widget class="QToolButton" name="toolOpen">
            <property name="toolTip">
-            <string>Open project</string>
+            <string>Open style</string>
            </property>
            <property name="icon">
             <iconset resource="qsseditor.qrc">
@@ -40,7 +40,7 @@
             <bool>false</bool>
            </property>
            <property name="toolTip">
-            <string>Save project</string>
+            <string>Save style</string>
            </property>
            <property name="icon">
             <iconset resource="qsseditor.qrc">
@@ -51,7 +51,7 @@
          <item>
           <widget class="QToolButton" name="toolSaveAs">
            <property name="toolTip">
-            <string>Save project as</string>
+            <string>Save style as</string>
            </property>
            <property name="icon">
             <iconset resource="qsseditor.qrc">
@@ -121,7 +121,7 @@
          </property>
          <widget class="QWidget" name="tab_1">
           <attribute name="title">
-           <string>Tab 1</string>
+           <string notr="true">Tab 1</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_7">
            <item row="0" column="0" colspan="2">
@@ -129,14 +129,14 @@
              <item row="0" column="0">
               <widget class="QRadioButton" name="radioButton">
                <property name="text">
-                <string>RadioButton</string>
+                <string notr="true">RadioButton</string>
                </property>
               </widget>
              </item>
              <item row="0" column="1">
               <widget class="QCheckBox" name="checkBox">
                <property name="text">
-                <string>CheckBox</string>
+                <string notr="true">CheckBox</string>
                </property>
                <property name="tristate">
                 <bool>true</bool>
@@ -162,7 +162,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>PushButton</string>
+                <string notr="true">PushButton</string>
                </property>
               </widget>
              </item>
@@ -175,7 +175,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>ToolButton</string>
+                <string notr="true">ToolButton</string>
                </property>
                <property name="popupMode">
                 <enum>QToolButton::InstantPopup</enum>
@@ -194,17 +194,17 @@
                  </property>
                  <item>
                   <property name="text">
-                   <string>1</string>
+                   <string notr="true">1</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>2</string>
+                   <string notr="true">2</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>3</string>
+                   <string notr="true">3</string>
                   </property>
                  </item>
                 </widget>
@@ -222,17 +222,17 @@
                  </property>
                  <item>
                   <property name="text">
-                   <string>1</string>
+                   <string notr="true">1</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>2</string>
+                   <string notr="true">2</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>3</string>
+                   <string notr="true">3</string>
                   </property>
                  </item>
                 </widget>
@@ -250,14 +250,14 @@
                <item>
                 <widget class="QLineEdit" name="lineEdit">
                  <property name="text">
-                  <string>Line edit</string>
+                  <string notr="true">Line edit</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QLineEdit" name="lineEdit_2">
                  <property name="text">
-                  <string>Password</string>
+                  <string notr="true">Password</string>
                  </property>
                  <property name="echoMode">
                   <enum>QLineEdit::Password</enum>
@@ -288,14 +288,14 @@
              <item row="4" column="1">
               <widget class="QLabel" name="label">
                <property name="text">
-                <string>Label with &lt;a href=&quot;http://google.com&quot;&gt;link&lt;/a&gt;</string>
+                <string notr="true">Label with &lt;a href=&quot;http://google.com&quot;&gt;link&lt;/a&gt;</string>
                </property>
               </widget>
              </item>
              <item row="4" column="2">
               <widget class="QCommandLinkButton" name="commandLinkButton">
                <property name="text">
-                <string>CommandLinkButton</string>
+                <string notr="true">CommandLinkButton</string>
                </property>
               </widget>
              </item>
@@ -388,14 +388,14 @@
          </widget>
          <widget class="QWidget" name="tab_2">
           <attribute name="title">
-           <string>Tab 2</string>
+           <string notr="true">Tab 2</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="0">
             <widget class="QListWidget" name="listWidget">
              <item>
               <property name="text">
-               <string>I1</string>
+               <string notr="true">I1</string>
               </property>
               <property name="icon">
                <iconset resource="qsseditor.qrc">
@@ -404,7 +404,7 @@
              </item>
              <item>
               <property name="text">
-               <string>I2</string>
+               <string notr="true">I2</string>
               </property>
               <property name="icon">
                <iconset resource="qsseditor.qrc">
@@ -413,7 +413,7 @@
              </item>
              <item>
               <property name="text">
-               <string>I3</string>
+               <string notr="true">I3</string>
               </property>
               <property name="icon">
                <iconset resource="qsseditor.qrc">
@@ -422,82 +422,82 @@
              </item>
              <item>
               <property name="text">
-               <string>I4</string>
+               <string notr="true">I4</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I5</string>
+               <string notr="true">I5</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I6</string>
+               <string notr="true">I6</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I7</string>
+               <string notr="true">I7</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I8</string>
+               <string notr="true">I8</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I9</string>
+               <string notr="true">I9</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I10</string>
+               <string notr="true">I10</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I11</string>
+               <string notr="true">I11</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I12</string>
+               <string notr="true">I12</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I14</string>
+               <string notr="true">I14</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I15</string>
+               <string notr="true">I15</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I16</string>
+               <string notr="true">I16</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I17</string>
+               <string notr="true">I17</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I18</string>
+               <string notr="true">I18</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I19</string>
+               <string notr="true">I19</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>I20</string>
+               <string notr="true">I20</string>
               </property>
              </item>
             </widget>
@@ -512,7 +512,7 @@
              </property>
              <item>
               <property name="text">
-               <string>I1</string>
+               <string notr="true">I1</string>
               </property>
               <property name="icon">
                <iconset resource="qsseditor.qrc">
@@ -521,7 +521,7 @@
              </item>
              <item>
               <property name="text">
-               <string>I2</string>
+               <string notr="true">I2</string>
               </property>
               <property name="icon">
                <iconset resource="qsseditor.qrc">
@@ -530,7 +530,7 @@
              </item>
              <item>
               <property name="text">
-               <string>I3</string>
+               <string notr="true">I3</string>
               </property>
               <property name="icon">
                <iconset resource="qsseditor.qrc">
@@ -552,52 +552,52 @@
              </attribute>
              <row>
               <property name="text">
-               <string>R1</string>
+               <string notr="true">R1</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>R2</string>
+               <string notr="true">R2</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>R3</string>
+               <string notr="true">R3</string>
               </property>
              </row>
              <column>
               <property name="text">
-               <string>C1</string>
+               <string notr="true">C1</string>
               </property>
              </column>
              <column>
               <property name="text">
-               <string>C2</string>
+               <string notr="true">C2</string>
               </property>
              </column>
              <item row="0" column="0">
               <property name="text">
-               <string>1,1</string>
+               <string notr="true">1,1</string>
               </property>
              </item>
              <item row="0" column="1">
               <property name="text">
-               <string>1,2</string>
+               <string notr="true">1,2</string>
               </property>
              </item>
              <item row="1" column="0">
               <property name="text">
-               <string>2,1</string>
+               <string notr="true">2,1</string>
               </property>
              </item>
              <item row="1" column="1">
               <property name="text">
-               <string>2,2</string>
+               <string notr="true">2,2</string>
               </property>
              </item>
              <item row="2" column="0">
               <property name="text">
-               <string>3,1</string>
+               <string notr="true">3,1</string>
               </property>
               <property name="flags">
                <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
@@ -605,7 +605,7 @@
              </item>
              <item row="2" column="1">
               <property name="text">
-               <string>2,3</string>
+               <string notr="true">2,3</string>
               </property>
               <property name="flags">
                <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
@@ -623,27 +623,30 @@
              </attribute>
              <column>
               <property name="text">
-               <string>C1</string>
+               <string notr="true">C1</string>
               </property>
              </column>
              <column>
               <property name="text">
-               <string>C2</string>
+               <string notr="true">C2</string>
               </property>
              </column>
              <item>
               <property name="text">
-               <string>R1</string>
+               <string notr="true">R1</string>
+              </property>
+              <property name="text">
+               <string notr="true"/>
               </property>
               <item>
                <property name="text">
-                <string>C1</string>
+                <string notr="true">C1</string>
                </property>
                <property name="checkState">
                 <enum>Checked</enum>
                </property>
                <property name="text">
-                <string>X1</string>
+                <string notr="true">X1</string>
                </property>
                <property name="checkState">
                 <enum>Checked</enum>
@@ -651,13 +654,13 @@
               </item>
               <item>
                <property name="text">
-                <string>C2</string>
+                <string notr="true">C2</string>
                </property>
                <property name="checkState">
                 <enum>PartiallyChecked</enum>
                </property>
                <property name="text">
-                <string>X2</string>
+                <string notr="true">X2</string>
                </property>
                <property name="checkState">
                 <enum>PartiallyChecked</enum>
@@ -665,10 +668,10 @@
               </item>
               <item>
                <property name="text">
-                <string>C3</string>
+                <string notr="true">C3</string>
                </property>
                <property name="text">
-                <string>X3</string>
+                <string notr="true">X3</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
@@ -677,7 +680,7 @@
              </item>
              <item>
               <property name="text">
-               <string>R2</string>
+               <string notr="true">R2</string>
               </property>
               <property name="flags">
                <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
@@ -689,7 +692,7 @@
          </widget>
          <widget class="QWidget" name="tab_3">
           <attribute name="title">
-           <string>Tab 3</string>
+           <string notr="true">Tab 3</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_8">
            <item row="0" column="0">
@@ -698,7 +701,7 @@
               <bool>true</bool>
              </property>
              <property name="html">
-              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+              <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -712,7 +715,7 @@ p, li { white-space: pre-wrap; }
            <item row="0" column="1">
             <widget class="QTextEdit" name="textEdit">
              <property name="html">
-              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+              <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -732,7 +735,7 @@ p, li { white-space: pre-wrap; }
               </sizepolicy>
              </property>
              <property name="title">
-              <string>GroupBox</string>
+              <string notr="true">GroupBox</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_3">
               <item row="0" column="0">
@@ -745,8 +748,8 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>253</width>
-                   <height>141</height>
+                   <width>702</width>
+                   <height>259</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -768,7 +771,7 @@ p, li { white-space: pre-wrap; }
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_2">
                        <property name="text">
-                        <string>Frame</string>
+                        <string notr="true">Frame</string>
                        </property>
                       </widget>
                      </item>
@@ -799,11 +802,11 @@ p, li { white-space: pre-wrap; }
                        <x>0</x>
                        <y>0</y>
                        <width>69</width>
-                       <height>69</height>
+                       <height>187</height>
                       </rect>
                      </property>
                      <attribute name="label">
-                      <string>Toolbox1</string>
+                      <string notr="true">Toolbox1</string>
                      </attribute>
                     </widget>
                     <widget class="QWidget" name="page_2">
@@ -816,7 +819,7 @@ p, li { white-space: pre-wrap; }
                       </rect>
                      </property>
                      <attribute name="label">
-                      <string>Toolbox2</string>
+                      <string notr="true">Toolbox2</string>
                      </attribute>
                     </widget>
                    </widget>
@@ -830,7 +833,7 @@ p, li { white-space: pre-wrap; }
                      </sizepolicy>
                     </property>
                     <property name="windowTitle">
-                     <string>Dock widget</string>
+                     <string notr="true">Dock widget</string>
                     </property>
                     <widget class="QWidget" name="dockWidgetContents_3"/>
                    </widget>
