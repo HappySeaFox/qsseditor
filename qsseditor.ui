@@ -63,17 +63,6 @@
           </widget>
          </item>
          <item>
-          <widget class="QToolButton" name="toolExportQss">
-           <property name="toolTip">
-            <string>Export QSS</string>
-           </property>
-           <property name="icon">
-            <iconset resource="qsseditor.qrc">
-             <normaloff>:/images/export.png</normaloff>:/images/export.png</iconset>
-           </property>
-          </widget>
-         </item>
-         <item>
           <spacer name="horizontalSpacer">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -747,46 +736,19 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>667</width>
+                   <width>687</width>
                    <height>241</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
-                  <item row="0" column="0" rowspan="2">
-                   <widget class="QToolBox" name="toolBox">
-                    <property name="currentIndex">
-                     <number>0</number>
-                    </property>
-                    <widget class="QWidget" name="page">
-                     <property name="geometry">
-                      <rect>
-                       <x>0</x>
-                       <y>0</y>
-                       <width>69</width>
-                       <height>169</height>
-                      </rect>
-                     </property>
-                     <attribute name="label">
-                      <string>Toolbox1</string>
-                     </attribute>
-                    </widget>
-                    <widget class="QWidget" name="page_2">
-                     <property name="geometry">
-                      <rect>
-                       <x>0</x>
-                       <y>0</y>
-                       <width>98</width>
-                       <height>28</height>
-                      </rect>
-                     </property>
-                     <attribute name="label">
-                      <string>Toolbox2</string>
-                     </attribute>
-                    </widget>
-                   </widget>
-                  </item>
                   <item row="0" column="1">
                    <widget class="QFrame" name="frame">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>1</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
@@ -817,8 +779,62 @@ p, li { white-space: pre-wrap; }
                     </layout>
                    </widget>
                   </item>
-                  <item row="1" column="1">
-                   <widget class="QMdiArea" name="mdiArea"/>
+                  <item row="0" column="0" rowspan="2">
+                   <widget class="QToolBox" name="toolBox">
+                    <property name="currentIndex">
+                     <number>0</number>
+                    </property>
+                    <widget class="QWidget" name="page">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>69</width>
+                       <height>169</height>
+                      </rect>
+                     </property>
+                     <attribute name="label">
+                      <string>Toolbox1</string>
+                     </attribute>
+                    </widget>
+                    <widget class="QWidget" name="page_2">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>100</width>
+                       <height>30</height>
+                      </rect>
+                     </property>
+                     <attribute name="label">
+                      <string>Toolbox2</string>
+                     </attribute>
+                    </widget>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QDockWidget" name="dockWidget">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>1</horstretch>
+                      <verstretch>1</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="windowTitle">
+                     <string>MDI</string>
+                    </property>
+                    <widget class="QWidget" name="dockWidgetContents_3"/>
+                   </widget>
+                  </item>
+                  <item row="1" column="1" colspan="2">
+                   <widget class="QMdiArea" name="mdiArea">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>2</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
                   </item>
                  </layout>
                 </widget>
@@ -853,7 +869,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>toolOpen</tabstop>
   <tabstop>toolSave</tabstop>
   <tabstop>toolSaveAs</tabstop>
-  <tabstop>toolExportQss</tabstop>
   <tabstop>toolOptions</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>radioButton</tabstop>
@@ -966,22 +981,6 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>toolExportQss</sender>
-   <signal>clicked()</signal>
-   <receiver>QssEditor</receiver>
-   <slot>slotExportQss()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>100</x>
-     <y>26</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>173</x>
-     <y>559</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
  <slots>
   <slot>slotCssChanged()</slot>
@@ -989,6 +988,5 @@ p, li { white-space: pre-wrap; }
   <slot>slotSave()</slot>
   <slot>slotSaveAs()</slot>
   <slot>slotOptions()</slot>
-  <slot>slotExportQss()</slot>
  </slots>
 </ui>
