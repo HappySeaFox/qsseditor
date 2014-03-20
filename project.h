@@ -18,10 +18,64 @@
 #ifndef PROJECT_H
 #define PROJECT_H
 
+#include <QString>
+
 class Project
 {
 public:
-    Project();
+    Project(const QString &filePath = QString());
+
+    bool setFilePath(const QString &filePath);
+
+    bool saveAs(const QString &filePath);
+
+    void setQss(const QString &qss);
+
+    QString qss() const;
+
+    bool isValid() const;
+
+    qint32 version() const;
+
+    QString error() const;
+
+    QString dataStreamErrorToString(int status);
+
+private:
+    QString m_qss;
+    bool m_valid;
+    qint32 m_version;
+    QString m_error;
 };
+
+inline
+void Project::setQss(const QString &qss)
+{
+    m_qss = qss;
+}
+
+inline
+QString Project::qss() const
+{
+    return m_qss;
+}
+
+inline
+bool Project::isValid() const
+{
+    return m_valid;
+}
+
+inline
+qint32 Project::version() const
+{
+    return m_version;
+}
+
+inline
+QString Project::error() const
+{
+    return m_error;
+}
 
 #endif // PROJECT_H

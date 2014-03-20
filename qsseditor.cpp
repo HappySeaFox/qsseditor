@@ -33,6 +33,7 @@
 #include "qscilexerqss.h"
 #include "qsseditor.h"
 #include "settings.h"
+#include "project.h"
 #include "ui_qsseditor.h"
 
 QssEditor::QssEditor(QWidget *parent) :
@@ -180,17 +181,18 @@ void QssEditor::open(const QString &fileName)
 {
     qDebug("Opening project");
 
-    QSettings settings(fileName, QSettings::IniFormat);
+    if(!updateProjectPath(fileName))
+        return;
 
-    if(settings.status() != QSettings::NoError)
+    m_project.setFilePath(m_lastFileName);
+
+    if(!m_project.error().isEmpty())
     {
-        showError(tr("Cannot open file:") + ' ' + settingsErrorToString(settings.status()));
+        showError(m_project.error());
         return;
     }
 
-    updateProjectPath(fileName);
-
-    ui->text->setText(settings.value("css").toString());
+    ui->text->setText(m_project.qss());
 
     m_changed = false;
     ui->toolSave->setEnabled(false);
@@ -203,17 +205,11 @@ bool QssEditor::save()
     if(m_lastFileName.isEmpty())
         return false;
 
-    QSettings settings(m_lastFileName, QSettings::IniFormat);
+    m_project.setQss(ui->text->text());
 
-    settings.setFallbacksEnabled(false);
-    settings.remove(QString());
-
-    settings.setValue("css", ui->text->text());
-    settings.sync();
-
-    if(settings.status() != QSettings::NoError)
+    if(!m_project.saveAs(m_lastFileName))
     {
-        showError(tr("Cannot save file:") + ' ' + settingsErrorToString(settings.status()));
+        showError(m_project.error());
         return false;
     }
 
@@ -223,7 +219,7 @@ bool QssEditor::save()
 
     appendCurrentProjectToHistory();
 
-    return false;
+    return true;
 }
 
 QString QssEditor::settingsErrorToString(int status)
@@ -252,19 +248,25 @@ bool QssEditor::continueWhenUnsaved()
                                                 QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
 }
 
-void QssEditor::updateProjectPath(const QString &newPath)
+bool QssEditor::updateProjectPath(const QString &newPath)
 {
+    if(newPath.isEmpty())
+        return false;
+
     QFileInfo fi(newPath);
 
-    m_lastFileName = fi.absoluteFilePath();
+    m_lastFileName = QDir::toNativeSeparators(fi.absoluteFilePath());
 
-    setWindowTitle(QDir::toNativeSeparators(m_lastFileName));
+    setWindowTitle(m_lastFileName);
 
     if(!QDir::setCurrent(fi.absolutePath()))
     {
         qWarning("Cannot change directory");
         QMessageBox::warning(this, tr("Warning"), tr("Cannot change directory"));
+        return false;
     }
+
+    return true;
 }
 
 void QssEditor::showError(const QString &err)
@@ -283,7 +285,7 @@ void QssEditor::restoreLastFiles()
         if(!QFile::exists(file))
             continue;
 
-        ui->toolOpen->menu()->addAction(file, this, SLOT(slotOpenFromHistoryMenu()));
+        ui->toolOpen->menu()->addAction(QDir::toNativeSeparators(file), this, SLOT(slotOpenFromHistoryMenu()));
     }
 }
 
@@ -345,7 +347,7 @@ void QssEditor::slotOpen()
     if(!continueWhenUnsaved())
         return;
 
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open project"), QString(), tr("QSS Editor Projects (*.qep)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open project"), QString(), tr("Qt Style Sheets (*.qss)"));
 
     if(fileName.isEmpty())
         return;
@@ -367,12 +369,14 @@ void QssEditor::slotSaveAs()
 {
     qDebug("Saving project as");
 
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save project as"), QString(), tr("QSS Editor Projects (*.qep)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save project as"), QString(), tr("Qt Style Sheets (*.qss)"));
 
     if(fileName.isEmpty())
         return;
 
-    updateProjectPath(fileName);
+    if(!updateProjectPath(fileName))
+        return;
+
     save();
 }
 
