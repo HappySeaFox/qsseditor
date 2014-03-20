@@ -2,6 +2,10 @@ isEmpty(TARGET) {
     error("TARGET is not defined")
 }
 
+!win32:!unix {
+    error("QSS Editor must be compiled on Windows or Linux")
+}
+
 greaterThan(QT_MAJOR_VERSION, 4): QT *= widgets
 
 INCLUDEPATH += .

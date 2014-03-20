@@ -15,8 +15,10 @@
  * along with QssEditor. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <QLibraryInfo>
 #include <QApplication>
 #include <QTranslator>
+#include <QtGlobal>
 #include <QLocale>
 #include <QDir>
 
@@ -34,7 +36,19 @@ int main(int argc, char *argv[])
     // load translations
     QString locale = QLocale::system().name();
     QString ts = SETTINGS_GET_STRING(SETTING_TRANSLATION);
-    QString translationsDir = QCoreApplication::applicationDirPath() + QDir::separator() + "translations";
+    QString translationsDir =
+#ifdef Q_OS_WIN32
+            QCoreApplication::applicationDirPath() + QDir::separator() + "translations";
+#elif defined Q_OS_UNIX
+            "/usr/share/qsseditor/translations";
+#endif
+
+    QString qtTranslationsDir =
+#ifdef Q_OS_WIN32
+            translationsDir;
+#elif defined Q_OS_UNIX
+            QLibraryInfo::location(QLibraryInfo::TranslationsPath);
+#endif
 
     qDebug("Locale \"%s\", translation \"%s\"", qPrintable(locale), qPrintable(ts));
 
@@ -44,7 +58,7 @@ int main(int argc, char *argv[])
     qDebug("Loading QSS Editor translation: %s", translator_qsseditor.load("qsseditor_" + ts, translationsDir) ? "ok" : "failed");
 
     QTranslator translator_qt;
-    qDebug("Loading Qt translation: %s", translator_qt.load("qt_" + ts, translationsDir) ? "ok" : "failed");
+    qDebug("Loading Qt translation: %s", translator_qt.load("qt_" + ts, qtTranslationsDir) ? "ok" : "failed");
 
     app.installTranslator(&translator_qt);
     app.installTranslator(&translator_qsseditor);
