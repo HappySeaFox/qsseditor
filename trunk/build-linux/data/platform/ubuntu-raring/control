@@ -1,9 +1,0 @@
-Package: qsseditor
-Priority: extra
-Section: graphics
-Installed-Size: SIZE
-Maintainer: linuxsquirrel.dev@gmail.com
-Architecture: ARCH
-Version: VERSION
-Depends: DEPS
-Description: DESC
