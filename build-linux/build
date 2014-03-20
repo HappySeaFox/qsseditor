@@ -89,9 +89,24 @@ cp -a data/platform-independent/qsseditor-32.png B/usr/share/icons/hicolor/32x32
 
 strip B/usr/bin/*
 
+# to shut up dpkg-shlibsdeps
+mkdir -p debian
+touch debian/control
+
+# detect dependencies
+deps="`dpkg-shlibsdeps ../$bin -O 2>/dev/null | sed 's/^shlibs:Depends=//'`"
+
+if [ -z "$deps" ]; then
+    echo "The shlibs list is empty" >&2
+    exit 1
+fi
+
+rm -rf debian
+
 cp -a $platform/control B/DEBIAN/control
 chmod 0600 B/DEBIAN/control
 sed -i "s/ARCH/$arch/" B/DEBIAN/control
+sed -i "s/DEPS/$deps/" B/DEBIAN/control
 chmod 0400 B/DEBIAN/control
 
 make_package
