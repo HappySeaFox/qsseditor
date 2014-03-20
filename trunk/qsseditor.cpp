@@ -22,6 +22,8 @@
 #include <QFileDialog>
 #include <QHeaderView>
 #include <QCloseEvent>
+#include <QDockWidget>
+#include <QMetaObject>
 #include <QShortcut>
 #include <QSettings>
 #include <QKeyEvent>
@@ -61,7 +63,6 @@ QssEditor::QssEditor(QWidget *parent) :
                              << ui->toolOpen
                              << ui->toolSave
                              << ui->toolSaveAs
-                             << ui->toolExportQss
                              << ui->toolOptions;
 
     foreach(QWidget *w, buttons)
@@ -201,6 +202,10 @@ void QssEditor::open(const QString &fileName)
     ui->toolSave->setEnabled(false);
 
     appendCurrentProjectToHistory();
+
+    // apply QSS right now
+    m_timerDelayedApply->stop();
+    QMetaObject::invokeMethod(m_timerDelayedApply, "timeout");
 }
 
 bool QssEditor::save()
@@ -343,6 +348,7 @@ void QssEditor::slotCssChanged()
 void QssEditor::slotApplyCss()
 {
     ui->widgetAllWidgets->setStyleSheet(ui->text->text());
+    ui->toolButton->menu()->setStyleSheet(ui->widgetAllWidgets->styleSheet());
 }
 
 void QssEditor::slotOpen()
@@ -381,32 +387,6 @@ void QssEditor::slotSaveAs()
         return;
 
     save();
-}
-
-void QssEditor::slotExportQss()
-{
-    qDebug("Export QSS");
-
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Export QSS"), QString(), tr("QSS files (*.qss)"));
-
-    if(fileName.isEmpty())
-        return;
-
-    QFile file(fileName);
-
-    if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
-    {
-        showError(tr("Cannot open file:") + ' ' + file.errorString());
-        return;
-    }
-
-    QByteArray qss = ui->text->text().toAscii();
-
-    if(file.write(qss, qss.length()) != qss.length())
-    {
-        showError(tr("Cannot export QSS:") + ' ' + file.errorString());
-        return;
-    }
 }
 
 void QssEditor::slotOptions()

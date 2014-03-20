@@ -58,7 +58,6 @@ private slots:
     void slotOpen();
     void slotSave();
     void slotSaveAs();
-    void slotExportQss();
     void slotOptions();
     void slotProgress();
     void slotQuit();
