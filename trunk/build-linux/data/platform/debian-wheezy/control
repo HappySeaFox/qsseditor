@@ -1,0 +1,9 @@
+Package: qsseditor
+Priority: extra
+Section: x11
+Installed-Size: 100
+Maintainer: linuxsquirrel.dev@gmail.com
+Architecture: ARCH
+Version: 0.5.0-1
+Depends: libc6, libqtgui4 (>= 4:4.6.1), libqtcore4 (>= 4:4.6.1)
+Description: QSS editor

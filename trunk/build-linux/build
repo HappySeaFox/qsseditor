@@ -1,0 +1,99 @@
+#!/bin/sh
+
+set -e -x
+
+# where to store debs
+out="debs"
+
+make_package()
+{
+    echo "Creating package"
+
+    ( cd B; find . -type f ! -regex '.*/DEBIAN/.*' -printf '%P\0' | LC_ALL=C sort -z | xargs -r0 md5sum > DEBIAN/md5sums ) > /dev/null
+
+    mkdir -p $out
+
+    if [ -f DEBIAN/md5sums ]; then
+        chmod 0644 DEBIAN/md5sums
+    fi
+
+    sudo chown -R root:root B
+
+    local name=$(cat B/DEBIAN/control | egrep '^Package:' | awk '{print $2}')
+    local version=$(cat B/DEBIAN/control | egrep '^Version:' | awk '{print $2}')
+
+    sudo dpkg-deb -b B "$out/${name}_${version}_${arch}.deb"
+    sudo rm -rf B
+}
+
+cd "`dirname \"$0\"`"
+
+# remove old debs
+rm -rf "$out"
+
+distro="`lsb_release -i | sed -r 's/Distributor ID:\s+//' | awk '{print tolower($1)}'`"
+codename="`lsb_release -c | sed -r 's/Codename:\s+//' | awk '{print tolower($1)}'`"
+
+if [ -z "$distro" -o -z "$codename" ]; then
+    echo "Cannot determine distribution (is lsb_release installed?)" >&2
+    exit 1
+fi
+
+system="$distro-$codename"
+platform="data/platform/$system"
+
+if [ ! -d "$platform" ]; then
+    echo "Control files for $distro $codename don't exist" >&2
+    exit 1
+fi
+
+echo
+echo "Building for $system"
+echo
+
+echo "Installing dependencies"
+
+$platform/install-deps
+
+arch=$($platform/arch)
+
+if [ -z "$arch" ]; then
+    echo -n "Your architecture (for example, i386 or amd64): "
+    read arch
+
+    if [ -z "$arch" ]; then
+        echo "Please specify architecture" >&2
+        exit 1
+    fi
+fi
+
+sudo rm -rf B
+
+echo "Creating infrastructure"
+mkdir -p B/DEBIAN
+chmod 0755 B/DEBIAN
+mkdir -p B/usr/bin
+mkdir -p B/usr/share/icons/hicolor/16x16/apps
+mkdir -p B/usr/share/icons/hicolor/24x24/apps
+mkdir -p B/usr/share/icons/hicolor/32x32/apps
+
+echo "Copying files"
+bin="QssEditor"
+binlower="`echo -n $bin | awk '{print tolower($1)}'`"
+cp -a ../$bin B/usr/bin/$binlower
+cp -a data/platform-independent/qsseditor-16.png B/usr/share/icons/hicolor/16x16/apps/qsseditor.png
+cp -a data/platform-independent/qsseditor-24.png B/usr/share/icons/hicolor/24x24/apps/qsseditor.png
+cp -a data/platform-independent/qsseditor-32.png B/usr/share/icons/hicolor/32x32/apps/qsseditor.png
+strip B/usr/bin/*
+cp -a $platform/control B/DEBIAN/control
+chmod 0600 B/DEBIAN/control
+sed -i "s/ARCH/$arch/" B/DEBIAN/control
+chmod 0400 B/DEBIAN/control
+
+make_package
+
+set +x
+
+echo
+echo "Done. Look for deb packages in \"$out\" directory"
+echo

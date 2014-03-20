@@ -1,0 +1,3 @@
+#!/bin/sh
+
+dpkg-architecture -qDEB_BUILD_ARCH
