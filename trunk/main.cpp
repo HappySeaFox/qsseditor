@@ -20,6 +20,7 @@
 #include <QTranslator>
 #include <QtGlobal>
 #include <QLocale>
+#include <QIcon>
 #include <QDir>
 
 #include "qsseditor.h"
@@ -32,6 +33,10 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("QssEditor");
     QCoreApplication::setOrganizationName("QssEditor");
     QCoreApplication::setApplicationVersion(NVER_STRING);
+
+#ifdef Q_OS_UNIX
+    QApplication::setWindowIcon(QIcon(":/images/qsseditor.ico"));
+#endif
 
     // load translations
     QString locale = QLocale::system().name();
