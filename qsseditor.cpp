@@ -44,6 +44,8 @@ QssEditor::QssEditor(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle(tr("QSS Editor") + ' ' + NVER_STRING);
+
     // application shortcuts
     new QShortcut(QKeySequence::Quit, this, SLOT(slotQuit()));
     new QShortcut(QKeySequence::Find, this, SLOT(slotFind()));
