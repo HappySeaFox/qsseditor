@@ -433,6 +433,9 @@ void QssEditor::slotOpenFromHistoryMenu()
         return;
     }
 
+    if(!continueWhenUnsaved())
+        return;
+
     open(a->text());
 }
 
