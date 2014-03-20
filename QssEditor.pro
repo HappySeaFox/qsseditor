@@ -285,7 +285,7 @@ exists($$INNO) {
 
     ISS="qsseditor-$${VERSION}.iss"
 
-    iss.commands += $$mle(echo $${LITERAL_HASH}define MyAppName \"Qss Editor\" > $$ISS)
+    iss.commands += $$mle(echo $${LITERAL_HASH}define MyAppName \"QSS Editor\" > $$ISS)
     iss.commands += $$mle(echo $${LITERAL_HASH}define MyAppPublisher \"Dmitry Baryshev\" >> $$ISS)
     iss.commands += $$mle(echo $${LITERAL_HASH}define MyAppURL \"$$HTTPROOT\" >> $$ISS)
 
@@ -316,7 +316,7 @@ exists($$INNO) {
     iss.commands += $$mle(echo MinVersion="0,5.1" >> $$ISS)
 
     !isEmpty(SIGNTOOL):exists($$CERT) {
-        iss.commands += $$mle(echo SignTool=bps sign /d \$\$qQss Editor\$\$q /du \$\$q$$HTTPROOT\$\$q /f \$\$q$$CERT\$\$q /tr \$\$q$$RFC3161_SERVER\$\$q /v \$\$q\$\$f\$\$q >> $$ISS)
+        iss.commands += $$mle(echo SignTool=bps sign /d \$\$qQSS Editor\$\$q /du \$\$q$$HTTPROOT\$\$q /f \$\$q$$CERT\$\$q /tr \$\$q$$RFC3161_SERVER\$\$q /v \$\$q\$\$f\$\$q >> $$ISS)
     }
 
     iss.commands += $$mle(echo [Languages] >> $$ISS)
