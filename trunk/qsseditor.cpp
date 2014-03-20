@@ -30,6 +30,7 @@
 #include <QMenu>
 #include <QDir>
 
+#include "searchandreplace.h"
 #include "qscilexerqss.h"
 #include "qsseditor.h"
 #include "settings.h"
@@ -45,6 +46,8 @@ QssEditor::QssEditor(QWidget *parent) :
 
     // application shortcuts
     new QShortcut(QKeySequence::Quit, this, SLOT(slotQuit()));
+    new QShortcut(QKeySequence::Find, this, SLOT(slotFind()));
+    new QShortcut(QKeySequence::FindNext, this, SLOT(slotFindNext()));
 
     // shortcuts
     ui->toolOpen->setShortcut(QKeySequence::Open);
@@ -444,4 +447,15 @@ void QssEditor::slotOpenFromHistoryMenu()
     }
 
     open(a->text());
+}
+
+void QssEditor::slotFind()
+{
+    SearchAndReplace sar(ui->text, this);
+    sar.exec();
+}
+
+void QssEditor::slotFindNext()
+{
+    ui->text->findNext();
 }

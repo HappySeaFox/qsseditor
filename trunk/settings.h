@@ -113,7 +113,14 @@
 
 #define SETTINGS_REMOVE Settings::instance()->remove
 
-#define SETTING_LAST_FILES "last-files"
+#define SETTING_LAST_FILES                   "last-files"
+#define SETTING_FIND_REPLACE_FIND_TEXT       "fr-find-text"
+#define SETTING_FIND_REPLACE_REPLACE         "fr-replace"
+#define SETTING_FIND_REPLACE_REPLAC_TEXT     "fr-replace-text"
+#define SETTING_FIND_REPLACE_FORWARD         "fr-forward"
+#define SETTING_FIND_REPLACE_CASE_SENSITIVE  "fr-case-sensitive"
+#define SETTING_FIND_REPLACE_WHOLE_WORDS     "fr-whole-words"
+#define SETTING_FIND_REPLACE_REGEXP          "fr-regexp"
 
 class SettingsPrivate;
 
