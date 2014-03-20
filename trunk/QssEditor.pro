@@ -199,11 +199,6 @@ isEmpty(HOST64) {
 }
 
 MINGWLIBS=libgcc_s_$${MINGW_BUILD_TYPE}-1.dll libwinpthread-1.dll libstdc++-6.dll
-OTHERQMFILES=
-
-for(l, LANGUAGES) {
-    OTHERQMFILES += qsseditor_lib_$${l}.qm
-}
 
 LICENSES=LICENSE.txt
 
@@ -262,10 +257,6 @@ QMAKE_EXTRA_TARGETS += tag
         exists($$l) {
             distbin.commands += $$mle(copy /y \"$$l\" \"$$T/translations\")
         }
-    }
-
-    for(qm, OTHERQMFILES) {
-        distbin.commands += $$mle(copy /y \"$${_PRO_FILE_PWD_}\\ts\\$$qm\" \"$$T/translations\")
     }
 
     for(lc, LICENSES) {
@@ -364,10 +355,6 @@ exists($$INNO) {
         exists($$l) {
             iss.commands += $$mle(echo Source: \"$$l\"; DestDir: \"{app}/translations\"; Flags: ignoreversion >> $$ISS)
         }
-    }
-
-    for(qm, OTHERQMFILES) {
-        iss.commands += $$mle(echo Source: \"$${_PRO_FILE_PWD_}\\ts\\$$qm\"; DestDir: \"{app}/translations\"; Flags: ignoreversion >> $$ISS)
     }
 
     for(ql, QTLIBS) {
