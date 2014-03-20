@@ -1,9 +1,9 @@
 Package: qsseditor
 Priority: extra
-Section: x11
-Installed-Size: 100
+Section: graphics
+Installed-Size: SIZE
 Maintainer: linuxsquirrel.dev@gmail.com
 Architecture: ARCH
-Version: 0.5.0-1
+Version: VERSION
 Depends: DEPS
-Description: QSS editor
+Description: DESC

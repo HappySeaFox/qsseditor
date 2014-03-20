@@ -6,6 +6,8 @@ set -e -x
 out="debs"
 bin="QssEditor"
 binlower="`echo -n $bin | awk '{print tolower($1)}'`"
+desc="Tool to edit and preview Qt style sheets"
+version="0.5.0-1"
 
 make_package()
 {
@@ -89,6 +91,8 @@ cp -a data/platform-independent/qsseditor-32.png B/usr/share/icons/hicolor/32x32
 
 strip B/usr/bin/*
 
+size="`du -s B | awk '{print $1}'`"
+
 # to shut up dpkg-shlibsdeps
 rm -rf debian
 mkdir -p debian
@@ -106,8 +110,13 @@ rm -rf debian
 
 cp -a $platform/control B/DEBIAN/control
 chmod 0600 B/DEBIAN/control
-sed -i "s/ARCH/$arch/" B/DEBIAN/control
-sed -i "s/DEPS/$deps/" B/DEBIAN/control
+
+sed -i "s/ARCH/$arch/"       B/DEBIAN/control
+sed -i "s/SIZE/$size/"       B/DEBIAN/control
+sed -i "s/DEPS/$deps/"       B/DEBIAN/control
+sed -i "s/VERSION/$version/" B/DEBIAN/control
+sed -i "s/DESC/$desc/"       B/DEBIAN/control
+
 chmod 0400 B/DEBIAN/control
 
 make_package
