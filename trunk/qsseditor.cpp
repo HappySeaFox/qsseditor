@@ -45,7 +45,7 @@ QssEditor::QssEditor(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    setWindowTitle(tr("QSS Editor") + " v" + NVER_STRING);
+    resetWindowTitle();
 
     // application shortcuts
     new QShortcut(QKeySequence::Quit, this, SLOT(slotQuit()));
@@ -64,6 +64,7 @@ QssEditor::QssEditor(QWidget *parent) :
                              << ui->toolOpen
                              << ui->toolSave
                              << ui->toolSaveAs
+                             << ui->toolClose
                              << ui->toolUndo
                              << ui->toolRedo
                              << ui->toolOptions;
@@ -185,7 +186,7 @@ void QssEditor::closeEvent(QCloseEvent *e)
 
 void QssEditor::open(const QString &fileName)
 {
-    qDebug("Opening project");
+    qDebug("Opening style");
 
     if(!updateProjectPath(fileName))
         return;
@@ -340,6 +341,11 @@ void QssEditor::appendCurrentProjectToHistory()
                                        movedAction ? movedAction : new QAction(m_lastFileName, ui->toolOpen->menu()));
 }
 
+void QssEditor::resetWindowTitle()
+{
+    setWindowTitle(tr("QSS Editor") + " v" + NVER_STRING);
+}
+
 void QssEditor::slotCssChanged()
 {
     m_changed = true;
@@ -389,6 +395,21 @@ void QssEditor::slotSaveAs()
         return;
 
     save();
+}
+
+void QssEditor::slotClose()
+{
+    qDebug("Closing");
+
+    if(!continueWhenUnsaved())
+        return;
+
+    m_lastFileName.clear();
+    ui->text->clear();
+    m_changed = false;
+    ui->toolSave->setEnabled(false);
+
+    resetWindowTitle();
 }
 
 void QssEditor::slotOptions()
