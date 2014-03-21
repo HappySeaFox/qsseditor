@@ -46,7 +46,8 @@ private:
     bool save();
     QString settingsErrorToString(int);
     bool continueWhenUnsaved();
-    bool updateProjectPath(const QString &newPath);
+    enum CheckPathPolicy { AllowNonExistent, ForbidNonExistent };
+    bool updateProjectPath(const QString &newPath, CheckPathPolicy policy);
     void showError(const QString &err);
     void restoreLastFiles();
     void saveLastFiles();
