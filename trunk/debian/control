@@ -14,4 +14,6 @@ Package: qsseditor
 Architecture: any
 Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Tool to edit and preview Qt style sheets
+Description: QSS Editor is a tool to edit and preview
+ Qt style sheets. It provides a simple interface
+ with autocompletion support.
