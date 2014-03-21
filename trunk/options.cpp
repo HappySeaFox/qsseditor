@@ -26,6 +26,8 @@ Options::Options(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->checkOpenLast->setChecked(SETTINGS_GET_BOOL(SETTING_OPEN_LAST_FILE));
+
     ui->comboLang->addItem('<' + tr("System") + '>');
 
     // translations
@@ -48,6 +50,7 @@ Options::Options(QWidget *parent) :
         m_startTranslationIndex = 0;
 
     ui->labelRestart->hide();
+    adjustSize();
 }
 
 Options::~Options()
@@ -62,5 +65,6 @@ void Options::slotSomethingImportantChanged()
 
 void Options::saveSettings() const
 {
+    SETTINGS_SET_BOOL(SETTING_OPEN_LAST_FILE, ui->checkOpenLast->isChecked());
     SETTINGS_SET_STRING(SETTING_TRANSLATION, ui->comboLang->itemData(ui->comboLang->currentIndex()).toString());
 }
