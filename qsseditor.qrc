@@ -13,5 +13,6 @@
         <file>images/flags/en.png</file>
         <file>images/redo.png</file>
         <file>images/undo.png</file>
+        <file>images/close.png</file>
     </qresource>
 </RCC>

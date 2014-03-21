@@ -51,6 +51,7 @@ private:
     void restoreLastFiles();
     void saveLastFiles();
     void appendCurrentProjectToHistory();
+    void resetWindowTitle();
 
 private slots:
     void slotCssChanged();
@@ -58,6 +59,7 @@ private slots:
     void slotOpen();
     void slotSave();
     void slotSaveAs();
+    void slotClose();
     void slotOptions();
     void slotProgress();
     void slotQuit();
