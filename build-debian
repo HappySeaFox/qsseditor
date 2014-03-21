@@ -1,5 +1,15 @@
 #!/bin/sh
 
+set -e
+
+if [ "$1" = "withdeps" ]; then
+    apt-get --no-install-recommends -y install devscripts         \
+                                               qt4-dev-tools      \
+                                               libqt4-dev         \
+                                               libqscintilla2-dev \
+                                               build-essential
+fi
+
 cpus="`grep ^processor /proc/cpuinfo | wc -l`"
 
 if [ -z "$cpus" ]; then
