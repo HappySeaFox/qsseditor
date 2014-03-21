@@ -313,6 +313,10 @@ void QssEditor::saveLastFiles()
 
     files.removeDuplicates();
 
+    // maximum history size
+    while(files.size() > 15)
+        files.removeLast();
+
     SETTINGS_SET_STRING_LIST(SETTING_LAST_FILES, files);
     SETTINGS_SET_STRING(SETTING_LAST_FILE, m_lastFileName);
 }
