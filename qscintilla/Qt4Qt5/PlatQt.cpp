@@ -1,9 +1,9 @@
 // This module implements the portability layer for the Qt port of Scintilla.
 //
 // Copyright (c) 2014 Riverbank Computing Limited <info@riverbankcomputing.com>
-// 
+//
 // This file is part of QScintilla.
-// 
+//
 // This file may be used under the terms of the GNU General Public
 // License versions 2.0 or 3.0 as published by the Free Software
 // Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
@@ -15,10 +15,10 @@
 // certain additional rights. These rights are described in the Riverbank
 // GPL Exception version 1.1, which can be found in the file
 // GPL_EXCEPTION.txt in this package.
-// 
+//
 // If you are unsure which license is appropriate for your use, please
 // contact the sales department at sales@riverbankcomputing.com.
-// 
+//
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -213,7 +213,7 @@ public:
     XYPOSITION WidthChar(Font &font_, char ch);
     XYPOSITION Ascent(Font &font_);
     XYPOSITION Descent(Font &font_);
-    XYPOSITION InternalLeading(Font &font_) {return 0;}
+    XYPOSITION InternalLeading(Font &font_) { Q_UNUSED(font_) return 0;}
     XYPOSITION ExternalLeading(Font &font_);
     XYPOSITION Height(Font &font_);
     XYPOSITION AverageCharWidth(Font &font_);
@@ -222,7 +222,7 @@ public:
     void FlushCachedState();
 
     void SetUnicodeMode(bool unicodeMode_) {unicodeMode = unicodeMode_;}
-    void SetDBCSMode(int codePage) {}
+    void SetDBCSMode(int codePage) { Q_UNUSED(codePage) }
 
     void DrawXPM(PRectangle rc, const XPM *xpm);
 
@@ -545,6 +545,9 @@ void SurfaceImpl::DrawXPM(PRectangle rc, const XPM *xpm)
 void SurfaceImpl::DrawRGBAImage(PRectangle rc, int width, int height,
         const unsigned char *pixelsImage)
 {
+    Q_UNUSED(width)
+    Q_UNUSED(height)
+
     Q_ASSERT(painter);
 
     const QImage *qim = reinterpret_cast<const QImage *>(pixelsImage);
@@ -1014,6 +1017,11 @@ bool Platform::IsKeyDown(int)
 long Platform::SendScintilla(WindowID w, unsigned int msg,
         unsigned long wParam, long lParam)
 {
+    Q_UNUSED(w)
+    Q_UNUSED(msg)
+    Q_UNUSED(wParam)
+    Q_UNUSED(lParam)
+
     // This is never called.
     return 0;
 }
@@ -1021,6 +1029,11 @@ long Platform::SendScintilla(WindowID w, unsigned int msg,
 long Platform::SendScintillaPointer(WindowID w, unsigned int msg,
         unsigned long wParam, void *lParam)
 {
+    Q_UNUSED(w)
+    Q_UNUSED(msg)
+    Q_UNUSED(wParam)
+    Q_UNUSED(lParam)
+
     // This is never called.
     return 0;
 }

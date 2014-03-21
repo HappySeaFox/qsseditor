@@ -3,9 +3,9 @@
 // behave in the same way.
 //
 // Copyright (c) 2014 Riverbank Computing Limited <info@riverbankcomputing.com>
-// 
+//
 // This file is part of QScintilla.
-// 
+//
 // This file may be used under the terms of the GNU General Public
 // License versions 2.0 or 3.0 as published by the Free Software
 // Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
@@ -17,10 +17,10 @@
 // certain additional rights. These rights are described in the Riverbank
 // GPL Exception version 1.1, which can be found in the file
 // GPL_EXCEPTION.txt in this package.
-// 
+//
 // If you are unsure which license is appropriate for your use, please
 // contact the sales department at sales@riverbankcomputing.com.
-// 
+//
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -266,17 +266,21 @@ void QsciScintilla::handleCharAdded(int ch)
 
     // Handle auto-indentation.
     if (autoInd)
+    {
         if (lex.isNull() || (lex->autoIndentStyle() & AiMaintain))
             maintainIndentation(ch, pos);
         else
             autoIndentation(ch, pos);
+    }
 
     // See if we might want to start auto-completion.
     if (!isCallTipActive() && acSource != AcsNone)
+    {
         if (isStartChar(ch))
             startAutoCompletion(acSource, false, use_single == AcusAlways);
         else if (acThresh >= 1 && isWordCharacter(ch))
             startAutoCompletion(acSource, true, use_single == AcusAlways);
+    }
 }
 
 
@@ -847,10 +851,12 @@ void QsciScintilla::autoIndentLine(long pos, int line, int indent)
     if (pos_after > pos_before)
         new_pos = pos + (pos_after - pos_before);
     else if (pos_after < pos_before && pos >= pos_after)
+    {
         if (pos >= pos_before)
             new_pos = pos + (pos_after - pos_before);
         else
             new_pos = pos_after;
+    }
 
     if (new_pos >= 0)
         SendScintilla(SCI_SETSEL, new_pos, new_pos);
@@ -1251,6 +1257,9 @@ void QsciScintilla::setWrapVisualFlags(WrapVisualFlag endFlag,
     case WrapFlagInMargin:
         flags |= SC_WRAPVISUALFLAG_MARGIN;
         break;
+
+    default:
+        break;
     }
 
     switch (startFlag)
@@ -1266,6 +1275,9 @@ void QsciScintilla::setWrapVisualFlags(WrapVisualFlag endFlag,
 
     case WrapFlagInMargin:
         flags |= SC_WRAPVISUALFLAG_MARGIN;
+        break;
+
+    default:
         break;
     }
 
@@ -1347,6 +1359,9 @@ void QsciScintilla::setFolding(FoldStyle folding, int margin)
         setFoldMarker(SC_MARKNUM_FOLDEREND, SC_MARK_BOXPLUSCONNECTED);
         setFoldMarker(SC_MARKNUM_FOLDEROPENMID, SC_MARK_BOXMINUSCONNECTED);
         setFoldMarker(SC_MARKNUM_FOLDERMIDTAIL, SC_MARK_TCORNER);
+        break;
+
+    default:
         break;
     }
 
@@ -1599,6 +1614,12 @@ void QsciScintilla::handleModified(int pos, int mtype, const char *text,
         int len, int added, int line, int foldNow, int foldPrev, int token,
         int annotationLinesAdded)
 {
+    Q_UNUSED(pos)
+    Q_UNUSED(text)
+    Q_UNUSED(len)
+    Q_UNUSED(token)
+    Q_UNUSED(annotationLinesAdded)
+
     if (mtype & SC_MOD_CHANGEFOLD)
     {
         if (fold)
@@ -1957,7 +1978,7 @@ void QsciScintilla::setSelection(int lineFrom, int indexFrom, int lineTo,
 void QsciScintilla::setSelectionBackgroundColor(const QColor &col)
 {
     int alpha = col.alpha();
-    
+
     if (alpha == 255)
         alpha = SC_ALPHA_NOALPHA;
 
