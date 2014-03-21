@@ -666,37 +666,37 @@
 <context>
     <name>QsciScintilla</name>
     <message>
-        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4181"/>
+        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4202"/>
         <source>&amp;Undo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4185"/>
+        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4206"/>
         <source>&amp;Redo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4191"/>
+        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4212"/>
         <source>Cu&amp;t</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4196"/>
+        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4217"/>
         <source>&amp;Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4202"/>
+        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4223"/>
         <source>&amp;Paste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4206"/>
+        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4227"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4213"/>
+        <location filename="../qscintilla/Qt4Qt5/qsciscintilla.cpp" line="4234"/>
         <source>Select All</source>
         <translation type="unfinished"></translation>
     </message>

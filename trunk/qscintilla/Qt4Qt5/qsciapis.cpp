@@ -1,9 +1,9 @@
 // This module implements the QsciAPIs class.
 //
 // Copyright (c) 2014 Riverbank Computing Limited <info@riverbankcomputing.com>
-// 
+//
 // This file is part of QScintilla.
-// 
+//
 // This file may be used under the terms of the GNU General Public
 // License versions 2.0 or 3.0 as published by the Free Software
 // Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
@@ -15,10 +15,10 @@
 // certain additional rights. These rights are described in the Riverbank
 // GPL Exception version 1.1, which can be found in the file
 // GPL_EXCEPTION.txt in this package.
-// 
+//
 // If you are unsure which license is appropriate for your use, please
 // contact the sales department at sales@riverbankcomputing.com.
-// 
+//
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -136,7 +136,7 @@ private:
 
 // The worker thread ctor.
 QsciAPIsWorker::QsciAPIsWorker(QsciAPIs *apis)
-    : proxy(apis), prepared(0), abort(false)
+    : prepared(0), proxy(apis), abort(false)
 {
 }
 
@@ -260,6 +260,9 @@ bool QsciAPIs::event(QEvent *e)
         emit apiPreparationFinished();
 
         return true;
+
+    default:
+        break;
     }
 
     return QObject::event(e);
@@ -647,6 +650,7 @@ void QsciAPIs::addAPIEntries(const WordIndexList &wl, bool complete,
 
             // See if the origin has been used before.
             if (unambig)
+            {
                 if (unambiguous_context.isEmpty())
                     unambiguous_context = org;
                 else if (unambiguous_context != org)
@@ -654,6 +658,7 @@ void QsciAPIs::addAPIEntries(const WordIndexList &wl, bool complete,
                     unambiguous_context.truncate(0);
                     unambig = false;
                 }
+            }
         }
 
         if (!with_context.contains(api_word))
