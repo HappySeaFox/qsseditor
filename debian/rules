@@ -19,6 +19,7 @@ override_dh_auto_install:
 	strip $(CURDIR)/debian/qsseditor/usr/bin/qsseditor
 	install -d -m 755 $(CURDIR)/debian/qsseditor/usr/share/qsseditor/translations
 	find ts -name '*.qm' -exec install -m 644 '{}' $(CURDIR)/debian/qsseditor/usr/share/qsseditor/translations/ ';'
-	install -D -m 644 debian/icons/qsseditor-16.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/16x16/apps/qsseditor.png
-	install -D -m 644 debian/icons/qsseditor-24.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/24x24/apps/qsseditor.png
-	install -D -m 644 debian/icons/qsseditor-32.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/32x32/apps/qsseditor.png
+	install -D -m 644 icons/qsseditor-16.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/16x16/apps/qsseditor.png
+	install -D -m 644 icons/qsseditor-24.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/24x24/apps/qsseditor.png
+	install -D -m 644 icons/qsseditor-32.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/32x32/apps/qsseditor.png
+	install -D -m 644 man/qsseditor.1 $(CURDIR)/debian/qsseditor/usr/share/man/man1/qsseditor.1
