@@ -704,7 +704,7 @@
 <context>
     <name>QssEditor</name>
     <message>
-        <location filename="../qsseditor.cpp" line="349"/>
+        <location filename="../qsseditor.cpp" line="348"/>
         <source>QSS Editor</source>
         <translation>QSS Редактор</translation>
     </message>
@@ -715,7 +715,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="29"/>
-        <location filename="../qsseditor.cpp" line="371"/>
+        <location filename="../qsseditor.cpp" line="369"/>
         <source>Open style</source>
         <translation>Открыть стиль</translation>
     </message>
@@ -726,7 +726,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="54"/>
-        <location filename="../qsseditor.cpp" line="393"/>
+        <location filename="../qsseditor.cpp" line="391"/>
         <source>Save style as</source>
         <translation>Сохранить стиль как</translation>
     </message>
@@ -751,49 +751,49 @@
         <translation>Предпросмотр стиля</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="243"/>
+        <location filename="../qsseditor.cpp" line="242"/>
         <source>No error</source>
         <translation>Нет ошибок</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="246"/>
+        <location filename="../qsseditor.cpp" line="245"/>
         <source>File access error</source>
         <translation>Ошибка доступа к файлу</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="249"/>
+        <location filename="../qsseditor.cpp" line="248"/>
         <source>Malformed file</source>
         <translation>Некорректный формат файла</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="252"/>
+        <location filename="../qsseditor.cpp" line="251"/>
         <source>Unknown error</source>
         <translation>Неизвестная ошибка</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="259"/>
-        <location filename="../qsseditor.cpp" line="278"/>
+        <location filename="../qsseditor.cpp" line="258"/>
+        <location filename="../qsseditor.cpp" line="277"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="260"/>
+        <location filename="../qsseditor.cpp" line="259"/>
         <source>This will discard all the unsaved changes</source>
         <translation>Все несохранённые данные будут утеряны</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="278"/>
+        <location filename="../qsseditor.cpp" line="277"/>
         <source>Cannot change directory</source>
         <translation>Невозможно сменить каталог</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="287"/>
+        <location filename="../qsseditor.cpp" line="286"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="371"/>
-        <location filename="../qsseditor.cpp" line="393"/>
+        <location filename="../qsseditor.cpp" line="369"/>
+        <location filename="../qsseditor.cpp" line="391"/>
         <source>Qt Style Sheets (*.qss)</source>
         <translation>Таблицы стилей Qt (*.qss)</translation>
     </message>
