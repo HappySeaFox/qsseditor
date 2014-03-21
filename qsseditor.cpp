@@ -189,16 +189,14 @@ void QssEditor::open(const QString &fileName)
 {
     qDebug("Opening style");
 
-    if(!updateProjectPath(fileName))
-        return;
-
-    m_project.setFilePath(m_lastFileName);
-
-    if(!m_project.error().isEmpty())
+    if(!m_project.setFilePath(fileName))
     {
         showError(tr("Cannot open style:") + ' ' + m_project.error());
         return;
     }
+
+    if(!updateProjectPath(fileName, ForbidNonExistent))
+        return;
 
     ui->text->setText(m_project.qss());
 
@@ -228,6 +226,7 @@ bool QssEditor::save()
     m_changed = false;
 
     ui->toolSave->setEnabled(false);
+    ui->toolClose->setEnabled(true);
 
     appendCurrentProjectToHistory();
 
@@ -260,29 +259,35 @@ bool QssEditor::continueWhenUnsaved()
                                                 QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok);
 }
 
-bool QssEditor::updateProjectPath(const QString &newPath)
+bool QssEditor::updateProjectPath(const QString &newPath, CheckPathPolicy policy)
 {
     if(newPath.isEmpty())
         return false;
 
     QFileInfo fi(newPath);
 
-    m_lastFileName = QDir::toNativeSeparators(fi.absoluteFilePath());
-
-    setWindowTitle(m_lastFileName);
+    if(policy == ForbidNonExistent && (!fi.exists() || !fi.isReadable()))
+    {
+        showError(tr("Cannot open style. The file doesn't exist or not readable"));
+        return false;
+    }
 
     if(!QDir::setCurrent(fi.absolutePath()))
     {
-        qWarning("Cannot change directory");
-        QMessageBox::warning(this, tr("Warning"), tr("Cannot change directory"));
+        showError(tr("Cannot change directory"));
         return false;
     }
+
+    m_lastFileName = QDir::toNativeSeparators(fi.absoluteFilePath());
+
+    setWindowTitle(m_lastFileName);
 
     return true;
 }
 
 void QssEditor::showError(const QString &err)
 {
+    qWarning("%s", qPrintable(err));
     QMessageBox::critical(this, tr("Error"), err);
 }
 
@@ -356,6 +361,7 @@ void QssEditor::slotCssChanged()
 {
     m_changed = true;
     ui->toolSave->setEnabled(true);
+    ui->toolClose->setEnabled(true);
     m_timerDelayedApply->start();
 }
 
@@ -397,7 +403,7 @@ void QssEditor::slotSaveAs()
     if(fileName.isEmpty())
         return;
 
-    if(!updateProjectPath(fileName))
+    if(!updateProjectPath(fileName, AllowNonExistent))
         return;
 
     save();
@@ -413,6 +419,8 @@ void QssEditor::slotClose()
     m_lastFileName.clear();
     ui->text->clear();
     m_changed = false;
+    m_project.setFilePath(QString());
+
     ui->toolSave->setEnabled(false);
     ui->toolClose->setEnabled(false);
 

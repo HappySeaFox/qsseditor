@@ -23,21 +23,17 @@
 
 #include "project.h"
 
-Project::Project(const QString &filePath)
-{
-    setFilePath(filePath);
-}
-
 bool Project::setFilePath(const QString &filePath)
 {
     static const QRegExp rx("/\\*\\s+QssEditor:\\s+([a-zA-Z0-9+\\/=]+)\\s+\\*/\\s+");
 
-    m_valid = false;
-    m_version = -1;
     m_error.clear();
 
     if(filePath.isEmpty())
+    {
+        m_error = QObject::tr("File name is empty");
         return false;
+    }
 
     QFile file(filePath);
 
@@ -47,17 +43,19 @@ bool Project::setFilePath(const QString &filePath)
         return false;
     }
 
-    m_qss = file.readAll();
+    QString qss = file.readAll();
+    int version = -1;
+
     file.close();
 
-    if(rx.indexIn(m_qss) == 0)
+    if(rx.indexIn(qss) == 0)
     {
         QByteArray ba = QByteArray::fromBase64(rx.cap(1).toAscii());
         QDataStream ds(&ba, QIODevice::ReadOnly);
 
         ds.setVersion(QDataStream::Qt_4_8);
 
-        ds >> m_version;
+        ds >> version;
 
         if(ds.status() != QDataStream::Ok)
         {
@@ -65,12 +63,15 @@ bool Project::setFilePath(const QString &filePath)
             return false;
         }
 
-        m_qss = m_qss.mid(rx.matchedLength());
+        qss = qss.mid(rx.matchedLength());
 
-        qDebug("Loaded project version %d", m_version);
+        qDebug("Loaded project version %d", version);
     }
     else
         qDebug("QssEditor project header is not found");
+
+    m_qss = qss;
+    m_version = version;
 
     return true;
 }
@@ -86,21 +87,27 @@ bool Project::saveAs(const QString &filePath)
     }
 
     QByteArray ba;
-    QDataStream ds(&ba, QIODevice::ReadWrite);
 
-    ds.setVersion(QDataStream::Qt_4_8);
-
-    qDebug("Saving project with version %d", m_version);
-
-    ds << m_version;
-
-    if(ds.status() != QDataStream::Ok)
+    if(m_version > 0)
     {
-        m_error = dataStreamErrorToString(ds.status());
-        return false;
-    }
+        QDataStream ds(&ba, QIODevice::ReadWrite);
 
-    ba = "/* QssEditor: " + ba.toBase64() + " */\n" + m_qss.toAscii();
+        ds.setVersion(QDataStream::Qt_4_8);
+
+        qDebug("Saving project with version %d", m_version);
+
+        ds << m_version;
+
+        if(ds.status() != QDataStream::Ok)
+        {
+            m_error = dataStreamErrorToString(ds.status());
+            return false;
+        }
+
+        ba = "/* QssEditor: " + ba.toBase64() + " */\n" + m_qss.toAscii();
+    }
+    else
+        ba = m_qss.toAscii();
 
     if(file.write(ba) != ba.length())
     {

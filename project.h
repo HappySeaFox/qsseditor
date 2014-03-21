@@ -23,8 +23,6 @@
 class Project
 {
 public:
-    Project(const QString &filePath = QString());
-
     bool setFilePath(const QString &filePath);
 
     bool saveAs(const QString &filePath);
@@ -32,8 +30,6 @@ public:
     void setQss(const QString &qss);
 
     QString qss() const;
-
-    bool isValid() const;
 
     qint32 version() const;
 
@@ -43,7 +39,6 @@ public:
 
 private:
     QString m_qss;
-    bool m_valid;
     qint32 m_version;
     QString m_error;
 };
@@ -58,12 +53,6 @@ inline
 QString Project::qss() const
 {
     return m_qss;
-}
-
-inline
-bool Project::isValid() const
-{
-    return m_valid;
 }
 
 inline
