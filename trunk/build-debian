@@ -2,12 +2,12 @@
 
 set -e
 
-if [ "$1" = "withdeps" ]; then
-    apt-get --no-install-recommends -y install devscripts         \
-                                               qt4-dev-tools      \
-                                               libqt4-dev         \
-                                               libqscintilla2-dev \
-                                               build-essential
+if [ "$1" = "with-deps" ]; then
+    sudo apt-get --no-install-recommends -y install devscripts         \
+                                                    qt4-dev-tools      \
+                                                    libqt4-dev         \
+                                                    libqscintilla2-dev \
+                                                    build-essential
 fi
 
 cpus="`grep ^processor /proc/cpuinfo | wc -l`"
