@@ -704,7 +704,7 @@
 <context>
     <name>QssEditor</name>
     <message>
-        <location filename="../qsseditor.cpp" line="348"/>
+        <location filename="../qsseditor.cpp" line="352"/>
         <source>QSS Editor</source>
         <translation>QSS Редактор</translation>
     </message>
@@ -715,7 +715,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="29"/>
-        <location filename="../qsseditor.cpp" line="369"/>
+        <location filename="../qsseditor.cpp" line="373"/>
         <source>Open style</source>
         <translation>Открыть стиль</translation>
     </message>
@@ -726,7 +726,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="54"/>
-        <location filename="../qsseditor.cpp" line="391"/>
+        <location filename="../qsseditor.cpp" line="395"/>
         <source>Save style as</source>
         <translation>Сохранить стиль как</translation>
     </message>
@@ -792,8 +792,8 @@
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="369"/>
-        <location filename="../qsseditor.cpp" line="391"/>
+        <location filename="../qsseditor.cpp" line="373"/>
+        <location filename="../qsseditor.cpp" line="395"/>
         <source>Qt Style Sheets (*.qss)</source>
         <translation>Таблицы стилей Qt (*.qss)</translation>
     </message>
