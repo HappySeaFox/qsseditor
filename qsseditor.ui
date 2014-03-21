@@ -77,6 +77,9 @@
          </item>
          <item>
           <widget class="QToolButton" name="toolClose">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="toolTip">
             <string>Close</string>
            </property>
@@ -880,8 +883,8 @@ p, li { white-space: pre-wrap; }
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>69</width>
-                       <height>69</height>
+                       <width>98</width>
+                       <height>28</height>
                       </rect>
                      </property>
                      <attribute name="label">
@@ -893,8 +896,8 @@ p, li { white-space: pre-wrap; }
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>100</width>
-                       <height>30</height>
+                       <width>98</width>
+                       <height>28</height>
                       </rect>
                      </property>
                      <attribute name="label">
