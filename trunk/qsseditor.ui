@@ -10,7 +10,7 @@
     <height>520</height>
    </rect>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
+  <layout class="QGridLayout" name="gridLayout_4">
    <item row="0" column="0">
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
@@ -133,7 +133,7 @@
       </layout>
      </widget>
      <widget class="QWidget" name="widgetAllWidgets" native="true">
-      <layout class="QGridLayout" name="gridLayout_4">
+      <layout class="QGridLayout" name="gridLayout">
        <property name="leftMargin">
         <number>0</number>
        </property>
@@ -146,6 +146,23 @@
        <property name="bottomMargin">
         <number>0</number>
        </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelPreview">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Preview style</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
        <item row="1" column="0">
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
@@ -783,8 +800,8 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>253</width>
-                   <height>141</height>
+                   <width>690</width>
+                   <height>234</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -837,7 +854,7 @@ p, li { white-space: pre-wrap; }
                        <x>0</x>
                        <y>0</y>
                        <width>69</width>
-                       <height>69</height>
+                       <height>162</height>
                       </rect>
                      </property>
                      <attribute name="label">
@@ -918,6 +935,8 @@ p, li { white-space: pre-wrap; }
   <tabstop>toolOpen</tabstop>
   <tabstop>toolSave</tabstop>
   <tabstop>toolSaveAs</tabstop>
+  <tabstop>toolUndo</tabstop>
+  <tabstop>toolRedo</tabstop>
   <tabstop>toolOptions</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>radioButton</tabstop>

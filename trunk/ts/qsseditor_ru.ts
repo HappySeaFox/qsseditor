@@ -736,6 +736,11 @@
         <translation>Повторить</translation>
     </message>
     <message>
+        <location filename="../qsseditor.ui" line="159"/>
+        <source>Preview style</source>
+        <translation>Предпросмотр стиля</translation>
+    </message>
+    <message>
         <location filename="../qsseditor.cpp" line="240"/>
         <source>No error</source>
         <translation>Нет ошибок</translation>
