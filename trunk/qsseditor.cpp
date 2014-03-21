@@ -196,7 +196,7 @@ void QssEditor::open(const QString &fileName)
 
     if(!m_project.error().isEmpty())
     {
-        showError(m_project.error());
+        showError(tr("Cannot open style:") + ' ' + m_project.error());
         return;
     }
 
@@ -221,7 +221,7 @@ bool QssEditor::save()
 
     if(!m_project.saveAs(m_lastFileName))
     {
-        showError(m_project.error());
+        showError(tr("Cannot save style:") + ' ' + m_project.error());
         return false;
     }
 
