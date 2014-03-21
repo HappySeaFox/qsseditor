@@ -145,8 +145,7 @@ QssEditor::QssEditor(QWidget *parent) :
 
     restoreLastFiles();
 
-    if(QCoreApplication::arguments().size() > 1)
-        QTimer::singleShot(0, this, SLOT(slotDelayedOpen()));
+    QTimer::singleShot(0, this, SLOT(slotDelayedOpen()));
 }
 
 QssEditor::~QssEditor()
@@ -312,6 +311,7 @@ void QssEditor::saveLastFiles()
     files.removeDuplicates();
 
     SETTINGS_SET_STRING_LIST(SETTING_LAST_FILES, files);
+    SETTINGS_SET_STRING(SETTING_LAST_FILE, m_lastFileName);
 }
 
 void QssEditor::appendCurrentProjectToHistory()
@@ -420,7 +420,10 @@ void QssEditor::slotQuit()
 
 void QssEditor::slotDelayedOpen()
 {
-    open(QCoreApplication::arguments().at(1));
+    if(QCoreApplication::arguments().size() > 1)
+        open(QCoreApplication::arguments().at(1));
+    else if(SETTINGS_GET_BOOL(SETTING_OPEN_LAST_FILE))
+        open(SETTINGS_GET_STRING(SETTING_LAST_FILE));
 }
 
 void QssEditor::slotOpenFromHistoryMenu()

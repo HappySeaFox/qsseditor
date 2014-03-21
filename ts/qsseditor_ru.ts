@@ -9,17 +9,22 @@
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../options.ui" line="22"/>
+        <location filename="../options.ui" line="20"/>
+        <source>Open last style at startup</source>
+        <translation>Открывать последний стиль при запуске</translation>
+    </message>
+    <message>
+        <location filename="../options.ui" line="39"/>
         <source>Language:</source>
         <translation>Язык:</translation>
     </message>
     <message>
-        <location filename="../options.ui" line="76"/>
+        <location filename="../options.ui" line="80"/>
         <source>Need restart</source>
         <translation>Требуется перезапуск</translation>
     </message>
     <message>
-        <location filename="../options.cpp" line="29"/>
+        <location filename="../options.cpp" line="31"/>
         <source>System</source>
         <translation>Системный</translation>
     </message>
@@ -741,43 +746,43 @@
         <translation>Предпросмотр стиля</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="240"/>
+        <location filename="../qsseditor.cpp" line="239"/>
         <source>No error</source>
         <translation>Нет ошибок</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="243"/>
+        <location filename="../qsseditor.cpp" line="242"/>
         <source>File access error</source>
         <translation>Ошибка доступа к файлу</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="246"/>
+        <location filename="../qsseditor.cpp" line="245"/>
         <source>Malformed file</source>
         <translation>Некорректный формат файла</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="249"/>
+        <location filename="../qsseditor.cpp" line="248"/>
         <source>Unknown error</source>
         <translation>Неизвестная ошибка</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="256"/>
-        <location filename="../qsseditor.cpp" line="275"/>
+        <location filename="../qsseditor.cpp" line="255"/>
+        <location filename="../qsseditor.cpp" line="274"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="257"/>
+        <location filename="../qsseditor.cpp" line="256"/>
         <source>This will discard all the unsaved changes</source>
         <translation>Все несохранённые данные будут утеряны</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="275"/>
+        <location filename="../qsseditor.cpp" line="274"/>
         <source>Cannot change directory</source>
         <translation>Невозможно сменить каталог</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="284"/>
+        <location filename="../qsseditor.cpp" line="283"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
