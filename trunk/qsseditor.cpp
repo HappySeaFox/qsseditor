@@ -56,6 +56,7 @@ QssEditor::QssEditor(QWidget *parent) :
     ui->toolOpen->setShortcut(QKeySequence::Open);
     ui->toolSave->setShortcut(QKeySequence::Save);
     ui->toolSaveAs->setShortcut(QKeySequence::SaveAs);
+    ui->toolClose->setShortcut(QKeySequence::Close);
 
     // set some sizes
     const int buttonSize = 22;
@@ -203,6 +204,7 @@ void QssEditor::open(const QString &fileName)
 
     m_changed = false;
     ui->toolSave->setEnabled(false);
+    ui->toolClose->setEnabled(false);
 
     appendCurrentProjectToHistory();
 
@@ -226,6 +228,7 @@ bool QssEditor::save()
     m_changed = false;
 
     ui->toolSave->setEnabled(false);
+    ui->toolClose->setEnabled(false);
 
     appendCurrentProjectToHistory();
 
@@ -350,6 +353,7 @@ void QssEditor::slotCssChanged()
 {
     m_changed = true;
     ui->toolSave->setEnabled(true);
+    ui->toolClose->setEnabled(true);
     m_timerDelayedApply->start();
 }
 
@@ -408,6 +412,7 @@ void QssEditor::slotClose()
     ui->text->clear();
     m_changed = false;
     ui->toolSave->setEnabled(false);
+    ui->toolClose->setEnabled(false);
 
     resetWindowTitle();
 }
