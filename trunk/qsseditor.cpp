@@ -204,7 +204,7 @@ void QssEditor::open(const QString &fileName)
 
     m_changed = false;
     ui->toolSave->setEnabled(false);
-    ui->toolClose->setEnabled(false);
+    ui->toolClose->setEnabled(true);
 
     appendCurrentProjectToHistory();
 
@@ -228,7 +228,6 @@ bool QssEditor::save()
     m_changed = false;
 
     ui->toolSave->setEnabled(false);
-    ui->toolClose->setEnabled(false);
 
     appendCurrentProjectToHistory();
 
@@ -353,7 +352,6 @@ void QssEditor::slotCssChanged()
 {
     m_changed = true;
     ui->toolSave->setEnabled(true);
-    ui->toolClose->setEnabled(true);
     m_timerDelayedApply->start();
 }
 
