@@ -751,6 +751,16 @@
         <translation>Предпросмотр стиля</translation>
     </message>
     <message>
+        <location filename="../qsseditor.cpp" line="199"/>
+        <source>Cannot open style:</source>
+        <translation>Невозможно открыть стиль:</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.cpp" line="224"/>
+        <source>Cannot save style:</source>
+        <translation>Невозможно сохранить стиль:</translation>
+    </message>
+    <message>
         <location filename="../qsseditor.cpp" line="242"/>
         <source>No error</source>
         <translation>Нет ошибок</translation>
