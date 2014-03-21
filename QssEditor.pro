@@ -387,7 +387,7 @@ exists($$INNO) {
 
     iss.commands += $$mle(echo [Run] >> $$ISS)
     iss.commands += $$mle(echo Filename: \"{app}\\$${TARGET}.exe\"; Description: \"{cm:LaunchProgram","{$${LITERAL_HASH}StringChange(MyAppName"," \'&\'"," \'&&\')}}\"; Flags: nowait postinstall skipifsilent >> $$ISS)
-    iss.commands += $$mle(echo Filename: \"{$${LITERAL_HASH}MyAppURL}/wiki/changelog\"; Flags: nowait shellexec >> $$ISS)
+    iss.commands += $$mle(echo ;Filename: \"{$${LITERAL_HASH}MyAppURL}/wiki/changelog\"; Flags: nowait shellexec >> $$ISS)
 
     iss.commands += $$mle(echo [Code] >> $$ISS)
     iss.commands += $$mle(echo procedure CurStepChanged(CurStep: TSetupStep); >> $$ISS)
