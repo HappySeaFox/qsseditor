@@ -13,7 +13,7 @@
         <location filename="../about.ui" line="103"/>
         <source>QSS Editor is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</source>
         <extracomment>See https://www.gnu.org/licenses/gpl-2.0.txt . &quot;THT&quot; is the name of the application</extracomment>
-        <translation>QSS редактор распространяется в надежде, что он будет полезной, но БЕЗО ВСЯКИХ ГАРАНТИЙ; даже без неявной гарантии ТОВАРНОГО ВИДА или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЁННЫХ ЦЕЛЕЙ.</translation>
+        <translation>QSS редактор распространяется в надежде, что он будет полезным, но БЕЗО ВСЯКИХ ГАРАНТИЙ; даже без неявной гарантии ТОВАРНОГО ВИДА или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЁННЫХ ЦЕЛЕЙ.</translation>
     </message>
     <message>
         <location filename="../about.ui" line="68"/>
