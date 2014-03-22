@@ -61,6 +61,9 @@ QssEditor::QssEditor(QWidget *parent) :
     ui->toolSaveAs->setShortcut(QKeySequence::SaveAs);
     ui->toolClose->setShortcut(QKeySequence::Close);
 
+    // built-in Qt icon
+    ui->toolAboutQt->setIcon(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"));
+
     // set some sizes
     const int buttonSize = 22;
 
@@ -504,4 +507,9 @@ void QssEditor::slotAbout()
 {
     About a(this);
     a.exec();
+}
+
+void QssEditor::slotAboutQt()
+{
+    QMessageBox::aboutQt(this);
 }
