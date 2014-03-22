@@ -459,7 +459,12 @@ void QssEditor::slotDelayedOpen()
     if(QCoreApplication::arguments().size() > 1)
         open(QCoreApplication::arguments().at(1));
     else if(SETTINGS_GET_BOOL(SETTING_OPEN_LAST_FILE))
-        open(SETTINGS_GET_STRING(SETTING_LAST_FILE));
+    {
+        QString file = SETTINGS_GET_STRING(SETTING_LAST_FILE);
+
+        if(!file.isEmpty())
+            open(file);
+    }
 }
 
 void QssEditor::slotOpenFromHistoryMenu()
