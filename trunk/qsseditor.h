@@ -69,6 +69,7 @@ private slots:
     void slotFind();
     void slotFindNext();
     void slotAbout();
+    void slotAboutQt();
 
 private:
     Ui::QssEditor *ui;

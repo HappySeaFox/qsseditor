@@ -156,6 +156,9 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QToolButton" name="toolAboutQt"/>
+         </item>
         </layout>
        </item>
        <item>
@@ -838,7 +841,7 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>630</width>
+                   <width>595</width>
                    <height>234</height>
                   </rect>
                  </property>
@@ -978,6 +981,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>toolRedo</tabstop>
   <tabstop>toolOptions</tabstop>
   <tabstop>toolAbout</tabstop>
+  <tabstop>toolAboutQt</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>radioButton</tabstop>
   <tabstop>checkBox</tabstop>
@@ -1153,6 +1157,22 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>toolAboutQt</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotAboutQt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>936</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>slotCssChanged()</slot>
@@ -1162,5 +1182,6 @@ p, li { white-space: pre-wrap; }
   <slot>slotOptions()</slot>
   <slot>slotClose()</slot>
   <slot>slotAbout()</slot>
+  <slot>slotAboutQt()</slot>
  </slots>
 </ui>
