@@ -36,6 +36,8 @@
 #include "settings.h"
 #include "options.h"
 #include "project.h"
+#include "tools.h"
+#include "about.h"
 #include "ui_qsseditor.h"
 
 QssEditor::QssEditor(QWidget *parent) :
@@ -51,6 +53,7 @@ QssEditor::QssEditor(QWidget *parent) :
     new QShortcut(QKeySequence::Quit, this, SLOT(slotQuit()));
     new QShortcut(QKeySequence::Find, this, SLOT(slotFind()));
     new QShortcut(QKeySequence::FindNext, this, SLOT(slotFindNext()));
+    new QShortcut(QKeySequence::HelpContents, this, SLOT(slotAbout()));
 
     // shortcuts
     ui->toolOpen->setShortcut(QKeySequence::Open);
@@ -61,6 +64,8 @@ QssEditor::QssEditor(QWidget *parent) :
     // set some sizes
     const int buttonSize = 22;
 
+    ui->toolAbout->setToolTip(Tools::aboutQssEditorTitle());
+
     QWidgetList buttons = QWidgetList()
                              << ui->toolOpen
                              << ui->toolSave
@@ -68,7 +73,8 @@ QssEditor::QssEditor(QWidget *parent) :
                              << ui->toolClose
                              << ui->toolUndo
                              << ui->toolRedo
-                             << ui->toolOptions;
+                             << ui->toolOptions
+                             << ui->toolAbout;
 
     foreach(QWidget *w, buttons)
     {
@@ -492,4 +498,10 @@ void QssEditor::slotFind()
 void QssEditor::slotFindNext()
 {
     ui->text->findNext();
+}
+
+void QssEditor::slotAbout()
+{
+    About a(this);
+    a.exec();
 }

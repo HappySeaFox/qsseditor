@@ -16,18 +16,22 @@ SOURCES += main.cpp \
     project.cpp \
     settings.cpp \
     searchandreplace.cpp \
-    options.cpp
+    options.cpp \
+    about.cpp
 
 HEADERS += qsseditor.h \
     qscilexerqss.h \
     project.h \
     settings.h \
     searchandreplace.h \
-    options.h
+    options.h \
+    about.h \
+    tools.h
 
 FORMS += qsseditor.ui \
     searchandreplace.ui \
-    options.ui
+    options.ui \
+    about.ui
 
 RESOURCES += qsseditor.qrc
 
