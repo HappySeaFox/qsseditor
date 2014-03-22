@@ -148,6 +148,14 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QToolButton" name="toolAbout">
+           <property name="icon">
+            <iconset resource="qsseditor.qrc">
+             <normaloff>:/images/qsseditor.ico</normaloff>:/images/qsseditor.ico</iconset>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
@@ -830,8 +838,8 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>253</width>
-                   <height>141</height>
+                   <width>630</width>
+                   <height>234</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -883,8 +891,8 @@ p, li { white-space: pre-wrap; }
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>98</width>
-                       <height>28</height>
+                       <width>69</width>
+                       <height>162</height>
                       </rect>
                      </property>
                      <attribute name="label">
@@ -969,6 +977,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>toolUndo</tabstop>
   <tabstop>toolRedo</tabstop>
   <tabstop>toolOptions</tabstop>
+  <tabstop>toolAbout</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>radioButton</tabstop>
   <tabstop>checkBox</tabstop>
@@ -1128,6 +1137,22 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>toolAbout</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotAbout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>208</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>937</x>
+     <y>21</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>slotCssChanged()</slot>
@@ -1136,5 +1161,6 @@ p, li { white-space: pre-wrap; }
   <slot>slotSaveAs()</slot>
   <slot>slotOptions()</slot>
   <slot>slotClose()</slot>
+  <slot>slotAbout()</slot>
  </slots>
 </ui>

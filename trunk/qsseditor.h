@@ -68,6 +68,7 @@ private slots:
     void slotOpenFromHistoryMenu();
     void slotFind();
     void slotFindNext();
+    void slotAbout();
 
 private:
     Ui::QssEditor *ui;

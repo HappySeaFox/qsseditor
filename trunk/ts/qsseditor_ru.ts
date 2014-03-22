@@ -2,6 +2,31 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ru_RU">
 <context>
+    <name>About</name>
+    <message>
+        <location filename="../about.ui" line="122"/>
+        <source>QSS Editor is a tool to edit and preview Qt style sheets</source>
+        <extracomment>&quot;THT&quot; is the name of the application. The URL to visit will be added in runtime. Ticker is a short company name, see http://www.investopedia.com/terms/t/tickersymbol.asp . The common practice is to borrow &quot;ticker&quot; from English and incorporate into your language (see http://en.wikipedia.org/wiki/Loanword)</extracomment>
+        <translation>QSS редактор - это утилита для редактирования и предпросмотра таблиц стилей Qt</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="103"/>
+        <source>QSS Editor is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</source>
+        <extracomment>See https://www.gnu.org/licenses/gpl-2.0.txt . &quot;THT&quot; is the name of the application</extracomment>
+        <translation>QSS редактор распространяется в надежде, что он будет полезной, но БЕЗО ВСЯКИХ ГАРАНТИЙ; даже без неявной гарантии ТОВАРНОГО ВИДА или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЁННЫХ ЦЕЛЕЙ.</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="68"/>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="37"/>
+        <source>Dmitry Baryshev</source>
+        <translation>Барышев Дмитрий</translation>
+    </message>
+</context>
+<context>
     <name>Options</name>
     <message>
         <location filename="../options.ui" line="14"/>
@@ -55,6 +80,11 @@
         <location filename="../project.cpp" line="135"/>
         <source>Unknown error</source>
         <translation>Неизвестная ошибка</translation>
+    </message>
+    <message>
+        <location filename="../tools.h" line="39"/>
+        <source>About QSS Editor</source>
+        <translation>О Редакторе QSS</translation>
     </message>
 </context>
 <context>
@@ -709,7 +739,7 @@
 <context>
     <name>QssEditor</name>
     <message>
-        <location filename="../qsseditor.cpp" line="357"/>
+        <location filename="../qsseditor.cpp" line="363"/>
         <source>QSS Editor</source>
         <translation>QSS Редактор</translation>
     </message>
@@ -720,7 +750,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="29"/>
-        <location filename="../qsseditor.cpp" line="379"/>
+        <location filename="../qsseditor.cpp" line="385"/>
         <source>Open style</source>
         <translation>Открыть стиль</translation>
     </message>
@@ -731,7 +761,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="54"/>
-        <location filename="../qsseditor.cpp" line="401"/>
+        <location filename="../qsseditor.cpp" line="407"/>
         <source>Save style as</source>
         <translation>Сохранить стиль как</translation>
     </message>
@@ -751,68 +781,68 @@
         <translation>Повторить</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="189"/>
+        <location filename="../qsseditor.ui" line="197"/>
         <source>Preview style</source>
         <translation>Предпросмотр стиля</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="194"/>
+        <location filename="../qsseditor.cpp" line="200"/>
         <source>Cannot open style:</source>
         <translation>Невозможно открыть стиль:</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="222"/>
+        <location filename="../qsseditor.cpp" line="228"/>
         <source>Cannot save style:</source>
         <translation>Невозможно сохранить стиль:</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="241"/>
+        <location filename="../qsseditor.cpp" line="247"/>
         <source>No error</source>
         <translation>Нет ошибок</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="244"/>
+        <location filename="../qsseditor.cpp" line="250"/>
         <source>File access error</source>
         <translation>Ошибка доступа к файлу</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="247"/>
+        <location filename="../qsseditor.cpp" line="253"/>
         <source>Malformed file</source>
         <translation>Некорректный формат файла</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="250"/>
+        <location filename="../qsseditor.cpp" line="256"/>
         <source>Unknown error</source>
         <translation>Неизвестная ошибка</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="257"/>
+        <location filename="../qsseditor.cpp" line="263"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="258"/>
+        <location filename="../qsseditor.cpp" line="264"/>
         <source>This will discard all the unsaved changes</source>
         <translation>Все несохранённые данные будут утеряны</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="271"/>
+        <location filename="../qsseditor.cpp" line="277"/>
         <source>Cannot open style. The file doesn&apos;t exist or not readable</source>
         <translation>Невозможно открыть стиль. Файл не существует или не может быть прочтён</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="277"/>
+        <location filename="../qsseditor.cpp" line="283"/>
         <source>Cannot change directory</source>
         <translation>Невозможно сменить каталог</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="291"/>
+        <location filename="../qsseditor.cpp" line="297"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="379"/>
-        <location filename="../qsseditor.cpp" line="401"/>
+        <location filename="../qsseditor.cpp" line="385"/>
+        <location filename="../qsseditor.cpp" line="407"/>
         <source>Qt Style Sheets (*.qss)</source>
         <translation>Таблицы стилей Qt (*.qss)</translation>
     </message>
