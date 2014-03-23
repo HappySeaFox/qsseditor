@@ -87,9 +87,6 @@ QssEditor::QssEditor(QWidget *parent) :
     toolButtonMenu->addAction("Item2");
     ui->toolButton->setMenu(toolButtonMenu);
 
-    toolButtonMenu = new QMenu(this);
-    ui->toolOpen->setMenu(toolButtonMenu);
-
     m_timerDelayedApply = new QTimer(this);
     m_timerDelayedApply->setSingleShot(true);
     connect(m_timerDelayedApply, SIGNAL(timeout()), this, SLOT(slotApplyCss()));
@@ -307,25 +304,32 @@ void QssEditor::restoreLastFiles()
         if(!QFile::exists(file))
             continue;
 
+        if(!ui->toolOpen->menu())
+            ui->toolOpen->setMenu(new QMenu(ui->toolOpen));
+
         ui->toolOpen->menu()->addAction(QDir::toNativeSeparators(file), this, SLOT(slotOpenFromHistoryMenu()));
     }
 }
 
 void QssEditor::saveLastFiles()
 {
-    const QList<QAction *> actions = ui->toolOpen->menu()->actions();
     QStringList files;
 
-    foreach(QAction *a, actions)
+    if(ui->toolOpen->menu())
     {
-        files.append(a->text());
+        const QList<QAction *> actions = ui->toolOpen->menu()->actions();
+
+        foreach(QAction *a, actions)
+        {
+            files.append(a->text());
+        }
+
+        files.removeDuplicates();
+
+        // maximum history size
+        while(files.size() > 15)
+            files.removeLast();
     }
-
-    files.removeDuplicates();
-
-    // maximum history size
-    while(files.size() > 15)
-        files.removeLast();
 
     SETTINGS_SET_STRING_LIST(SETTING_LAST_FILES, files);
     SETTINGS_SET_STRING(SETTING_LAST_FILE, m_lastFileName);
@@ -335,6 +339,9 @@ void QssEditor::appendCurrentProjectToHistory()
 {
     if(m_lastFileName.isEmpty())
         return;
+
+    if(!ui->toolOpen->menu())
+        ui->toolOpen->setMenu(new QMenu(ui->toolOpen));
 
     QList<QAction *> actions = ui->toolOpen->menu()->actions();
     QAction *movedAction = 0;
