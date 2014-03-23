@@ -53,6 +53,7 @@ private:
     void saveLastFiles();
     void appendCurrentProjectToHistory();
     void resetWindowTitle();
+    void resetPreviewDelay();
 
 private slots:
     void slotCssChanged();
