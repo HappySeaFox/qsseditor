@@ -28,10 +28,6 @@
            <property name="toolTip">
             <string>Open style</string>
            </property>
-           <property name="icon">
-            <iconset resource="qsseditor.qrc">
-             <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
-           </property>
           </widget>
          </item>
          <item>
@@ -42,20 +38,12 @@
            <property name="toolTip">
             <string>Save style</string>
            </property>
-           <property name="icon">
-            <iconset resource="qsseditor.qrc">
-             <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
-           </property>
           </widget>
          </item>
          <item>
           <widget class="QToolButton" name="toolSaveAs">
            <property name="toolTip">
             <string>Save style as</string>
-           </property>
-           <property name="icon">
-            <iconset resource="qsseditor.qrc">
-             <normaloff>:/images/saveas.png</normaloff>:/images/saveas.png</iconset>
            </property>
           </widget>
          </item>
@@ -83,10 +71,6 @@
            <property name="toolTip">
             <string>Close</string>
            </property>
-           <property name="icon">
-            <iconset resource="qsseditor.qrc">
-             <normaloff>:/images/close.png</normaloff>:/images/close.png</iconset>
-           </property>
           </widget>
          </item>
          <item>
@@ -107,20 +91,12 @@
            <property name="toolTip">
             <string>Undo</string>
            </property>
-           <property name="icon">
-            <iconset resource="qsseditor.qrc">
-             <normaloff>:/images/undo.png</normaloff>:/images/undo.png</iconset>
-           </property>
           </widget>
          </item>
          <item>
           <widget class="QToolButton" name="toolRedo">
            <property name="toolTip">
             <string>Redo</string>
-           </property>
-           <property name="icon">
-            <iconset resource="qsseditor.qrc">
-             <normaloff>:/images/redo.png</normaloff>:/images/redo.png</iconset>
            </property>
           </widget>
          </item>
@@ -141,10 +117,6 @@
           <widget class="QToolButton" name="toolOptions">
            <property name="toolTip">
             <string>Options</string>
-           </property>
-           <property name="icon">
-            <iconset resource="qsseditor.qrc">
-             <normaloff>:/images/options.png</normaloff>:/images/options.png</iconset>
            </property>
           </widget>
          </item>
@@ -841,8 +813,8 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>595</width>
-                   <height>234</height>
+                   <width>253</width>
+                   <height>141</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -894,8 +866,8 @@ p, li { white-space: pre-wrap; }
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>69</width>
-                       <height>162</height>
+                       <width>98</width>
+                       <height>28</height>
                       </rect>
                      </property>
                      <attribute name="label">
