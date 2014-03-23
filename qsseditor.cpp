@@ -47,6 +47,13 @@ QssEditor::QssEditor(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // some default values
+    QHash<QString, QVariant> defaultValues;
+
+    defaultValues.insert(SETTING_PREVIEW_DELAY, 750);
+
+    Settings::instance()->addDefaultValues(defaultValues);
+
     resetWindowTitle();
 
     // application shortcuts
@@ -95,9 +102,9 @@ QssEditor::QssEditor(QWidget *parent) :
     ui->toolOpen->setMenu(toolButtonMenu);
 
     m_timerDelayedApply = new QTimer(this);
-    m_timerDelayedApply->setInterval(750);
     m_timerDelayedApply->setSingleShot(true);
     connect(m_timerDelayedApply, SIGNAL(timeout()), this, SLOT(slotApplyCss()));
+    resetPreviewDelay();
 
     QTimer *timerProgress = new QTimer(this);
     timerProgress->setInterval(500);
@@ -366,6 +373,16 @@ void QssEditor::resetWindowTitle()
     setWindowTitle(tr("QSS Editor") + " v" + NVER_STRING);
 }
 
+void QssEditor::resetPreviewDelay()
+{
+    int delay = SETTINGS_GET_INT(SETTING_PREVIEW_DELAY);
+
+    if(delay < 100 || delay > 5000)
+        delay = 750;
+
+    m_timerDelayedApply->setInterval(delay);
+}
+
 void QssEditor::slotCssChanged()
 {
     m_changed = true;
@@ -443,7 +460,10 @@ void QssEditor::slotOptions()
     Options opt(this);
 
     if(opt.exec() == QDialog::Accepted)
+    {
         opt.saveSettings();
+        resetPreviewDelay();
+    }
 }
 
 void QssEditor::slotProgress()

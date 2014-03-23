@@ -27,6 +27,7 @@ Options::Options(QWidget *parent) :
     ui->setupUi(this);
 
     ui->checkOpenLast->setChecked(SETTINGS_GET_BOOL(SETTING_OPEN_LAST_FILE));
+    ui->spinPreviewDelay->setValue(SETTINGS_GET_INT(SETTING_PREVIEW_DELAY));
 
     ui->comboLang->addItem('<' + tr("System") + '>');
 
@@ -65,6 +66,7 @@ void Options::slotSomethingImportantChanged()
 
 void Options::saveSettings() const
 {
-    SETTINGS_SET_BOOL(SETTING_OPEN_LAST_FILE, ui->checkOpenLast->isChecked());
-    SETTINGS_SET_STRING(SETTING_TRANSLATION, ui->comboLang->itemData(ui->comboLang->currentIndex()).toString());
+    SETTINGS_SET_STRING(SETTING_TRANSLATION, ui->comboLang->itemData(ui->comboLang->currentIndex()).toString(), Settings::NoSync);
+    SETTINGS_SET_BOOL(SETTING_OPEN_LAST_FILE, ui->checkOpenLast->isChecked(), Settings::NoSync);
+    SETTINGS_SET_INT(SETTING_PREVIEW_DELAY, ui->spinPreviewDelay->value());
 }

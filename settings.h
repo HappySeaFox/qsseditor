@@ -115,6 +115,7 @@
 
 #define SETTING_TRANSLATION                  "translation"
 #define SETTING_OPEN_LAST_FILE               "open-last-file"
+#define SETTING_PREVIEW_DELAY                "preview-delay"
 #define SETTING_LAST_FILE                    "last-file"
 #define SETTING_LAST_FILES                   "last-files"
 #define SETTING_FIND_REPLACE_FIND_TEXT       "fr-find-text"
