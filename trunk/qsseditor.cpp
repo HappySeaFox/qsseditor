@@ -56,6 +56,15 @@ QssEditor::QssEditor(QWidget *parent) :
 
     resetWindowTitle();
 
+    // icons
+    ui->toolOpen->setIcon(QIcon::fromTheme("document-open", QIcon(":/images/open.png")));
+    ui->toolSave->setIcon(QIcon::fromTheme("document-save", QIcon(":/images/save.png")));
+    ui->toolSaveAs->setIcon(QIcon::fromTheme("document-save-as", QIcon(":/images/saveas.png")));
+    ui->toolClose->setIcon(QIcon::fromTheme("window-close", QIcon(":/images/close.png")));
+    ui->toolUndo->setIcon(QIcon::fromTheme("edit-undo", QIcon(":/images/undo.png")));
+    ui->toolRedo->setIcon(QIcon::fromTheme("edit-redo", QIcon(":/images/redo.png")));
+    ui->toolOptions->setIcon(QIcon::fromTheme("preferences-system", QIcon(":/images/options.png")));
+
     // application shortcuts
     new QShortcut(QKeySequence::Quit, this, SLOT(slotQuit()));
     new QShortcut(QKeySequence::Find, this, SLOT(slotFind()));
@@ -71,27 +80,7 @@ QssEditor::QssEditor(QWidget *parent) :
     // built-in Qt icon
     ui->toolAboutQt->setIcon(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"));
 
-    // set some sizes
-    const int buttonSize = 22;
-
-    ui->toolAbout->setToolTip(Tools::aboutQssEditorTitle());
-
-    QWidgetList buttons = QWidgetList()
-                             << ui->toolOpen
-                             << ui->toolSave
-                             << ui->toolSaveAs
-                             << ui->toolClose
-                             << ui->toolUndo
-                             << ui->toolRedo
-                             << ui->toolOptions
-                             << ui->toolAbout;
-
-    foreach(QWidget *w, buttons)
-    {
-        w->setFixedSize(buttonSize, buttonSize);
-    }
-
-    // menu fot toolbutton
+    // menu for toolbutton
     QMenu *toolButtonMenu = new QMenu(this);
     toolButtonMenu->addAction("Item1");
     toolButtonMenu->addSeparator();
