@@ -53,7 +53,7 @@ bool Project::setFilePath(const QString &filePath)
         QByteArray ba = QByteArray::fromBase64(rx.cap(1).toAscii());
         QDataStream ds(&ba, QIODevice::ReadOnly);
 
-        ds.setVersion(QDataStream::Qt_4_8);
+        ds.setVersion(QDataStream::Qt_4_0);
 
         ds >> version;
 
@@ -92,7 +92,7 @@ bool Project::saveAs(const QString &filePath)
     {
         QDataStream ds(&ba, QIODevice::ReadWrite);
 
-        ds.setVersion(QDataStream::Qt_4_8);
+        ds.setVersion(QDataStream::Qt_4_0);
 
         qDebug("Saving project with version %d", m_version);
 
@@ -128,9 +128,10 @@ QString Project::dataStreamErrorToString(int status)
         case QDataStream::ReadCorruptData:
             return QObject::tr("The data stream has read corrupt data");
 
+#if QT_VERSION >= QT_VERSION_CHECK(4,8,0)
         case QDataStream::WriteFailed:
             return QObject::tr("The data stream cannot write to the underlying device");
-
+#endif
         default:
             return QObject::tr("Unknown error");
 
