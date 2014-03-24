@@ -82,12 +82,12 @@
         <translation>Поток данных обнаружил испорченные данные</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="132"/>
+        <location filename="../project.cpp" line="133"/>
         <source>The data stream cannot write to the underlying device</source>
         <translation>Поток данных не может записать на устройство</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="135"/>
+        <location filename="../project.cpp" line="136"/>
         <source>Unknown error</source>
         <translation>Неизвестная ошибка</translation>
     </message>

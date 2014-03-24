@@ -6,7 +6,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT *= widgets
 
 NVER1=0
 NVER2=5
-NVER3=0
+NVER3=1
 
 include(QssEditor-common.pri)
 
