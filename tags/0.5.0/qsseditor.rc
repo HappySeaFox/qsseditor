@@ -1,0 +1,42 @@
+#include <winuser.h>
+#include <winver.h>
+#include <winnt.h>
+
+#define stringify(v1) #v1
+#define quote(v1) stringify(v1)
+
+#define NVER NVER1.NVER2.NVER3
+
+STRINGTABLE LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+BEGIN
+        1 "QSS Editor"quote(TARGET)"\0"
+END
+
+IDI_ICON1 ICON DISCARDABLE "images/qsseditor.ico"
+
+1 VERSIONINFO
+        FILEVERSION    NVER1, NVER2, NVER3, 0
+        PRODUCTVERSION NVER1, NVER2, NVER3, 0
+        FILEOS         VOS_UNKNOWN
+        FILETYPE       VFT_APP
+BEGIN
+        BLOCK "StringFileInfo"
+        BEGIN
+          BLOCK "040904e4"
+          BEGIN
+          VALUE "Comments",           quote(TARGET) " helps you to create QSS styles for Qt applications."
+          VALUE "CompanyName",        "Dmitry Baryshev"
+          VALUE "FileDescription",    "QSS Editor"
+          VALUE "FileVersion",        quote(NVER)
+          VALUE "InternalName",       quote(TARGET)
+          VALUE "LegalCopyright",     "(C) 2014 Dmitry Baryshev"
+          VALUE "ProductName",        "QSS Editor"
+          VALUE "ProductVersion",     quote(NVER)
+          VALUE "Builder",            "Dmitry Baryshev"
+          END
+        END
+        BLOCK "VarFileInfo"
+        BEGIN
+            VALUE "Translation", 0x409, 1200
+        END
+END
