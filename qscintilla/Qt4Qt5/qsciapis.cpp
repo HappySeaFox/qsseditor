@@ -47,8 +47,9 @@ const unsigned char PreparedDataFormatVersion = 0;
 
 
 // This class contains prepared API information.
-struct QsciAPIsPrepared
+class QsciAPIsPrepared
 {
+public:
     // The word dictionary is a map of individual words and a list of positions
     // each occurs in the sorted list of APIs.  A position is a tuple of the
     // index into the list of APIs and the index into the particular API.
@@ -733,7 +734,7 @@ QStringList QsciAPIs::callTips(const QStringList &context, int commas,
 
                 // Check the word is the function name and not part of any
                 // context.
-                if (wi.second != awords.count() - 1)
+                if (wi.second != uint(awords.count() - 1))
                     continue;
 
                 const QString &api = prep->raw_apis[wi.first];
