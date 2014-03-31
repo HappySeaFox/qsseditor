@@ -50,7 +50,7 @@ bool Project::setFilePath(const QString &filePath)
 
     if(rx.indexIn(qss) == 0)
     {
-        QByteArray ba = QByteArray::fromBase64(rx.cap(1).toAscii());
+        QByteArray ba = QByteArray::fromBase64(rx.cap(1).toLatin1());
         QDataStream ds(&ba, QIODevice::ReadOnly);
 
         ds.setVersion(QDataStream::Qt_4_0);
@@ -104,10 +104,10 @@ bool Project::saveAs(const QString &filePath)
             return false;
         }
 
-        ba = "/* QssEditor: " + ba.toBase64() + " */\n" + m_qss.toAscii();
+        ba = "/* QssEditor: " + ba.toBase64() + " */\n" + m_qss.toLatin1();
     }
     else
-        ba = m_qss.toAscii();
+        ba = m_qss.toLatin1();
 
     if(file.write(ba) != ba.length())
     {
