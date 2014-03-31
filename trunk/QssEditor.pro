@@ -2,11 +2,12 @@ TARGET = QssEditor
 TEMPLATE = app
 QT += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT *= widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT *= widgets printsupport
+mac: greaterThan(QT_MAJOR_VERSION, 4): QT *= macextras
 
 NVER1=0
 NVER2=5
-NVER3=1
+NVER3=2
 
 include(QssEditor-common.pri)
 
@@ -37,16 +38,16 @@ RESOURCES += qsseditor.qrc
 
 RC_FILE = qsseditor.rc
 
-unix {
+unix:!mac {
     LIBS += -lqscintilla2
 }
 
 # QScintilla files
 DEFINES += SCINTILLA_QT SCI_LEXER
 
-win32 {
-    INCLUDEPATH += qscintilla qscintilla/include qscintilla/lexlib qscintilla/Qt4Qt5 qscintilla/src
-    DEPENDPATH += qscintilla qscintilla/include qscintilla/lexlib qscintilla/Qt4Qt5 qscintilla/src
+win32 || mac {
+    INCLUDEPATH += $$_PRO_FILE_PWD_/qscintilla $$_PRO_FILE_PWD_/qscintilla/include $$_PRO_FILE_PWD_/qscintilla/lexlib $$_PRO_FILE_PWD_/qscintilla/Qt4Qt5 $$_PRO_FILE_PWD_/qscintilla/src
+    DEPENDPATH += $$_PRO_FILE_PWD_/qscintilla $$_PRO_FILE_PWD_/qscintilla/include $$_PRO_FILE_PWD_/qscintilla/lexlib $$_PRO_FILE_PWD_/qscintilla/Qt4Qt5 $$_PRO_FILE_PWD_/qscintilla/src
 
     HEADERS += \
             qscintilla/Qt4Qt5/Qsci/qsciglobal.h \
