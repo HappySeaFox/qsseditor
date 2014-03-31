@@ -9,7 +9,7 @@ NVER1=0
 NVER2=5
 NVER3=2
 
-include(QssEditor-common.pri)
+include($$_PRO_FILE_PWD_/QssEditor-common.pri)
 
 SOURCES += main.cpp \
         qsseditor.cpp \
