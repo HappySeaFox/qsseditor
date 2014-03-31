@@ -1,9 +1,9 @@
 // This module implements the QsciCommandSet class.
 //
 // Copyright (c) 2014 Riverbank Computing Limited <info@riverbankcomputing.com>
-// 
+//
 // This file is part of QScintilla.
-// 
+//
 // This file may be used under the terms of the GNU General Public
 // License versions 2.0 or 3.0 as published by the Free Software
 // Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
@@ -15,10 +15,10 @@
 // certain additional rights. These rights are described in the Riverbank
 // GPL Exception version 1.1, which can be found in the file
 // GPL_EXCEPTION.txt in this package.
-// 
+//
 // If you are unsure which license is appropriate for your use, please
 // contact the sales department at sales@riverbankcomputing.com.
-// 
+//
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -871,7 +871,7 @@ QsciCommandSet::QsciCommandSet(QsciScintilla *qs) : qsci(qs)
                 k + (QsciScintillaBase::SCMOD_CTRL << 16),
                 QsciScintillaBase::SCI_NULL);
 
-    for (int i = 0; i < sizeof (cmd_table) / sizeof (cmd_table[0]); ++i)
+    for (size_t i = 0; i < sizeof (cmd_table) / sizeof (cmd_table[0]); ++i)
         cmds.append(
                 new QsciCommand(qsci, cmd_table[i].cmd, cmd_table[i].key,
                         cmd_table[i].altkey, cmd_table[i].desc));
