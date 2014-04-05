@@ -1,9 +1,9 @@
 // This module implements the QsciLexerCSS class.
 //
 // Copyright (c) 2014 Riverbank Computing Limited <info@riverbankcomputing.com>
-// 
+//
 // This file is part of QScintilla.
-// 
+//
 // This file may be used under the terms of the GNU General Public
 // License versions 2.0 or 3.0 as published by the Free Software
 // Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
@@ -15,10 +15,10 @@
 // certain additional rights. These rights are described in the Riverbank
 // GPL Exception version 1.1, which can be found in the file
 // GPL_EXCEPTION.txt in this package.
-// 
+//
 // If you are unsure which license is appropriate for your use, please
 // contact the sales department at sales@riverbankcomputing.com.
-// 
+//
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -234,73 +234,73 @@ QString QsciLexerCSS::description(int style) const
     switch (style)
     {
     case Default:
-        return tr("Default");
+        return "Default";
 
     case Tag:
-        return tr("Tag");
+        return "Tag";
 
     case ClassSelector:
-        return tr("Class selector");
+        return "Class selector";
 
     case PseudoClass:
-        return tr("Pseudo-class");
+        return "Pseudo-class";
 
     case UnknownPseudoClass:
-        return tr("Unknown pseudo-class");
+        return "Unknown pseudo-class";
 
     case Operator:
-        return tr("Operator");
+        return "Operator";
 
     case CSS1Property:
-        return tr("CSS1 property");
+        return "CSS1 property";
 
     case UnknownProperty:
-        return tr("Unknown property");
+        return "Unknown property";
 
     case Value:
-        return tr("Value");
+        return "Value";
 
     case IDSelector:
-        return tr("ID selector");
+        return "ID selector";
 
     case Important:
-        return tr("Important");
+        return "Important";
 
     case AtRule:
-        return tr("@-rule");
+        return "@-rule";
 
     case DoubleQuotedString:
-        return tr("Double-quoted string");
+        return "Double-quoted string";
 
     case SingleQuotedString:
-        return tr("Single-quoted string");
+        return "Single-quoted string";
 
     case CSS2Property:
-        return tr("CSS2 property");
+        return "CSS2 property";
 
     case Attribute:
-        return tr("Attribute");
+        return "Attribute";
 
     case CSS3Property:
-        return tr("CSS3 property");
+        return "CSS3 property";
 
     case PseudoElement:
-        return tr("Pseudo-element");
+        return "Pseudo-element";
 
     case ExtendedCSSProperty:
-        return tr("Extended CSS property");
+        return "Extended CSS property";
 
     case ExtendedPseudoClass:
-        return tr("Extended pseudo-class");
+        return "Extended pseudo-class";
 
     case ExtendedPseudoElement:
-        return tr("Extended pseudo-element");
+        return "Extended pseudo-element";
 
     case MediaRule:
-        return tr("Media rule");
+        return "Media rule";
 
     case Variable:
-        return tr("Variable");
+        return "Variable";
     }
 
     return QString();

@@ -4199,39 +4199,39 @@ QMenu *QsciScintilla::createStandardContextMenu()
 
     if (!read_only)
     {
-        action = menu->addAction(tr("&Undo"), this, SLOT(undo()));
+        action = menu->addAction("&Undo", this, SLOT(undo()));
         set_shortcut(action, QsciCommand::Undo);
         action->setEnabled(isUndoAvailable());
 
-        action = menu->addAction(tr("&Redo"), this, SLOT(redo()));
+        action = menu->addAction("&Redo", this, SLOT(redo()));
         set_shortcut(action, QsciCommand::Redo);
         action->setEnabled(isRedoAvailable());
 
         menu->addSeparator();
 
-        action = menu->addAction(tr("Cu&t"), this, SLOT(cut()));
+        action = menu->addAction("Cu&t", this, SLOT(cut()));
         set_shortcut(action, QsciCommand::SelectionCut);
         action->setEnabled(has_selection);
     }
 
-    action = menu->addAction(tr("&Copy"), this, SLOT(copy()));
+    action = menu->addAction("&Copy", this, SLOT(copy()));
     set_shortcut(action, QsciCommand::SelectionCopy);
     action->setEnabled(has_selection);
 
     if (!read_only)
     {
-        action = menu->addAction(tr("&Paste"), this, SLOT(paste()));
+        action = menu->addAction("&Paste", this, SLOT(paste()));
         set_shortcut(action, QsciCommand::Paste);
         action->setEnabled(SendScintilla(SCI_CANPASTE));
 
-        action = menu->addAction(tr("Delete"), this, SLOT(delete_selection()));
+        action = menu->addAction("Delete", this, SLOT(delete_selection()));
         action->setEnabled(has_selection);
     }
 
     if (!menu->isEmpty())
         menu->addSeparator();
 
-    action = menu->addAction(tr("Select All"), this, SLOT(selectAll()));
+    action = menu->addAction("Select All", this, SLOT(selectAll()));
     set_shortcut(action, QsciCommand::SelectAll);
     action->setEnabled(length() != 0);
 
