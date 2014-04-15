@@ -1,3 +1,9 @@
+qsseditor (0.5.4-1) unstable; urgency=low
+
+  * New version for Ubuntu PPA
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Tue, 15 Apr 2014 22:06:30 +0300
+
 qsseditor (0.5.3-1) unstable; urgency=low
 
   * Chinese translation
