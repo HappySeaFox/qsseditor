@@ -1,0 +1,17 @@
+qsseditor (0.5.3-1) unstable; urgency=low
+
+  * Chinese translation
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Tue, 15 Apr 2014 06:02:27 +0300
+
+qsseditor (0.5.0-2) unstable; urgency=low
+
+  * Version fix for PPA
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Tue, 25 Mar 2014 01:27:20 +0300
+
+qsseditor (0.5.0-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Thu, 20 Mar 2014 23:16:12 +0300

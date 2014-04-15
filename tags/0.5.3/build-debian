@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "with-deps" ]; then
+    sudo apt-get --no-install-recommends -y install devscripts         \
+                                                    qt4-dev-tools      \
+                                                    libqt4-dev         \
+                                                    libqscintilla2-dev \
+                                                    build-essential
+fi
+
+cpus="`grep ^processor /proc/cpuinfo | wc -l`"
+
+if [ -z "$cpus" ]; then
+    echo "Cannot determine the number of CPUs, falling back to 1"
+    cpus=1
+else
+    echo "Number of CPUs: $cpus"
+fi
+
+debuild --preserve-envvar=MAKEFLAGS --no-tgz-check -b -uc -us -j$cpus
