@@ -4,6 +4,7 @@ set -e
 
 if [ "$1" = "with-deps" ]; then
     sudo apt-get --no-install-recommends -y install devscripts         \
+                                                    debhelper          \
                                                     qt4-dev-tools      \
                                                     libqt4-dev         \
                                                     libqscintilla2-dev \
