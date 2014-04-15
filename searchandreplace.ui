@@ -73,7 +73,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string extracomment="Th sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;">Replace&amp;&amp;Next</string>
+        <string extracomment="The sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;">Replace&amp;&amp;Next</string>
        </property>
       </widget>
      </item>

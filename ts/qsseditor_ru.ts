@@ -253,7 +253,7 @@
     <message>
         <location filename="../searchandreplace.ui" line="76"/>
         <source>Replace&amp;&amp;Next</source>
-        <extracomment>Th sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;</extracomment>
+        <extracomment>The sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;</extracomment>
         <translation>Заменить&amp;&amp;Далее</translation>
     </message>
     <message>
