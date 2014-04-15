@@ -7,7 +7,7 @@ mac: greaterThan(QT_MAJOR_VERSION, 4): QT *= macextras
 
 NVER1=0
 NVER2=5
-NVER3=3
+NVER3=4
 
 include($$_PRO_FILE_PWD_/QssEditor-common.pri)
 
