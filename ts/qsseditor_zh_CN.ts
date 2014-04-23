@@ -67,27 +67,27 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../project.cpp" line="34"/>
+        <location filename="../project.cpp" line="38"/>
         <source>File name is empty</source>
         <translation>文件名为空</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="126"/>
+        <location filename="../project.cpp" line="130"/>
         <source>The data stream has read past the end of the data</source>
         <translation>数据流已读取到数据末尾</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="129"/>
+        <location filename="../project.cpp" line="133"/>
         <source>The data stream has read corrupt data</source>
         <translation>数据流读取到损坏的数据</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="133"/>
+        <location filename="../project.cpp" line="137"/>
         <source>The data stream cannot write to the underlying device</source>
         <translation>数据流无法写入到该基础设备</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="136"/>
+        <location filename="../project.cpp" line="140"/>
         <source>Unknown error</source>
         <translation>未知错误</translation>
     </message>

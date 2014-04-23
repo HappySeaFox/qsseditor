@@ -51,7 +51,9 @@ Options::Options(QWidget *parent) :
         m_startTranslationIndex = 0;
 
     ui->labelRestart->hide();
+
     adjustSize();
+    resize(width(), height()+10);
 }
 
 Options::~Options()

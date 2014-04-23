@@ -67,27 +67,27 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../project.cpp" line="34"/>
+        <location filename="../project.cpp" line="38"/>
         <source>File name is empty</source>
         <translation>Пустое имя файла</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="126"/>
+        <location filename="../project.cpp" line="130"/>
         <source>The data stream has read past the end of the data</source>
         <translation>Поток данных зашёл за границу чтения</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="129"/>
+        <location filename="../project.cpp" line="133"/>
         <source>The data stream has read corrupt data</source>
         <translation>Поток данных обнаружил испорченные данные</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="133"/>
+        <location filename="../project.cpp" line="137"/>
         <source>The data stream cannot write to the underlying device</source>
         <translation>Поток данных не может записать на устройство</translation>
     </message>
     <message>
-        <location filename="../project.cpp" line="136"/>
+        <location filename="../project.cpp" line="140"/>
         <source>Unknown error</source>
         <translation>Неизвестная ошибка</translation>
     </message>
