@@ -35,6 +35,8 @@ About::About(QWidget *parent) :
 
     ui->labelCopyright->setText(QString("(C) 2014 %1 &lt;<a href=\"mailto:linuxsquirrel.dev@gmail.com\">"
                                         "linuxsquirrel.dev@gmail.com</a>&gt;").arg(tr("Dmitry Baryshev")));
+
+    adjustSize();
 }
 
 About::~About()

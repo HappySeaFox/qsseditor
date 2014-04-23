@@ -229,6 +229,9 @@
                <property name="text">
                 <string notr="true">PushButton</string>
                </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item row="1" column="1">
@@ -866,8 +869,8 @@ p, li { white-space: pre-wrap; }
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>98</width>
-                       <height>28</height>
+                       <width>69</width>
+                       <height>69</height>
                       </rect>
                      </property>
                      <attribute name="label">
@@ -879,8 +882,8 @@ p, li { white-space: pre-wrap; }
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>98</width>
-                       <height>28</height>
+                       <width>100</width>
+                       <height>30</height>
                       </rect>
                      </property>
                      <attribute name="label">

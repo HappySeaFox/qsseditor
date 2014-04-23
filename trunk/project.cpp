@@ -23,6 +23,10 @@
 
 #include "project.h"
 
+Project::Project()
+    : m_version(-1)
+{}
+
 bool Project::setFilePath(const QString &filePath)
 {
     static const QRegExp rx("/\\*\\s+QssEditor:\\s+([a-zA-Z0-9+\\/=]+)\\s+\\*/\\s+");

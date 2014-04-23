@@ -23,6 +23,8 @@
 class Project
 {
 public:
+    Project();
+
     bool setFilePath(const QString &filePath);
 
     bool saveAs(const QString &filePath);

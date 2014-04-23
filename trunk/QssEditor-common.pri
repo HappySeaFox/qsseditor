@@ -3,7 +3,7 @@ isEmpty(TARGET) {
 }
 
 !win32:!unix {
-    error("QSS Editor must be compiled on Windows or Linux")
+    error("QSS Editor must be compiled on Windows or Linux/Mac")
 }
 
 greaterThan(QT_MAJOR_VERSION, 4): QT *= widgets
@@ -18,7 +18,7 @@ DEPENDPATH += .
 #QMAKE_CXXFLAGS += -pedantic -std=c++11
 
 # translation languages
-LANGUAGES=en ru zh_CN
+LANGUAGES=de en ru zh_CN
 
 CONFIG += warn_on
 QMAKE_CXXFLAGS_WARN_ON *= -Wextra

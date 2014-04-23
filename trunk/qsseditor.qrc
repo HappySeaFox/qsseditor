@@ -14,5 +14,6 @@
         <file>images/undo.png</file>
         <file>images/close.png</file>
         <file>images/flags/zh_CN.png</file>
+        <file>images/flags/de.png</file>
     </qresource>
 </RCC>

@@ -22,5 +22,6 @@ override_dh_auto_install:
 	install -D -m 644 icons/qsseditor-16.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/16x16/apps/qsseditor.png
 	install -D -m 644 icons/qsseditor-24.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/24x24/apps/qsseditor.png
 	install -D -m 644 icons/qsseditor-32.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/32x32/apps/qsseditor.png
+	install -D -m 644 icons/qsseditor-48.png $(CURDIR)/debian/qsseditor/usr/share/icons/hicolor/48x48/apps/qsseditor.png
 	install -D -m 644 man/qsseditor.1 $(CURDIR)/debian/qsseditor/usr/share/man/man1/qsseditor.1
 	install -D -m 644 qsseditor.desktop $(CURDIR)/debian/qsseditor/usr/share/applications/qsseditor.desktop

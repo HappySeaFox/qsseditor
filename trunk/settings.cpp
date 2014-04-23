@@ -84,6 +84,8 @@ void Settings::fillTranslations()
     d->translations.insert("en", "English");
 
     // http://www.loc.gov/standards/iso639-2/php/code_list.php
+    d->translations.insert("de",    QString::fromUtf8("Deutsch"));
+    //d->translations.insert("ro",    QString::fromUtf8("Română"));
     d->translations.insert("ru",    QString::fromUtf8("Русский"));
     d->translations.insert("zh_CN", QString::fromUtf8("简体中文"));
 }
