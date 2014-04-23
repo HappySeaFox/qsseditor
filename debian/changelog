@@ -3,7 +3,7 @@ qsseditor (0.5.5-1) unstable; urgency=low
   * German translation
   * Fixed the size of "About" dialog
   * Added 48x48 icon
-  * Preview button can checked and unchecked (to test :checked state)
+  * Preview button can be checked and unchecked (to test :checked state)
 
  -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Thu, 20 Apr 2014 20:35:16 +0300
 
