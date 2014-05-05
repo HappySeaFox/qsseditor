@@ -101,7 +101,7 @@
     <name>QssEditor</name>
     <message>
         <location filename="../qsseditor.ui" line="29"/>
-        <location filename="../qsseditor.cpp" line="401"/>
+        <location filename="../qsseditor.cpp" line="407"/>
         <source>Open style</source>
         <translation>打开样式</translation>
     </message>
@@ -112,7 +112,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="46"/>
-        <location filename="../qsseditor.cpp" line="423"/>
+        <location filename="../qsseditor.cpp" line="429"/>
         <source>Save style as</source>
         <translation>另存样式为</translation>
     </message>
@@ -142,68 +142,68 @@
         <translation>预览样式</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="196"/>
+        <location filename="../qsseditor.cpp" line="202"/>
         <source>Cannot open style:</source>
         <translation>不能打开样式:</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="224"/>
+        <location filename="../qsseditor.cpp" line="230"/>
         <source>Cannot save style:</source>
         <translation>不能保存样式:</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="243"/>
+        <location filename="../qsseditor.cpp" line="249"/>
         <source>No error</source>
         <translation>没有错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="246"/>
+        <location filename="../qsseditor.cpp" line="252"/>
         <source>File access error</source>
         <translation>文件读取错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="249"/>
+        <location filename="../qsseditor.cpp" line="255"/>
         <source>Malformed file</source>
         <translation>文件格式错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="252"/>
+        <location filename="../qsseditor.cpp" line="258"/>
         <source>Unknown error</source>
         <translation>未知错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="259"/>
+        <location filename="../qsseditor.cpp" line="265"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="260"/>
+        <location filename="../qsseditor.cpp" line="266"/>
         <source>This will discard all the unsaved changes</source>
         <translation>这将丢弃所有未保存的更改</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="273"/>
+        <location filename="../qsseditor.cpp" line="279"/>
         <source>Cannot open style. The file doesn&apos;t exist or not readable</source>
         <translation>无法打开样式。该文件不存在或无法读取</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="279"/>
+        <location filename="../qsseditor.cpp" line="285"/>
         <source>Cannot change directory</source>
         <translation>不能更改目录</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="293"/>
+        <location filename="../qsseditor.cpp" line="299"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="369"/>
+        <location filename="../qsseditor.cpp" line="375"/>
         <source>QSS Editor</source>
         <translation>QSS 编辑器</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="401"/>
-        <location filename="../qsseditor.cpp" line="423"/>
+        <location filename="../qsseditor.cpp" line="407"/>
+        <location filename="../qsseditor.cpp" line="429"/>
         <source>Qt Style Sheets (*.qss)</source>
         <translation>Qt 样式表 (*.qss)</translation>
     </message>
