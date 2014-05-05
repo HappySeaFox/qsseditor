@@ -78,7 +78,13 @@ QssEditor::QssEditor(QWidget *parent) :
     ui->toolClose->setShortcut(QKeySequence::Close);
 
     // built-in Qt icon
-    ui->toolAboutQt->setIcon(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"));
+    ui->toolAboutQt->setIcon(QIcon(
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+    ":/qt-project.org/qmessagebox/images/qtlogo-64.png"
+#else
+    ":/trolltech/qmessagebox/images/qtlogo-64.png"
+#endif
+                                 ));
 
     // menu for toolbutton
     QMenu *toolButtonMenu = new QMenu(this);
