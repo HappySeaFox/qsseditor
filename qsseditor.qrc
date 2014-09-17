@@ -15,5 +15,6 @@
         <file>images/close.png</file>
         <file>images/flags/zh_CN.png</file>
         <file>images/flags/de.png</file>
+        <file>images/flags/ro.png</file>
     </qresource>
 </RCC>
