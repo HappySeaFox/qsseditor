@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SearchAndReplace</class>
+ <widget class="QDialog" name="SearchAndReplace">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>370</width>
+    <height>166</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Find and Replace</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Find:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QCheckBox" name="checkReplace">
+     <property name="text">
+      <string>Replace with:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Options</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkCs">
+        <property name="text">
+         <string>Case sensitive</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="checkWhole">
+        <property name="text">
+         <string>Whole words</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="checkRegexp">
+        <property name="text">
+         <string>Regular expression</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="3" rowspan="3">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pushFind">
+       <property name="text">
+        <string>Find</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushReplaceAndNext">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string extracomment="The sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;">Replace&amp;&amp;Next</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushReplaceAll">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Replace All</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushClose">
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Direction</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QRadioButton" name="radioUp">
+          <property name="text">
+           <string>Up</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QRadioButton" name="radioDown">
+          <property name="text">
+           <string>Down</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="QLineEdit" name="lineReplace">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QLineEdit" name="lineFind"/>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineFind</tabstop>
+  <tabstop>checkReplace</tabstop>
+  <tabstop>lineReplace</tabstop>
+  <tabstop>radioUp</tabstop>
+  <tabstop>radioDown</tabstop>
+  <tabstop>checkCs</tabstop>
+  <tabstop>checkWhole</tabstop>
+  <tabstop>checkRegexp</tabstop>
+  <tabstop>pushFind</tabstop>
+  <tabstop>pushReplaceAndNext</tabstop>
+  <tabstop>pushReplaceAll</tabstop>
+  <tabstop>pushClose</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>checkReplace</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineReplace</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>174</x>
+     <y>54</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushClose</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>359</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>438</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushFind</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>find()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>15</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>428</x>
+     <y>21</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkReplace</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushReplaceAndNext</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkReplace</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushReplaceAll</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>31</x>
+     <y>41</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>83</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushReplaceAndNext</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>replaceAndNext()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>303</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushReplaceAll</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>slotReplaceAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>330</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>337</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineFind</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>slotSearchChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>214</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkReplace</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>slotSearchChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>76</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineReplace</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>slotSearchChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>228</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>229</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioUp</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>slotSearchChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>43</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>43</x>
+     <y>213</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkCs</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>slotSearchChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>97</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkWhole</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>slotSearchChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>167</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkRegexp</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SearchAndReplace</receiver>
+   <slot>slotSearchChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>197</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>find()</slot>
+  <slot>replaceAndNext()</slot>
+  <slot>slotReplaceAll()</slot>
+  <slot>slotSearchChanged()</slot>
+ </slots>
+</ui>
