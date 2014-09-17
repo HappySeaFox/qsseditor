@@ -18,7 +18,7 @@ DEPENDPATH += .
 #QMAKE_CXXFLAGS += -pedantic -std=c++11
 
 # translation languages
-LANGUAGES=de en ru zh_CN
+LANGUAGES=de en ro ru zh_CN
 
 CONFIG += warn_on
 QMAKE_CXXFLAGS_WARN_ON *= -Wextra
