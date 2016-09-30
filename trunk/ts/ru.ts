@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zh_CN">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>About</name>
     <message>
-        <location filename="../about.ui" line="68"/>
-        <source>OK</source>
-        <translation>好的</translation>
+        <location filename="../about.ui" line="122"/>
+        <source>QSS Editor is a tool to edit and preview Qt style sheets</source>
+        <extracomment>&quot;THT&quot; is the name of the application. The URL to visit will be added in runtime. Ticker is a short company name, see http://www.investopedia.com/terms/t/tickersymbol.asp . The common practice is to borrow &quot;ticker&quot; from English and incorporate into your language (see http://en.wikipedia.org/wiki/Loanword)</extracomment>
+        <translation>QSS редактор - это утилита для редактирования и предпросмотра таблиц стилей Qt</translation>
     </message>
     <message>
         <location filename="../about.ui" line="103"/>
         <source>QSS Editor is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</source>
         <extracomment>See https://www.gnu.org/licenses/gpl-2.0.txt . &quot;THT&quot; is the name of the application</extracomment>
-        <translation>QSS 编辑器的发布是希望它能对用户有所帮助，但它没有任何担保；也没有适销性或针对特定用途的的默示性担保。</translation>
+        <translation>QSS редактор распространяется в надежде, что он будет полезным, но БЕЗО ВСЯКИХ ГАРАНТИЙ; даже без неявной гарантии ТОВАРНОГО ВИДА или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЁННЫХ ЦЕЛЕЙ.</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="122"/>
-        <source>QSS Editor is a tool to edit and preview Qt style sheets</source>
-        <extracomment>&quot;THT&quot; is the name of the application. The URL to visit will be added in runtime. Ticker is a short company name, see http://www.investopedia.com/terms/t/tickersymbol.asp . The common practice is to borrow &quot;ticker&quot; from English and incorporate into your language (see http://en.wikipedia.org/wiki/Loanword)</extracomment>
-        <translation>QSS 编辑器是一个编辑和预览 Qt 样式表的工具</translation>
+        <location filename="../about.ui" line="68"/>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="37"/>
         <source>Dmitry Baryshev</source>
-        <translation>Dmitry Baryshev</translation>
+        <translation>Барышев Дмитрий</translation>
     </message>
 </context>
 <context>
@@ -31,37 +31,37 @@
     <message>
         <location filename="../options.ui" line="14"/>
         <source>Options</source>
-        <translation>选项</translation>
-    </message>
-    <message>
-        <location filename="../options.ui" line="22"/>
-        <source>Language:</source>
-        <translation>语言:</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../options.ui" line="57"/>
         <source>Open last style at startup</source>
-        <translation>启动时打开最后一个样式</translation>
+        <translation>Открывать последний стиль при запуске</translation>
+    </message>
+    <message>
+        <location filename="../options.ui" line="22"/>
+        <source>Language:</source>
+        <translation>Язык:</translation>
     </message>
     <message>
         <location filename="../options.ui" line="66"/>
         <source>Preview delay:</source>
-        <translation>预览延迟:</translation>
+        <translation>Задержка предпросмотра:</translation>
     </message>
     <message>
         <location filename="../options.ui" line="73"/>
         <source>ms</source>
-        <translation>毫秒</translation>
+        <translation>мсек</translation>
     </message>
     <message>
         <location filename="../options.ui" line="120"/>
         <source>Need restart</source>
-        <translation>需要重新启动程序</translation>
+        <translation>Требуется перезапуск</translation>
     </message>
     <message>
-        <location filename="../options.cpp" line="32"/>
+        <location filename="../options.cpp" line="35"/>
         <source>System</source>
-        <translation>系统</translation>
+        <translation>Системный</translation>
     </message>
 </context>
 <context>
@@ -69,143 +69,143 @@
     <message>
         <location filename="../project.cpp" line="38"/>
         <source>File name is empty</source>
-        <translation>文件名为空</translation>
+        <translation>Пустое имя файла</translation>
     </message>
     <message>
         <location filename="../project.cpp" line="130"/>
         <source>The data stream has read past the end of the data</source>
-        <translation>数据流已读取到数据末尾</translation>
+        <translation>Поток данных зашёл за границу чтения</translation>
     </message>
     <message>
         <location filename="../project.cpp" line="133"/>
         <source>The data stream has read corrupt data</source>
-        <translation>数据流读取到损坏的数据</translation>
+        <translation>Поток данных обнаружил испорченные данные</translation>
     </message>
     <message>
         <location filename="../project.cpp" line="137"/>
         <source>The data stream cannot write to the underlying device</source>
-        <translation>数据流无法写入到该基础设备</translation>
+        <translation>Поток данных не может записать на устройство</translation>
     </message>
     <message>
         <location filename="../project.cpp" line="140"/>
         <source>Unknown error</source>
-        <translation>未知错误</translation>
+        <translation>Неизвестная ошибка</translation>
     </message>
     <message>
         <location filename="../tools.h" line="39"/>
         <source>About QSS Editor</source>
-        <translation>关于 QSS 编辑器</translation>
+        <translation>О Редакторе QSS</translation>
     </message>
 </context>
 <context>
     <name>QssEditor</name>
     <message>
+        <location filename="../qsseditor.cpp" line="375"/>
+        <source>QSS Editor</source>
+        <translation>QSS Редактор</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="119"/>
+        <source>Options</source>
+        <translation>Настройки</translation>
+    </message>
+    <message>
         <location filename="../qsseditor.ui" line="29"/>
         <location filename="../qsseditor.cpp" line="407"/>
         <source>Open style</source>
-        <translation>打开样式</translation>
+        <translation>Открыть стиль</translation>
     </message>
     <message>
         <location filename="../qsseditor.ui" line="39"/>
         <source>Save style</source>
-        <translation>保存样式</translation>
+        <translation>Сохранить стиль</translation>
     </message>
     <message>
         <location filename="../qsseditor.ui" line="46"/>
         <location filename="../qsseditor.cpp" line="429"/>
         <source>Save style as</source>
-        <translation>另存样式为</translation>
+        <translation>Сохранить стиль как</translation>
     </message>
     <message>
         <location filename="../qsseditor.ui" line="72"/>
         <source>Close</source>
-        <translation>关闭</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <location filename="../qsseditor.ui" line="92"/>
         <source>Undo</source>
-        <translation>撤销</translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <location filename="../qsseditor.ui" line="99"/>
         <source>Redo</source>
-        <translation>恢复</translation>
-    </message>
-    <message>
-        <location filename="../qsseditor.ui" line="119"/>
-        <source>Options</source>
-        <translation>选项</translation>
+        <translation>Повторить</translation>
     </message>
     <message>
         <location filename="../qsseditor.ui" line="172"/>
         <source>Preview style</source>
-        <translation>预览样式</translation>
+        <translation>Предпросмотр стиля</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="202"/>
         <source>Cannot open style:</source>
-        <translation>不能打开样式:</translation>
+        <translation>Невозможно открыть стиль:</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="230"/>
         <source>Cannot save style:</source>
-        <translation>不能保存样式:</translation>
+        <translation>Невозможно сохранить стиль:</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="249"/>
         <source>No error</source>
-        <translation>没有错误</translation>
+        <translation>Нет ошибок</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="252"/>
         <source>File access error</source>
-        <translation>文件读取错误</translation>
+        <translation>Ошибка доступа к файлу</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="255"/>
         <source>Malformed file</source>
-        <translation>文件格式错误</translation>
+        <translation>Некорректный формат файла</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="258"/>
         <source>Unknown error</source>
-        <translation>未知错误</translation>
+        <translation>Неизвестная ошибка</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="265"/>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="266"/>
         <source>This will discard all the unsaved changes</source>
-        <translation>这将丢弃所有未保存的更改</translation>
+        <translation>Все несохранённые данные будут утеряны</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="279"/>
         <source>Cannot open style. The file doesn&apos;t exist or not readable</source>
-        <translation>无法打开样式。该文件不存在或无法读取</translation>
+        <translation>Невозможно открыть стиль. Файл не существует или не может быть прочтён</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="285"/>
         <source>Cannot change directory</source>
-        <translation>不能更改目录</translation>
+        <translation>Невозможно сменить каталог</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="299"/>
         <source>Error</source>
-        <translation>错误</translation>
-    </message>
-    <message>
-        <location filename="../qsseditor.cpp" line="375"/>
-        <source>QSS Editor</source>
-        <translation>QSS 编辑器</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="407"/>
         <location filename="../qsseditor.cpp" line="429"/>
         <source>Qt Style Sheets (*.qss)</source>
-        <translation>Qt 样式表 (*.qss)</translation>
+        <translation>Таблицы стилей Qt (*.qss)</translation>
     </message>
 </context>
 <context>
@@ -213,73 +213,73 @@
     <message>
         <location filename="../searchandreplace.ui" line="14"/>
         <source>Find and Replace</source>
-        <translation>查找和替换</translation>
+        <translation>Поиск и Замена</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="20"/>
         <source>Find:</source>
-        <translation>查找内容:</translation>
+        <translation>Найти:</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="27"/>
         <source>Replace with:</source>
-        <translation>替换为:</translation>
+        <translation>Заменить на:</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="34"/>
         <source>Options</source>
-        <translation>选项</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="40"/>
         <source>Case sensitive</source>
-        <translation>区分大小写</translation>
+        <translation>С учётом регистра</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="47"/>
         <source>Whole words</source>
-        <translation>全字匹配</translation>
+        <translation>Слова целиком</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="54"/>
         <source>Regular expression</source>
-        <translation>正则表达式</translation>
+        <translation>Регулярное выражение</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="66"/>
         <source>Find</source>
-        <translation>查找</translation>
+        <translation>Найти</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="76"/>
         <source>Replace&amp;&amp;Next</source>
         <extracomment>The sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;</extracomment>
-        <translation>替换并查找下一个</translation>
+        <translation>Заменить&amp;&amp;Далее</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="86"/>
         <source>Replace All</source>
-        <translation>全部替换</translation>
+        <translation>Заменить всё</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="93"/>
         <source>Close</source>
-        <translation>关闭</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="117"/>
         <source>Direction</source>
-        <translation>方向</translation>
+        <translation>Направление</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="123"/>
         <source>Up</source>
-        <translation>向上</translation>
+        <translation>Вверх</translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="130"/>
         <source>Down</source>
-        <translation>向下</translation>
+        <translation>Вниз</translation>
     </message>
 </context>
 </TS>

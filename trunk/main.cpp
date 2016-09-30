@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     ts = ts.isEmpty() ? locale : (ts + ".qm");
 
     QTranslator translator_qsseditor;
-    qDebug("Loading QSS Editor translation: %s", translator_qsseditor.load("qsseditor_" + ts, translationsDir) ? "ok" : "failed");
+    qDebug("Loading QSS Editor translation: %s", translator_qsseditor.load(ts, translationsDir) ? "ok" : "failed");
 
     QTranslator translator_qt;
     qDebug("Loading Qt translation: %s", translator_qt.load("qt_" + ts, qtTranslationsDir) ? "ok" : "failed");

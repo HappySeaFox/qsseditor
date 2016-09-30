@@ -6,8 +6,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT *= widgets printsupport
 mac: greaterThan(QT_MAJOR_VERSION, 4): QT *= macextras
 
 NVER1=0
-NVER2=5
-NVER3=6
+NVER2=6
+NVER3=0
 
 include($$_PRO_FILE_PWD_/QssEditor-common.pri)
 
@@ -194,7 +194,7 @@ DEFINES += DOWNLOADROOT=$$sprintf("\"\\\"%1\\\"\"", $$DOWNLOADROOT)
 greaterThan(QT_MAJOR_VERSION, 4) {
     IMAGEPLUGINS=qico.dll qjpeg.dll
     QTLIBS=Qt5Core.dll Qt5Gui.dll Qt5Widgets.dll
-    QTPLATFORMS=qminimal.dll qoffscreen.dll qwindows.dll
+    QTPLATFORMS=qwindows.dll
 } else {
     IMAGEPLUGINS=qico4.dll qjpeg4.dll
     QTLIBS=QtCore4.dll QtGui4.dll
@@ -228,8 +228,8 @@ QMAKE_EXTRA_TARGETS += tag
 
     QMAKE_EXTRA_TARGETS += distsrc
 
-    # standalone binary
-    T="$${OUT_PWD}/qsseditor-standalone-$$VERSION"
+    # portable binary
+    T="$${OUT_PWD}/qsseditor-portable-$$VERSION"
 
     distbin.commands += $$mle(if exist \"$$T\" rd /S /Q \"$$T\")
     distbin.commands += $$mle(mkdir \"$$T\")
@@ -256,9 +256,10 @@ QMAKE_EXTRA_TARGETS += tag
         distbin.commands += $$mle(copy /y \"$$[QT_INSTALL_PLUGINS]\\imageformats\\$$ip\" \"$$T/imageformats\")
     }
 
-    for(qm, QMFILES) {
-        distbin.commands += $$mle(copy /y \"$$qm\" \"$$T/translations\")
-    }
+    # translations
+    distbin.commands += $$mle(copy /y \"$$TRANSLATIONS_DIR\\*.qm\" \"$$T/translations\")
+    distbin.commands += $$mle(copy /y \"$$TRANSLATIONS_DIR\\*.png\" \"$$T/translations\")
+    distbin.commands += $$mle(copy /y \"$$TRANSLATIONS_DIR\\translations.conf\" \"$$T/translations\")
 
     for(l, LANGUAGES) {
         l=$$[QT_INSTALL_TRANSLATIONS]\\qt_$${l}.qm
@@ -272,8 +273,8 @@ QMAKE_EXTRA_TARGETS += tag
     }
 
     # compress
-    distbin.commands += $$mle(del /F /Q qsseditor-standalone-$${VERSION}$${HOST64}.zip)
-    distbin.commands += $$mle($$ZIP a -r -tzip -mx=9 qsseditor-standalone-$${VERSION}$${HOST64}.zip \"$$T\")
+    distbin.commands += $$mle(del /F /Q qsseditor-portable-$${VERSION}$${HOST64}.zip)
+    distbin.commands += $$mle($$ZIP a -r -tzip -mx=9 qsseditor-portable-$${VERSION}$${HOST64}.zip \"$$T\")
     distbin.commands += $$mle(rd /S /Q \"$$T\")
 
     QMAKE_EXTRA_TARGETS += distbin
@@ -354,9 +355,9 @@ exists($$INNO) {
         iss.commands += $$mle(echo Source: \"$${_PRO_FILE_PWD_}\\$$lc\"; DestDir: \"{app}\"; Flags: ignoreversion >> $$ISS)
     }
 
-    for(qm, QMFILES) {
-        iss.commands += $$mle(echo Source: \"$$qm\"; DestDir: \"{app}/translations\"; Flags: ignoreversion >> $$ISS)
-    }
+    iss.commands += $$mle(echo Source: \"$$TRANSLATIONS_DIR/*.qm\"; DestDir: \"{app}/translations\"; Flags: ignoreversion >> $$ISS)
+    iss.commands += $$mle(echo Source: \"$$TRANSLATIONS_DIR/*.png\"; DestDir: \"{app}/translations\"; Flags: ignoreversion >> $$ISS)
+    iss.commands += $$mle(echo Source: \"$$TRANSLATIONS_DIR/translations.conf\"; DestDir: \"{app}/translations\"; Flags: ignoreversion >> $$ISS)
 
     for(l, LANGUAGES) {
         l=$$[QT_INSTALL_TRANSLATIONS]\\qt_$${l}.qm
