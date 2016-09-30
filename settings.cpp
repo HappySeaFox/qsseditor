@@ -91,7 +91,7 @@ void Settings::fillTranslations()
 {
     QFile translations(
             #ifdef Q_OS_UNIX
-                QString("/usr/share/" TARGET_STRING)
+                QString("/usr/share/" NVER_STRING)
             #else
                 QCoreApplication::applicationDirPath()
             #endif

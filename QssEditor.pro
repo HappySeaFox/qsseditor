@@ -39,7 +39,7 @@ RESOURCES += qsseditor.qrc
 RC_FILE = qsseditor.rc
 
 unix:!mac {
-    LIBS += -lqscintilla2
+    CONFIG += qscintilla2
 }
 
 # QScintilla files
