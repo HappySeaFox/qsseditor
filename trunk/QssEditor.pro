@@ -42,10 +42,13 @@ unix:!mac {
     CONFIG += qscintilla2
 }
 
-# QScintilla files
-DEFINES += SCINTILLA_QT SCI_LEXER
+QSCINTILLA_INTERNAL=$$(QSCINTILLA_INTERNAL)
+equals(QSCINTILLA_INTERNAL, 1)|win32|mac {
+    message("Using internal QScintilla")
 
-win32|mac {
+    # QScintilla files
+    DEFINES += SCINTILLA_QT SCI_LEXER
+
     INCLUDEPATH += $$_PRO_FILE_PWD_/qscintilla $$_PRO_FILE_PWD_/qscintilla/include $$_PRO_FILE_PWD_/qscintilla/lexlib $$_PRO_FILE_PWD_/qscintilla/Qt4Qt5 $$_PRO_FILE_PWD_/qscintilla/src
     DEPENDPATH += $$_PRO_FILE_PWD_/qscintilla $$_PRO_FILE_PWD_/qscintilla/include $$_PRO_FILE_PWD_/qscintilla/lexlib $$_PRO_FILE_PWD_/qscintilla/Qt4Qt5 $$_PRO_FILE_PWD_/qscintilla/src
 
