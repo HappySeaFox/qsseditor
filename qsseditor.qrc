@@ -8,13 +8,8 @@
         <file>images/save.png</file>
         <file>images/saveas.png</file>
         <file>images/qsseditor.ico</file>
-        <file>images/flags/ru.png</file>
-        <file>images/flags/en.png</file>
         <file>images/redo.png</file>
         <file>images/undo.png</file>
         <file>images/close.png</file>
-        <file>images/flags/zh_CN.png</file>
-        <file>images/flags/de.png</file>
-        <file>images/flags/ro.png</file>
     </qresource>
 </RCC>

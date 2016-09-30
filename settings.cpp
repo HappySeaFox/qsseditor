@@ -16,6 +16,9 @@
  */
 
 #include <QCoreApplication>
+#include <QTextStream>
+#include <QFile>
+#include <QDir>
 
 #include "settings.h"
 
@@ -24,8 +27,13 @@
 class SettingsPrivate
 {
 public:
+    SettingsPrivate()
+        : translationsFilled(false)
+    {}
+
     QSettings *settings;
     QMap<QString, QString> translations;
+    bool translationsFilled;
     QHash<QString, QVariant> defaultValues;
 };
 
@@ -81,13 +89,48 @@ Settings* Settings::instance()
 
 void Settings::fillTranslations()
 {
-    d->translations.insert("en", "English");
+    QFile translations(
+            #ifdef Q_OS_UNIX
+                QString("/usr/share/" TARGET_STRING)
+            #else
+                QCoreApplication::applicationDirPath()
+            #endif
+                + QDir::separator()
+                + "translations"
+                + QDir::separator()
+                + "translations.conf");
 
-    // http://www.loc.gov/standards/iso639-2/php/code_list.php
-    d->translations.insert("de",    QString::fromUtf8("Deutsch"));
-    d->translations.insert("ro",    QString::fromUtf8("Română"));
-    d->translations.insert("ru",    QString::fromUtf8("Русский"));
-    d->translations.insert("zh_CN", QString::fromUtf8("简体中文"));
+    d->translationsFilled = true;
+
+    if(!translations.open(QFile::ReadOnly))
+    {
+        qWarning("Cannot open translations' configuration: %s", qPrintable(translations.errorString()));
+        return;
+    }
+
+    QTextStream in(&translations);
+
+    in.setCodec("UTF-8");
+
+    while(!in.atEnd())
+    {
+        QString line = in.readLine().trimmed();
+
+        if(line.startsWith("#"))
+            continue;
+
+        int index = line.indexOf(QChar('='));
+
+        if(index < 0)
+            continue;
+
+        QString code = line.mid(index+1);
+
+        if(code.isEmpty())
+            continue;
+
+        d->translations.insert(code, line.left(index));
+    }
 }
 
 QHash<QString, QVariant>& Settings::defaultValues()

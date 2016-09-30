@@ -17,8 +17,13 @@ DEPENDPATH += .
 # for testing
 #QMAKE_CXXFLAGS += -pedantic -std=c++11
 
-# translation languages
-LANGUAGES=de en ro ru zh_CN
+win32 {
+    LANGUAGES=$$system(dir /B \"$${_PRO_FILE_PWD_}\\ts\\*.ts\")
+} else {
+    LANGUAGES=$$system(find \"$${_PRO_FILE_PWD_}/ts/\" -name \"*.ts\" -printf \"%f \")
+}
+
+LANGUAGES=$$replace(LANGUAGES, .ts, )
 
 CONFIG += warn_on
 QMAKE_CXXFLAGS_WARN_ON *= -Wextra
@@ -46,14 +51,6 @@ win32 {
     SEP="\\"
 } unix {
     SEP="/"
-}
-
-# generate TRANSLATIONS
-defineReplace(gentranslations) {
-    for(ts, LANGUAGES) {
-        TRANSLATIONS += $${_PRO_FILE_PWD_}$${SEP}ts$${SEP}$${1}_$${ts}.ts
-    }
-    return ( $$TRANSLATIONS )
 }
 
 # search an executable in PATH
@@ -90,45 +87,49 @@ win32:isEmpty(GCC) {
     error("MinGW is not found in PATH")
 }
 
-TS_PREFIX=$$lower($$TARGET)
-TS_PREFIX=$$replace(TS_PREFIX, -, _)
+for(ts, LANGUAGES) {
+    win32 {
+        LRELEASE="$$[QT_INSTALL_BINS]\\lrelease.exe"
+        LUPDATE="$$[QT_INSTALL_BINS]\\lupdate.exe"
+        MTRANSLATIONS += $${_PRO_FILE_PWD_}\\ts\\$${ts}.ts
+    } else {
+        LRELEASE=$$system(which lrelease)
+        LUPDATE=$$system(which lupdate)
+        MTRANSLATIONS += $${_PRO_FILE_PWD_}/ts/$${ts}.ts
+    }
+}
 
-TRANSLATIONS += $$gentranslations($$TS_PREFIX)
-
-message(Translations for $${TS_PREFIX}: $$TRANSLATIONS)
+message(Translations: $$MTRANSLATIONS)
 
 # copy translations
-!isEmpty(TRANSLATIONS) {
-    QMAKE_POST_LINK += $$mle(lupdate -no-obsolete $$_PRO_FILE_ -ts $$TRANSLATIONS)
+!isEmpty(LUPDATE) {
+    message("lupdate is found, will update the translations")
+    QMAKE_POST_LINK += $$mle($$LUPDATE -no-obsolete $$_PRO_FILE_ -ts $$MTRANSLATIONS)
 }
 
 # lrelease for each ts
-for(ts, TRANSLATIONS) {
-    QM=$$replace(ts, \\.ts$, .qm)
-    QM=$$replace(QM, /, $${SEP})
-    QMAKE_POST_LINK += $$mle(lrelease \"$$ts\" -qm \"$$QM\")
-}
+!isEmpty(LRELEASE) {
+    win32 {
+        TRANSLATIONS_DIR="$${OUT_PWD}/$(DESTDIR_TARGET)/../translations"
+        QMAKE_POST_LINK += $$mle(if not exist \"$$TRANSLATIONS_DIR\" mkdir \"$$TRANSLATIONS_DIR\")
 
-win32 {
-    TRANSLATIONS_DIR="$${OUT_PWD}/$(DESTDIR_TARGET)/../translations"
-} unix {
-    TRANSLATIONS_DIR="$${OUT_PWD}/translations"
-}
+        for(ts, LANGUAGES) {
+            QMAKE_POST_LINK += $$mle($$LRELEASE \"$${_PRO_FILE_PWD_}\\ts\\$${ts}.ts\" -qm \"$$TRANSLATIONS_DIR\\$${ts}.qm\")
+            QMAKE_POST_LINK += $$mle(copy /Y \"$${_PRO_FILE_PWD_}\\ts\\$${ts}.png\" \"$$TRANSLATIONS_DIR\\$${ts}.png\")
+        }
 
-win32 {
-    QMAKE_POST_LINK += $$mle(if not exist \"$$TRANSLATIONS_DIR\" mkdir \"$$TRANSLATIONS_DIR\")
-} unix {
-    QMAKE_POST_LINK += $$mle(test -d \"$$TRANSLATIONS_DIR\" || mkdir -p \"$$TRANSLATIONS_DIR\")
-}
+        QMAKE_POST_LINK += $$mle(copy /Y \"$${_PRO_FILE_PWD_}\\ts\\translations.conf\" \"$$TRANSLATIONS_DIR\\\")
+    } else {
+        TRANSLATIONS_DIR="$${OUT_PWD}/translations"
+        QMAKE_POST_LINK += $$mle(mkdir -p \"$$TRANSLATIONS_DIR\")
 
-QMFILES=
+        for(ts, LANGUAGES) {
+            QMAKE_POST_LINK += $$mle($$LRELEASE \"$${_PRO_FILE_PWD_}/ts/$${ts}.ts\" -qm \"$$TRANSLATIONS_DIR/$${ts}.qm\")
+            QMAKE_POST_LINK += $$mle(cp -f \"$${_PRO_FILE_PWD_}/ts/$${ts}.png\" \"$$TRANSLATIONS_DIR/$${ts}.png\")
+        }
 
-# copy .qm files
-for(ts, TRANSLATIONS) {
-    ts=$$replace(ts, \\.ts$, .qm)
-    ts=$$replace(ts, /, $${SEP})
-    QMFILES += $$ts
-    QMAKE_POST_LINK += $$mle($(COPY) \"$$ts\" \"$$TRANSLATIONS_DIR\")
+        QMAKE_POST_LINK += $$mle(cp -f \"$${_PRO_FILE_PWD_}/ts/translations.conf\" \"$$TRANSLATIONS_DIR/\")
+    }
 }
 
 # check for upx
@@ -163,7 +164,7 @@ win32 {
 
     # sign
     !isEmpty(SIGNTOOL):exists($$CERT) {
-        QMAKE_POST_LINK += $$mle($$SIGNTOOL sign /d \"Trader\'s Home Task\" /du \"$$HTTPROOT\" /f \"$$CERT\" /tr \"$$RFC3161_SERVER\" /v \"$${OUT_PWD}/$(DESTDIR_TARGET)\")
+        QMAKE_POST_LINK += $$mle($$SIGNTOOL sign /d \"QSS Editor\" /du \"$$HTTPROOT\" /f \"$$CERT\" /tr \"$$RFC3161_SERVER\" /v \"$${OUT_PWD}/$(DESTDIR_TARGET)\")
     }
 }
 

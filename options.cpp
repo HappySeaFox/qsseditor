@@ -15,6 +15,9 @@
  * along with QssEditor. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <QCoreApplication>
+#include <QDir>
+
 #include "settings.h"
 #include "options.h"
 #include "ui_options.h"
@@ -36,9 +39,19 @@ Options::Options(QWidget *parent) :
     QString ts = SETTINGS_GET_STRING(SETTING_TRANSLATION);
     QMap<QString, QString>::const_iterator itEnd = tsmap.end();
 
+    const QString basePath =
+            #ifdef Q_OS_UNIX
+                QString("/usr/share/" TARGET_STRING)
+            #else
+                QCoreApplication::applicationDirPath()
+            #endif
+                + QDir::separator()
+                + "translations"
+                + QDir::separator();
+
     for(QMap<QString, QString>::const_iterator it = tsmap.begin();it != itEnd;++it)
     {
-        ui->comboLang->addItem(QIcon(":/images/flags/" + it.key() + ".png"), it.value(), it.key());
+        ui->comboLang->addItem(QIcon(basePath + it.key() + ".png"), it.value(), it.key());
 
         if(it.key() == ts)
         {
