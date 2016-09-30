@@ -14,13 +14,13 @@
 
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
-Name: qsseditor
+Name: QssEditor
 Summary: QT stylesheets editor
 License: GPL-3.0
 Group: Applications/Editors
 URL: http://sourceforge.net/projects/qsseditor
 Version: 0.6.0
-Release: 1
+Release: 2
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 
@@ -43,7 +43,7 @@ http://qt-project.org/doc/qt-4.8/stylesheet.html
 qmake-qt5 %{name}.pro
 make
 %install
-install -D -m 755 qsseditor $RPM_BUILD_ROOT/usr/bin/qsseditor
+install -D -m 755 %{name} $RPM_BUILD_ROOT/usr/bin/qsseditor
 install -d -m 755 $RPM_BUILD_ROOT/usr/share/qsseditor/translations
 find ts -name '*.ts' -type f -exec lrelease-qt5 '{}' ';'
 find ts -name '*.qm' -type f -exec install -m 644 '{}' $RPM_BUILD_ROOT/usr/share/qsseditor/translations/ ';'
@@ -78,5 +78,7 @@ install -D -m 644 qsseditor.desktop $RPM_BUILD_ROOT/usr/share/applications/qssed
 /usr/share/man/man1/qsseditor.1.gz
 /usr/share/applications/qsseditor.desktop
 %changelog
+* Fri Sep 30 2016 Dmitry Baryshev <linuxsquirrel.dev@gmail.com> 0.6.0-2
+- Fix running qmake
 * Fri Sep 30 2016 Dmitry Baryshev <linuxsquirrel.dev@gmail.com> 0.6.0-1
 - Initial RPM release
