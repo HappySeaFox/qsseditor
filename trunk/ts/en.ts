@@ -101,7 +101,7 @@
     <name>QssEditor</name>
     <message>
         <location filename="../qsseditor.ui" line="29"/>
-        <location filename="../qsseditor.cpp" line="407"/>
+        <location filename="../qsseditor.cpp" line="410"/>
         <source>Open style</source>
         <translation type="unfinished"></translation>
     </message>
@@ -112,7 +112,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="46"/>
-        <location filename="../qsseditor.cpp" line="429"/>
+        <location filename="../qsseditor.cpp" line="432"/>
         <source>Save style as</source>
         <translation type="unfinished"></translation>
     </message>
@@ -142,68 +142,68 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="202"/>
+        <location filename="../qsseditor.cpp" line="205"/>
         <source>Cannot open style:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="230"/>
+        <location filename="../qsseditor.cpp" line="233"/>
         <source>Cannot save style:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="249"/>
+        <location filename="../qsseditor.cpp" line="252"/>
         <source>No error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="252"/>
+        <location filename="../qsseditor.cpp" line="255"/>
         <source>File access error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="255"/>
+        <location filename="../qsseditor.cpp" line="258"/>
         <source>Malformed file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="258"/>
+        <location filename="../qsseditor.cpp" line="261"/>
         <source>Unknown error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="265"/>
+        <location filename="../qsseditor.cpp" line="268"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="266"/>
+        <location filename="../qsseditor.cpp" line="269"/>
         <source>This will discard all the unsaved changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="279"/>
+        <location filename="../qsseditor.cpp" line="282"/>
         <source>Cannot open style. The file doesn&apos;t exist or not readable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="285"/>
+        <location filename="../qsseditor.cpp" line="288"/>
         <source>Cannot change directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="299"/>
+        <location filename="../qsseditor.cpp" line="302"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="375"/>
+        <location filename="../qsseditor.cpp" line="378"/>
         <source>QSS Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="407"/>
-        <location filename="../qsseditor.cpp" line="429"/>
+        <location filename="../qsseditor.cpp" line="410"/>
+        <location filename="../qsseditor.cpp" line="432"/>
         <source>Qt Style Sheets (*.qss)</source>
         <translation type="unfinished"></translation>
     </message>

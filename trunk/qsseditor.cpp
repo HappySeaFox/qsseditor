@@ -91,6 +91,9 @@ QssEditor::QssEditor(QWidget *parent) :
     toolButtonMenu->addAction("Item1");
     toolButtonMenu->addSeparator();
     toolButtonMenu->addAction("Item2");
+    toolButtonMenu->addSeparator();
+    QAction *act = toolButtonMenu->addAction("Item3");
+    act->setEnabled(false);
     ui->toolButton->setMenu(toolButtonMenu);
 
     m_timerDelayedApply = new QTimer(this);
