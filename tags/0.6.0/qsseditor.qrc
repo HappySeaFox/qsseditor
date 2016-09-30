@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/battery.png</file>
+        <file>images/image-sunset.png</file>
+        <file>images/user.png</file>
+        <file>images/open.png</file>
+        <file>images/options.png</file>
+        <file>images/save.png</file>
+        <file>images/saveas.png</file>
+        <file>images/qsseditor.ico</file>
+        <file>images/redo.png</file>
+        <file>images/undo.png</file>
+        <file>images/close.png</file>
+    </qresource>
+</RCC>

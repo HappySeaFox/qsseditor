@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QssEditor</class>
+ <widget class="QWidget" name="QssEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>915</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <item row="0" column="0">
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <item>
+          <widget class="QToolButton" name="toolOpen">
+           <property name="toolTip">
+            <string>Open style</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolSave">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>Save style</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolSaveAs">
+           <property name="toolTip">
+            <string>Save style as</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>8</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolClose">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>Close</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>0</width>
+             <height>17</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolUndo">
+           <property name="toolTip">
+            <string>Undo</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolRedo">
+           <property name="toolTip">
+            <string>Redo</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolOptions">
+           <property name="toolTip">
+            <string>Options</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolAbout">
+           <property name="icon">
+            <iconset resource="qsseditor.qrc">
+             <normaloff>:/images/qsseditor.ico</normaloff>:/images/qsseditor.ico</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolAboutQt"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QsciScintilla" name="text" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>1</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="widgetAllWidgets" native="true">
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelPreview">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Preview style</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <property name="tabsClosable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="tab_1">
+          <attribute name="title">
+           <string notr="true">Tab 1</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="0" colspan="2">
+            <layout class="QGridLayout" name="gridLayout_6">
+             <item row="0" column="0">
+              <widget class="QRadioButton" name="radioButton">
+               <property name="text">
+                <string notr="true">RadioButton</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="checkBox">
+               <property name="text">
+                <string notr="true">CheckBox</string>
+               </property>
+               <property name="tristate">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QProgressBar" name="progressBar">
+               <property name="maximum">
+                <number>20</number>
+               </property>
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="pushButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string notr="true">PushButton</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QToolButton" name="toolButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string notr="true">ToolButton</string>
+               </property>
+               <property name="popupMode">
+                <enum>QToolButton::InstantPopup</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QComboBox" name="comboBoxReadOnly">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string notr="true">1</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string notr="true">2</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string notr="true">3</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="comboBoxEditable">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="editable">
+                  <bool>true</bool>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string notr="true">1</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string notr="true">2</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string notr="true">3</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="2" column="0">
+              <widget class="QSpinBox" name="spinBox"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+             </item>
+             <item row="2" column="2">
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLineEdit" name="lineEdit">
+                 <property name="text">
+                  <string notr="true">Line edit</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_2">
+                 <property name="text">
+                  <string notr="true">Password</string>
+                 </property>
+                 <property name="echoMode">
+                  <enum>QLineEdit::Password</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="3" column="0">
+              <widget class="QTimeEdit" name="timeEdit"/>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDateEdit" name="dateEdit"/>
+             </item>
+             <item row="3" column="2">
+              <widget class="QDateTimeEdit" name="dateTimeEdit"/>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLCDNumber" name="lcdNumber">
+               <property name="digitCount">
+                <number>10</number>
+               </property>
+               <property name="intValue" stdset="0">
+                <number>1234567890</number>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string notr="true">Label with &lt;a href=&quot;http://google.com&quot;&gt;link&lt;/a&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="2">
+              <widget class="QCommandLinkButton" name="commandLinkButton">
+               <property name="text">
+                <string notr="true">CommandLinkButton</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="0" column="0" rowspan="3">
+              <widget class="Line" name="line_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1" rowspan="3">
+              <widget class="QSlider" name="verticalSlider">
+               <property name="value">
+                <number>30</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksAbove</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QSlider" name="horizontalSlider">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="value">
+                <number>30</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QDial" name="dial">
+               <property name="notchesVisible">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="1">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="3" column="0">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_2">
+          <attribute name="title">
+           <string notr="true">Tab 2</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QListWidget" name="listWidget">
+             <item>
+              <property name="text">
+               <string notr="true">I1</string>
+              </property>
+              <property name="icon">
+               <iconset resource="qsseditor.qrc">
+                <normaloff>:/images/battery.png</normaloff>:/images/battery.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I2</string>
+              </property>
+              <property name="icon">
+               <iconset resource="qsseditor.qrc">
+                <normaloff>:/images/image-sunset.png</normaloff>:/images/image-sunset.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I3</string>
+              </property>
+              <property name="icon">
+               <iconset resource="qsseditor.qrc">
+                <normaloff>:/images/user.png</normaloff>:/images/user.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I6</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I7</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I9</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I10</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I11</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I12</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I14</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I15</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I16</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I17</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I18</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I19</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I20</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QListWidget" name="listWidgetIcons">
+             <property name="flow">
+              <enum>QListView::LeftToRight</enum>
+             </property>
+             <property name="viewMode">
+              <enum>QListView::IconMode</enum>
+             </property>
+             <item>
+              <property name="text">
+               <string notr="true">I1</string>
+              </property>
+              <property name="icon">
+               <iconset resource="qsseditor.qrc">
+                <normaloff>:/images/battery.png</normaloff>:/images/battery.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I2</string>
+              </property>
+              <property name="icon">
+               <iconset resource="qsseditor.qrc">
+                <normaloff>:/images/image-sunset.png</normaloff>:/images/image-sunset.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">I3</string>
+              </property>
+              <property name="icon">
+               <iconset resource="qsseditor.qrc">
+                <normaloff>:/images/user.png</normaloff>:/images/user.png</iconset>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QTableWidget" name="table">
+             <property name="sortingEnabled">
+              <bool>true</bool>
+             </property>
+             <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string notr="true">R1</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string notr="true">R2</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string notr="true">R3</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string notr="true">C1</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string notr="true">C2</string>
+              </property>
+             </column>
+             <item row="0" column="0">
+              <property name="text">
+               <string notr="true">1,1</string>
+              </property>
+             </item>
+             <item row="0" column="1">
+              <property name="text">
+               <string notr="true">1,2</string>
+              </property>
+             </item>
+             <item row="1" column="0">
+              <property name="text">
+               <string notr="true">2,1</string>
+              </property>
+             </item>
+             <item row="1" column="1">
+              <property name="text">
+               <string notr="true">2,2</string>
+              </property>
+             </item>
+             <item row="2" column="0">
+              <property name="text">
+               <string notr="true">3,1</string>
+              </property>
+              <property name="flags">
+               <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
+              </property>
+             </item>
+             <item row="2" column="1">
+              <property name="text">
+               <string notr="true">2,3</string>
+              </property>
+              <property name="flags">
+               <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QTreeWidget" name="tree">
+             <property name="allColumnsShowFocus">
+              <bool>true</bool>
+             </property>
+             <attribute name="headerShowSortIndicator" stdset="0">
+              <bool>true</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string notr="true">C1</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string notr="true">C2</string>
+              </property>
+             </column>
+             <item>
+              <property name="text">
+               <string notr="true">R1</string>
+              </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
+              <item>
+               <property name="text">
+                <string notr="true">C1</string>
+               </property>
+               <property name="checkState">
+                <enum>Checked</enum>
+               </property>
+               <property name="text">
+                <string notr="true">X1</string>
+               </property>
+               <property name="checkState">
+                <enum>Checked</enum>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">C2</string>
+               </property>
+               <property name="checkState">
+                <enum>PartiallyChecked</enum>
+               </property>
+               <property name="text">
+                <string notr="true">X2</string>
+               </property>
+               <property name="checkState">
+                <enum>PartiallyChecked</enum>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">C3</string>
+               </property>
+               <property name="text">
+                <string notr="true">X3</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
+               </property>
+              </item>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">R2</string>
+              </property>
+              <property name="flags">
+               <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string notr="true">Tab 3</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="0" column="0">
+            <widget class="QTextBrowser" name="textBrowser">
+             <property name="undoRedoEnabled">
+              <bool>true</bool>
+             </property>
+             <property name="html">
+              <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Text &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;browser&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;with&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline;&quot;&gt;some&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; font-style:italic;&quot;&gt;text &lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;and &lt;/span&gt;&lt;a href=&quot;http://google.com&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;links&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="openLinks">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QTextEdit" name="textEdit">
+             <property name="html">
+              <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Text edit&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCalendarWidget" name="calendarWidget"/>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <widget class="QGroupBox" name="groupBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string notr="true">GroupBox</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0">
+               <widget class="QScrollArea" name="scrollArea">
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>253</width>
+                   <height>141</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_9">
+                  <item row="0" column="1">
+                   <widget class="QFrame" name="frame">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>1</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_10">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string notr="true">Frame</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <spacer name="verticalSpacer_2">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>46</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="0" rowspan="2">
+                   <widget class="QToolBox" name="toolBox">
+                    <property name="currentIndex">
+                     <number>0</number>
+                    </property>
+                    <widget class="QWidget" name="page">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>69</width>
+                       <height>69</height>
+                      </rect>
+                     </property>
+                     <attribute name="label">
+                      <string notr="true">Toolbox1</string>
+                     </attribute>
+                    </widget>
+                    <widget class="QWidget" name="page_2">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>100</width>
+                       <height>30</height>
+                      </rect>
+                     </property>
+                     <attribute name="label">
+                      <string notr="true">Toolbox2</string>
+                     </attribute>
+                    </widget>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QDockWidget" name="dockWidget">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>1</horstretch>
+                      <verstretch>1</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="windowTitle">
+                     <string notr="true">Dock widget</string>
+                    </property>
+                    <widget class="QWidget" name="dockWidgetContents_3"/>
+                   </widget>
+                  </item>
+                  <item row="1" column="1" colspan="2">
+                   <widget class="QMdiArea" name="mdiArea">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>2</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QsciScintilla</class>
+   <extends>QWidget</extends>
+   <header>Qsci/qsciscintilla.h</header>
+   <container>1</container>
+   <slots>
+    <signal>textChanged()</signal>
+    <slot>undo()</slot>
+    <slot>redo()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>toolOpen</tabstop>
+  <tabstop>toolSave</tabstop>
+  <tabstop>toolSaveAs</tabstop>
+  <tabstop>toolClose</tabstop>
+  <tabstop>toolUndo</tabstop>
+  <tabstop>toolRedo</tabstop>
+  <tabstop>toolOptions</tabstop>
+  <tabstop>toolAbout</tabstop>
+  <tabstop>toolAboutQt</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>radioButton</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>toolButton</tabstop>
+  <tabstop>comboBoxReadOnly</tabstop>
+  <tabstop>comboBoxEditable</tabstop>
+  <tabstop>spinBox</tabstop>
+  <tabstop>doubleSpinBox</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>timeEdit</tabstop>
+  <tabstop>dateEdit</tabstop>
+  <tabstop>dateTimeEdit</tabstop>
+  <tabstop>verticalSlider</tabstop>
+  <tabstop>horizontalSlider</tabstop>
+  <tabstop>dial</tabstop>
+  <tabstop>commandLinkButton</tabstop>
+  <tabstop>listWidget</tabstop>
+  <tabstop>listWidgetIcons</tabstop>
+  <tabstop>table</tabstop>
+  <tabstop>tree</tabstop>
+  <tabstop>textBrowser</tabstop>
+  <tabstop>textEdit</tabstop>
+  <tabstop>calendarWidget</tabstop>
+  <tabstop>scrollArea</tabstop>
+ </tabstops>
+ <resources>
+  <include location="qsseditor.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>text</sender>
+   <signal>textChanged()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotCssChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>457</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolOpen</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotOpen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>31</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>243</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolSave</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotSave()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>242</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolSaveAs</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotSaveAs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>243</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolOptions</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>187</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>238</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolUndo</sender>
+   <signal>clicked()</signal>
+   <receiver>text</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>54</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolRedo</sender>
+   <signal>clicked()</signal>
+   <receiver>text</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>96</x>
+     <y>339</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolClose</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotClose()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>925</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolAbout</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotAbout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>208</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>937</x>
+     <y>21</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolAboutQt</sender>
+   <signal>clicked()</signal>
+   <receiver>QssEditor</receiver>
+   <slot>slotAboutQt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>936</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotCssChanged()</slot>
+  <slot>slotOpen()</slot>
+  <slot>slotSave()</slot>
+  <slot>slotSaveAs()</slot>
+  <slot>slotOptions()</slot>
+  <slot>slotClose()</slot>
+  <slot>slotAbout()</slot>
+  <slot>slotAboutQt()</slot>
+ </slots>
+</ui>

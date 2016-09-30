@@ -1,0 +1,44 @@
+qsseditor (0.6.0-1) unstable; urgency=low
+
+  * Load translations dynamically
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Fri, 30 Sep 2016 11:59:12 +0300
+
+qsseditor (0.5.6-1) unstable; urgency=low
+
+  * Romanian translation
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Wed, 17 Sep 2014 17:15:42 +0300
+
+qsseditor (0.5.5-1) unstable; urgency=low
+
+  * German translation
+  * Fixed the size of "About" dialog
+  * Added 48x48 icon
+  * Preview button can be checked and unchecked (to test :checked state)
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Thu, 20 Apr 2014 20:35:16 +0300
+
+qsseditor (0.5.4-1) unstable; urgency=low
+
+  * New version for Ubuntu PPA
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Tue, 15 Apr 2014 22:06:30 +0300
+
+qsseditor (0.5.3-1) unstable; urgency=low
+
+  * Chinese translation
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Tue, 15 Apr 2014 06:02:27 +0300
+
+qsseditor (0.5.0-2) unstable; urgency=low
+
+  * Version fix for PPA
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Tue, 25 Mar 2014 01:27:20 +0300
+
+qsseditor (0.5.0-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Dmitry Baryshev (dmitrykx) <linuxsquirrel.dev@gmail.com>  Thu, 20 Mar 2014 23:16:12 +0300

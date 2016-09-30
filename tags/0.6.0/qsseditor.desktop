@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Graphics;Viewer
+Exec=qsseditor %f
+Icon=qsseditor
+Terminal=false
+Name=QSS Editor
+Name[ru]=Редактор QSS
+Comment=Tool to edit and preview Qt style sheets
+Comment[ru]=Утилита для редактирования и предпросмотра таблиц стилей Qt
