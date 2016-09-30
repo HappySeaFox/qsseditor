@@ -193,7 +193,7 @@ DEFINES += DOWNLOADROOT=$$sprintf("\"\\\"%1\\\"\"", $$DOWNLOADROOT)
 # files to copy to the distribution
 greaterThan(QT_MAJOR_VERSION, 4) {
     IMAGEPLUGINS=qico.dll qjpeg.dll
-    QTLIBS=Qt5Core.dll Qt5Gui.dll Qt5Widgets.dll
+    QTLIBS=Qt5Core.dll Qt5Gui.dll Qt5Widgets.dll Qt5PrintSupport.dll
     QTPLATFORMS=qwindows.dll
 } else {
     IMAGEPLUGINS=qico4.dll qjpeg4.dll
@@ -262,9 +262,12 @@ QMAKE_EXTRA_TARGETS += tag
     distbin.commands += $$mle(copy /y \"$$TRANSLATIONS_DIR\\translations.conf\" \"$$T/translations\")
 
     for(l, LANGUAGES) {
-        l=$$[QT_INSTALL_TRANSLATIONS]\\qt_$${l}.qm
-        exists($$l) {
-            distbin.commands += $$mle(copy /y \"$$l\" \"$$T/translations\")
+        qtl=$$[QT_INSTALL_TRANSLATIONS]\\qt_$${l}.qm $$[QT_INSTALL_TRANSLATIONS]\\qtbase_$${l}.qm
+
+        for(l, qtl) {
+            exists($$l) {
+                distbin.commands += $$mle(copy /y \"$$l\" \"$$T/translations\")
+            }
         }
     }
 
@@ -360,9 +363,12 @@ exists($$INNO) {
     iss.commands += $$mle(echo Source: \"$$TRANSLATIONS_DIR/translations.conf\"; DestDir: \"{app}/translations\"; Flags: ignoreversion >> $$ISS)
 
     for(l, LANGUAGES) {
-        l=$$[QT_INSTALL_TRANSLATIONS]\\qt_$${l}.qm
-        exists($$l) {
-            iss.commands += $$mle(echo Source: \"$$l\"; DestDir: \"{app}/translations\"; Flags: ignoreversion >> $$ISS)
+        qtl=$$[QT_INSTALL_TRANSLATIONS]\\qt_$${l}.qm $$[QT_INSTALL_TRANSLATIONS]\\qtbase_$${l}.qm
+
+        for(l, qtl) {
+            exists($$l) {
+                iss.commands += $$mle(echo Source: \"$$l\"; DestDir: \"{app}/translations\"; Flags: ignoreversion >> $$ISS)
+            }
         }
     }
 
