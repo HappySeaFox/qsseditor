@@ -36,6 +36,7 @@ DEFINES += NVER3=$$NVER3
 DEFINES += NVER_STRING=$$sprintf("\"\\\"%1\\\"\"", $$VERSION)
 
 DEFINES += TARGET=$$TARGET
+DEFINES += TARGET_STRING=$$sprintf("\"\\\"%1\\\"\"", $$TARGET)
 
 # require at least Windows XP
 win32:DEFINES += _WIN32_WINNT=0x0501 WINVER=0x0501
