@@ -41,7 +41,7 @@ Options::Options(QWidget *parent) :
 
     const QString basePath =
             #ifdef Q_OS_UNIX
-                QString("/usr/share/" NVER_STRING)
+                QString("/usr/share/" TARGET_STRING).toLower()
             #else
                 QCoreApplication::applicationDirPath()
             #endif
