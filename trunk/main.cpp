@@ -59,14 +59,18 @@ int main(int argc, char *argv[])
 
     ts = ts.isEmpty() ? locale : (ts + ".qm");
 
-    QTranslator translator_qsseditor;
-    qDebug("Loading QSS Editor translation: %s", translator_qsseditor.load(ts, translationsDir) ? "ok" : "failed");
-
     QTranslator translator_qt;
     qDebug("Loading Qt translation: %s", translator_qt.load("qt_" + ts, qtTranslationsDir) ? "ok" : "failed");
 
+    QTranslator translator_qtbase;
+    qDebug("Loading Qt Base translation: %s", translator_qtbase.load("qtbase_" + ts, qtTranslationsDir) ? "ok" : "failed");
+
+    QTranslator translator;
+    qDebug("Loading translation: %s", translator.load(ts, translationsDir) ? "ok" : "failed");
+
     app.installTranslator(&translator_qt);
-    app.installTranslator(&translator_qsseditor);
+    app.installTranslator(&translator_qtbase);
+    app.installTranslator(&translator);
 
     QssEditor w;
     w.show();
