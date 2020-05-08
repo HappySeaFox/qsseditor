@@ -1,13 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: qsseditor
-Source: http://sourceforge.net/projects/qsseditor
+Source: https://github.com/smoked-herring/qsseditor
 
 Files: *
 Copyright: 2014 Dmitry Baryshev
 License: GPL-3
 
 Files: debian/*
-Copyright: 2014 Dmitry Baryshev <linuxsquirrel.dev@gmail.com>
+Copyright: 2014 Dmitry Baryshev <dmitrymq@gmail.com>
 License: LGPL-2.1
 
 License: GPL-3

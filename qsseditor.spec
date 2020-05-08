@@ -1,7 +1,7 @@
 #
 # spec file for package qsseditor
 #
-# Copyright (c) 2016 Dmitry Baryshev <linuxsquirrel.dev@gmail.com>
+# Copyright (c) 2016 Dmitry Baryshev <dmitrymq@gmail.com>
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -18,7 +18,7 @@ Name: qsseditor
 Summary: QT stylesheets editor
 License: GPL-3.0
 Group: Applications/Editors
-URL: http://sourceforge.net/projects/qsseditor
+URL: https://github.com/smoked-herring/qsseditor
 Version: 0.6.0
 Release: 3
 Source0: %{name}-%{version}.tar.gz
@@ -78,9 +78,9 @@ install -D -m 644 qsseditor.desktop $RPM_BUILD_ROOT/usr/share/applications/qssed
 /usr/share/man/man1/qsseditor.1.gz
 /usr/share/applications/qsseditor.desktop
 %changelog
-* Fri Sep 30 2016 Dmitry Baryshev <linuxsquirrel.dev@gmail.com> 0.6.0-3
+* Fri Sep 30 2016 Dmitry Baryshev <dmitrymq@gmail.com> 0.6.0-3
 - Fix running qmake #2
-* Fri Sep 30 2016 Dmitry Baryshev <linuxsquirrel.dev@gmail.com> 0.6.0-2
+* Fri Sep 30 2016 Dmitry Baryshev <dmitrymq@gmail.com> 0.6.0-2
 - Fix running qmake
-* Fri Sep 30 2016 Dmitry Baryshev <linuxsquirrel.dev@gmail.com> 0.6.0-1
+* Fri Sep 30 2016 Dmitry Baryshev <dmitrymq@gmail.com> 0.6.0-1
 - Initial RPM release

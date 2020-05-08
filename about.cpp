@@ -33,8 +33,8 @@ About::About(QWidget *parent) :
     ui->label->setPixmap(QIcon(":/images/qsseditor.ico").pixmap(48, 48));
     ui->labelVersion->setText(QString("QSS Editor %1").arg(NVER_STRING));
 
-    ui->labelCopyright->setText(QString("(C) 2014 %1 &lt;<a href=\"mailto:linuxsquirrel.dev@gmail.com\">"
-                                        "linuxsquirrel.dev@gmail.com</a>&gt;").arg(tr("Dmitry Baryshev")));
+    ui->labelCopyright->setText(QString("(C) 2014 %1 &lt;<a href=\"mailto:dmitrymq@gmail.com\">"
+                                        "dmitrymq@gmail.com</a>&gt;").arg(tr("Dmitry Baryshev")));
 
     adjustSize();
 }

@@ -187,14 +187,8 @@ OTHER_FILES += \
     README.txt
 
 # distribution
-SVNROOT_FOR_COMMIT="svn+ssh://dmitrykx@svn.code.sf.net/p/qsseditor/code"
-SVNROOT_FOR_DOWNLOAD="http://sourceforge.net/p/qsseditor/code/HEAD/tree/trunk"
-HTTPROOT="http://sourceforge.net/p/qsseditor"
-DOWNLOADROOT="http://sourceforge.net/projects/qsseditor"
-
-DEFINES += SVNROOT_FOR_DOWNLOAD=$$sprintf("\"\\\"%1\\\"\"", $$SVNROOT_FOR_DOWNLOAD)
+HTTPROOT="https://github.com/smoked-herring/qsseditor"
 DEFINES += HTTPROOT=$$sprintf("\"\\\"%1\\\"\"", $$HTTPROOT)
-DEFINES += DOWNLOADROOT=$$sprintf("\"\\\"%1\\\"\"", $$DOWNLOADROOT)
 
 # files to copy to the distribution
 greaterThan(QT_MAJOR_VERSION, 4) {
@@ -215,11 +209,6 @@ isEmpty(HOST64) {
 MINGWLIBS=libgcc_s_$${MINGW_BUILD_TYPE}-1.dll libwinpthread-1.dll libstdc++-6.dll
 
 LICENSES=LICENSE.txt
-
-tag.commands += $$mle(echo "$$VERSION"> "\"$${_PRO_FILE_PWD_}/QssEditor-version.tag\"")
-tag.commands += $$mle(svn -m "\"$$VERSION file tag\"" commit "\"$${_PRO_FILE_PWD_}/QssEditor-version.tag\"")
-tag.commands += $$mle(svn -m "\"$$VERSION tag\"" copy "\"$$SVNROOT_FOR_COMMIT/trunk\"" "\"$$SVNROOT_FOR_COMMIT/tags/$$VERSION\"")
-QMAKE_EXTRA_TARGETS += tag
 
 !isEmpty(ZIP) {
     message("7Z is found, will create custom dist targets")
