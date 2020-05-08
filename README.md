@@ -4,6 +4,8 @@ Author: Dmitry Baryshev
 
 Patches for Mac: Israel Lins Albuquerque <i.lins85@icloud.com>
 
+![QssEditor](github/qsseditor.png?raw=true)
+
 ## Features overview
 
 QSS Editor is a cross-platform UI application to edit and preview Qt style sheets (QSS). QSS description and reference:
