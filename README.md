@@ -1,17 +1,15 @@
 # QssEditor
 
+QSS Editor is a cross-platform UI application to edit and preview Qt style sheets (QSS). QSS description and reference:
+[http://qt-project.org/doc/qt-4.8/stylesheet.html](http://qt-project.org/doc/qt-4.8/stylesheet.html).
+
+Nice and dark QSS example (dark.qss, dark2.qss) could be found [here](https://github.com/ColinDuquesnoy/QDarkStyleSheet/blob/master/qdarkstyle/style.qss).
+
 Author: Dmitry Baryshev
 
 Patches for Mac: Israel Lins Albuquerque <i.lins85@icloud.com>
 
 ![QssEditor](github/qsseditor.png?raw=true)
-
-## Features overview
-
-QSS Editor is a cross-platform UI application to edit and preview Qt style sheets (QSS). QSS description and reference:
-[http://qt-project.org/doc/qt-4.8/stylesheet.html](http://qt-project.org/doc/qt-4.8/stylesheet.html).
-
-Nice and dark QSS example (dark.qss, dark2.qss) could be found [here](https://github.com/ColinDuquesnoy/QDarkStyleSheet/blob/master/qdarkstyle/style.qss).
 
 ## Build requirements
 
