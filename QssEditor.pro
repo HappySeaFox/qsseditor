@@ -3,7 +3,10 @@ TEMPLATE = app
 QT += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT *= widgets printsupport
-mac: greaterThan(QT_MAJOR_VERSION, 4): QT *= macextras
+
+mac {
+    greaterThan(QT_MAJOR_VERSION, 4): QT *= macextras
+}
 
 NVER1=0
 NVER2=6
