@@ -9,7 +9,7 @@ Author: Dmitry Baryshev
 
 Patches for Mac: Israel Lins Albuquerque <i.lins85@icloud.com>
 
-![QssEditor](github/qsseditor.png?raw=true)
+![QssEditor](.github/qsseditor.png?raw=true)
 
 ## Build requirements
 
