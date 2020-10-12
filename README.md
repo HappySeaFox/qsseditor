@@ -1,4 +1,10 @@
-# QssEditor
+<h1 align="center">QSS Editor</h1>
+<h3 align="center">A cross-platform tool to edit and preview Qt style sheets.</h3>
+<p align="center">
+  <a href="https://github.com/smoked-herring/qsseditor/releases">
+    <img alt="Latest release" src="https://img.shields.io/github/v/release/smoked-herring/qsseditor?include_prereleases"/>
+  </a>
+</p>
 
 QSS Editor is a cross-platform UI application to edit and preview Qt style sheets (QSS). QSS description and reference:
 [http://qt-project.org/doc/qt-4.8/stylesheet.html](http://qt-project.org/doc/qt-4.8/stylesheet.html).
@@ -8,6 +14,8 @@ Nice and dark QSS example (dark.qss, dark2.qss) could be found [here](https://gi
 Author: Dmitry Baryshev
 
 Patches for Mac: Israel Lins Albuquerque <i.lins85@icloud.com>
+
+:star: If you like QSS Editor, please consider starring the repository.
 
 ![QssEditor](.github/qsseditor.png?raw=true)
 
