@@ -12,8 +12,6 @@ Author: Dmitry Baryshev
 
 Patches for Mac: Israel Lins Albuquerque <i.lins85@icloud.com>
 
-:star: If you like QSS Editor, please consider starring the repository.
-
 ![QssEditor](.github/qsseditor.png?raw=true)
 
 ## Build requirements
