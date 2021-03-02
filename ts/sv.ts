@@ -137,7 +137,17 @@
         <translation>Alternativ</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="172"/>
+        <location filename="../qsseditor.ui" line="126"/>
+        <source>About</source>
+        <translation>Om QSS Editor</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="137"/>
+        <source>About Qt</source>
+        <translation>Om Qt</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="179"/>
         <source>Preview style</source>
         <translation>Förhandsgranska stil</translation>
     </message>
@@ -184,7 +194,7 @@
     <message>
         <location filename="../qsseditor.cpp" line="282"/>
         <source>Cannot open style. The file doesn&apos;t exist or not readable</source>
-        <translation>Det går inte att öppna stilen. Filen finns inte eller är inte läsbar </translation>
+        <translation>Det går inte att öppna stilen. Filen finns inte eller är inte läsbar</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="288"/>

@@ -137,14 +137,24 @@
         <translation>Opțiuni</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="172"/>
+        <location filename="../qsseditor.ui" line="126"/>
+        <source>About</source>
+        <translation>Despre QSS Editor</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="137"/>
+        <source>About Qt</source>
+        <translation>Despre Qt</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="179"/>
         <source>Preview style</source>
         <translation>Previzualizare stil</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="205"/>
         <source>Cannot open style:</source>
-        <translation>Nu se poate deschide stilul</translation>
+        <translation>Nu se poate deschide stilul:</translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="233"/>

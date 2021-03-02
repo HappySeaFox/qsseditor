@@ -137,7 +137,17 @@
         <translation>选项</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="172"/>
+        <location filename="../qsseditor.ui" line="126"/>
+        <source>About</source>
+        <translation>关于QSS Editor</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="137"/>
+        <source>About Qt</source>
+        <translation>关于Qt</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="179"/>
         <source>Preview style</source>
         <translation>预览样式</translation>
     </message>

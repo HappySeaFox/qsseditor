@@ -137,7 +137,17 @@
         <translation>Optionen</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="172"/>
+        <location filename="../qsseditor.ui" line="126"/>
+        <source>About</source>
+        <translation>Über QSS Editor</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="137"/>
+        <source>About Qt</source>
+        <translation>Über Qt</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="179"/>
         <source>Preview style</source>
         <translation>Vorschau Stil</translation>
     </message>

@@ -142,7 +142,17 @@
         <translation>Повторить</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="172"/>
+        <location filename="../qsseditor.ui" line="126"/>
+        <source>About</source>
+        <translation>О QSS Editor</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="137"/>
+        <source>About Qt</source>
+        <translation>О Qt</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="179"/>
         <source>Preview style</source>
         <translation>Предпросмотр стиля</translation>
     </message>

@@ -56,7 +56,7 @@
     <message>
         <location filename="../options.ui" line="120"/>
         <source>Need restart</source>
-        <translation>Απαιτείται επανεκκίνηση </translation>
+        <translation>Απαιτείται επανεκκίνηση</translation>
     </message>
     <message>
         <location filename="../options.cpp" line="35"/>
@@ -137,7 +137,17 @@
         <translation>Επιλογές</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="172"/>
+        <location filename="../qsseditor.ui" line="126"/>
+        <source>About</source>
+        <translation>Σχετικά με το QSS Editor</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="137"/>
+        <source>About Qt</source>
+        <translation>Σχετικά με το Qt</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.ui" line="179"/>
         <source>Preview style</source>
         <translation>Στυλ προεπισκόπησης</translation>
     </message>
