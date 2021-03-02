@@ -16,10 +16,8 @@ Patches for Mac: Israel Lins Albuquerque <i.lins85@icloud.com>
 
 ## Build requirements
 
-- MinGW-based Qt 4.8.7 from [here](https://download.qt.io/archive/qt/4.8/4.8.7)
-- 32-bit MinGW 4.8.2 DWARF in PATH from [here](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/4.8.2/threads-posix/dwarf/i686-4.8.2-release-posix-dwarf-rt_v3-rev3.7z/download)
-
-QssEditor may need patching to enable building with other build tools or Qt versions.
+- Qt >= 4, Qt5 is recommended
+- MSVC or MinGW
 
 ## Licensing notes
 
