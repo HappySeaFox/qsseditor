@@ -59,9 +59,9 @@ Source: "Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Qt5PrintSupport.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "imageformats/qico.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
-Source: "imageformats/qjpeg.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
-Source: "platforms/qwindows.dll"; DestDir: "{app}\platforms"; Flags: ignoreversion
+Source: "imageformats/*.dll"; DestDir: "{app}/imageformats"; Flags: ignoreversion
+Source: "platforms/*.dll"; DestDir: "{app}/platforms"; Flags: ignoreversion
+Source: "styles/*.dll"; DestDir: "{app}/styles"; Flags: ignoreversion
 Source: "translations/*.png"; DestDir: "{app}/translations"; Flags: ignoreversion
 Source: "translations/*.qm"; DestDir: "{app}/translations"; Flags: ignoreversion
 Source: "translations/translations.conf"; DestDir: "{app}/translations"; Flags: ignoreversion
