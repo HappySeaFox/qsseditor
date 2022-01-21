@@ -36,7 +36,7 @@ extern "C++" {
 
 #include <QByteArray>
 #include <QList>
-#include <QPointer>
+#include <QScopedPointer>
 
 #include <Qsci/qsciglobal.h>
 #include <Qsci/qscicommand.h>
@@ -2075,7 +2075,7 @@ private:
     int ct_cursor;
     QList<int> ct_shifts;
     AutoCompletionUseSingle use_single;
-    QPointer<QsciLexer> lex;
+    QScopedPointer<QsciLexer> lex;
     QsciCommandSet *stdCmds;
     QsciDocument doc;
     QColor nl_text_colour;

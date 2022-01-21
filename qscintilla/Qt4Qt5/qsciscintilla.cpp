@@ -3174,7 +3174,7 @@ void QsciScintilla::setLexer(QsciLexer *lexer)
     detachLexer();
 
     // Connect up the new lexer.
-    lex = lexer;
+    lex.reset(lexer);
 
     if (lex)
     {
@@ -3185,15 +3185,15 @@ void QsciScintilla::setLexer(QsciLexer *lexer)
 
         lex->setEditor(this);
 
-        connect(lex,SIGNAL(colorChanged(const QColor &, int)),
+        connect(lex.data(),SIGNAL(colorChanged(const QColor &, int)),
                 SLOT(handleStyleColorChange(const QColor &, int)));
-        connect(lex,SIGNAL(eolFillChanged(bool, int)),
+        connect(lex.data(),SIGNAL(eolFillChanged(bool, int)),
                 SLOT(handleStyleEolFillChange(bool, int)));
-        connect(lex,SIGNAL(fontChanged(const QFont &, int)),
+        connect(lex.data(),SIGNAL(fontChanged(const QFont &, int)),
                 SLOT(handleStyleFontChange(const QFont &, int)));
-        connect(lex,SIGNAL(paperChanged(const QColor &, int)),
+        connect(lex.data(),SIGNAL(paperChanged(const QColor &, int)),
                 SLOT(handleStylePaperChange(const QColor &, int)));
-        connect(lex,SIGNAL(propertyChanged(const char *, const char *)),
+        connect(lex.data(),SIGNAL(propertyChanged(const char *, const char *)),
                 SLOT(handlePropertyChange(const char *, const char *)));
 
         SendScintilla(SCI_SETPROPERTY, "fold", "1");
@@ -3267,7 +3267,7 @@ void QsciScintilla::setLexerStyle(int style)
 // Get the current lexer.
 QsciLexer *QsciScintilla::lexer() const
 {
-    return lex;
+    return lex.data();
 }
 
 
