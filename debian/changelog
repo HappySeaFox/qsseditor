@@ -1,3 +1,10 @@
+qsseditor (0.6.1-1) unstable; urgency=low
+
+  * Added Swedish translation
+  * Updated translations
+
+ -- Dmitry Baryshev (dmitrykx) <dmitrymq@gmail.com>  Tue, 02 Mar 2021 19:46:58 +0300
+
 qsseditor (0.6.0-1) unstable; urgency=low
 
   * Load translations dynamically
