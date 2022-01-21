@@ -6,7 +6,7 @@
   </a>
 </p>
 
-Nice and dark QSS example (dark.qss, dark2.qss) could be found [here](https://github.com/ColinDuquesnoy/QDarkStyleSheet/blob/master/qdarkstyle/style.qss).
+Nice and dark QSS example could be found [here](https://github.com/ColinDuquesnoy/QDarkStyleSheet/blob/master/qdarkstyle/dark/style.qss).
 
 Author: Dmitry Baryshev
 
