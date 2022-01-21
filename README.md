@@ -14,10 +14,25 @@ Patches for Mac: Israel Lins Albuquerque <i.lins85@icloud.com>
 
 ![QssEditor](.github/qsseditor.png?raw=true)
 
-## Build requirements
+## Installation
 
-- Qt >= 4, Qt5 is recommended
-- MSVC or MinGW
+Visit the Releases Github page for prebuilt packages. If no suitable package exists,
+you can consider building `QssEditor`.
+
+## Building
+
+#### Requirements
+
+- Windows, Linux, macOS
+- Git to clone the repository
+- Qt5 with Qt Creator
+- Build tools: MSVC, MinGW, GCC, XCode etc.
+
+#### Steps
+
+1. Clone `https://github.com/smoked-herring/qsseditor`
+2. Open `QssEditor.pro` in Qt Creator
+3. Build `QssEditor` with a preferred or the default kit
 
 ## Licensing notes
 
