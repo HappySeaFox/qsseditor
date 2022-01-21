@@ -191,6 +191,9 @@
          <property name="tabsClosable">
           <bool>true</bool>
          </property>
+         <property name="movable">
+          <bool>true</bool>
+         </property>
          <widget class="QWidget" name="tab_1">
           <attribute name="title">
            <string notr="true">Tab 1</string>
@@ -931,6 +934,11 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
           </layout>
+         </widget>
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>Tab 4</string>
+          </attribute>
          </widget>
         </widget>
        </item>

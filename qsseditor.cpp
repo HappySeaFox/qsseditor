@@ -47,6 +47,9 @@ QssEditor::QssEditor(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Disable tab #4 to preview disabled tabs
+    ui->tabWidget->setTabEnabled(3, false);
+
     // some default values
     QHash<QString, QVariant> defaultValues;
 
