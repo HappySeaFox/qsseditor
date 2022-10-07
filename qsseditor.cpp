@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This file is part of QssEditor.
  *
  * QssEditor is free software: you can redistribute it and/or modify
@@ -146,7 +146,7 @@ QssEditor::QssEditor(QWidget *parent) :
     ui->text->setAutoCompletionReplaceWord(true);
     ui->text->setAutoCompletionCaseSensitivity(false);
     ui->text->setAutoCompletionUseSingle(QsciScintilla::AcusAlways);
-    ui->text->setAutoCompletionThreshold(0);
+    ui->text->setAutoCompletionThreshold(3);
 
     ui->text->setBraceMatching(QsciScintilla::SloppyBraceMatch);
     ui->text->setMatchedBraceBackgroundColor(Qt::yellow);
@@ -177,7 +177,7 @@ bool QssEditor::eventFilter(QObject *obj, QEvent *event)
 
         if(ke)
         {
-            if((ke->modifiers() == Qt::CTRL) && (ke->key() == Qt::Key_Space))
+            if((ke->modifiers() == Qt::CTRL) && (ke->key() == Qt::Key_Tab))
             {
                 ui->text->autoCompleteFromAll();
                 return true;
